@@ -195,7 +195,7 @@ function Home() {
                         <div className="col-lg-6 order-2 order-lg-1">
                             <div className="banner-left text-center pb-lg-5 p-md-0">
                                 <div className="banner-image">
-                                    <img src="assets/images/team/gareth-picture.png" alt="banner-image" className="w-60"/><br/>
+                                    <img src="assets/images/team/gareth-picture.png" alt="banner-image"/><br/>
                                 </div>
                                 <div className="countdown">
                                     <div id="countdown"
@@ -220,19 +220,19 @@ function Home() {
                                 <li className="pe-2 border-end border-1 border-lightgrey">
                                     <i className="fa  fa-calendar-o pe-1"></i> 08-12 SEP 2025
                                 </li>
-                                <li className="ps-2">
+                                <li className="ps-2 border-end border-1 border-lightgrey">
                                     <i className="fa  fa-map-marker pe-1"></i> IICS India, Lajpat Nagar, Delhi
+                                </li>
+                                <li className="ps-2">
+                                    09:00 A.M - 04:00 P.M
                                 </li>
                                 </ul>
                             </div>
                             <div className="banner-button">
                                 <div className="row">
-                                    <div className="col-lg-6 col-md-6">
-                                        <Link to="https://docs.google.com/forms/d/1h7rB7jZCF_XXaddmFClBbOxYamXWCi8oD_3mHQcacgY/viewform?edit_requested=true"  className="btn me-3 my-1 w-100">Register Now</Link>
+                                    <div className="col-lg-12 col-md-6">
+                                        <Link to="https://docs.google.com/forms/d/1h7rB7jZCF_XXaddmFClBbOxYamXWCi8oD_3mHQcacgY/viewform?edit_requested=true"  className="btn me-3 my-1 w-100">Register Now @ <strike>₹10,000</strike><span className='lead ps-2'>₹6,999/_</span></Link>
                                     </div>
-                                    <div className="col-lg-6 col-md-6">
-                                        <Link to="/Eventlists"  className="btn btn2 my-1 w-100">VIEW SCHEDULE</Link>
-                                    </div> 
                                 </div>
                                 </div>
                             </div>
@@ -531,8 +531,8 @@ function Home() {
                     mattis, pulvinar dapibus leo.</p> */}
                 </div>
                 <div className="schedule-list-outer">
-                <div className="schedule-list-top mb-7">
-                    <div className="row align-items-center">
+                <div className="schedule-list-top mb-7 border-bottom">
+                    <div className="row">
                     <div className="col-lg-3 col-md-4">
                         <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
                         <h4 className="pink mb-2">1ST DAY</h4>
@@ -543,26 +543,6 @@ function Home() {
                     </div>
                     <div className="col-lg-9 col-md-8">
                         <div className="schedule-list  text-center text-sm-start">
-                        <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/" className="black">Learning Outcomes</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2">
-                                <ul>
-                                    <li>
-                                        Understand career opportunities digital industries and emerging job opportunities
-                                    </li>
-                                    <li>
-                                        Build confidence in storytelling and pitching skills
-                                    </li>
-                                    <li>
-                                        Explore future pathways in AI, AR, and immersive storytelling
-                                    </li>
-                                </ul>
-                            </p>
-                            </div>
-                        </div>
                         <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
                             <div className="schedule-box-title">
                                 <h5 className="mb-2"><Link to="/" className="black">Course Content</Link></h5>
@@ -603,12 +583,32 @@ function Home() {
                             </p>
                             </div>
                         </div>
+                        <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                            <div className="schedule-box-title">
+                                <h5 className="mb-2"><Link to="/" className="black">Learning Outcomes</Link></h5>
+                            </div>
+                            <div className="schedule-box-info">
+                            <p className="mb-2">
+                                <ul>
+                                    <li>
+                                        Understand career opportunities digital industries and emerging job opportunities
+                                    </li>
+                                    <li>
+                                        Build confidence in storytelling and pitching skills
+                                    </li>
+                                    <li>
+                                        Explore future pathways in AI, AR, and immersive storytelling
+                                    </li>
+                                </ul>
+                            </p>
+                            </div>
+                        </div>
                         </div>
                     </div>
                     </div>
                 </div>
-                <div className="schedule-list-top mb-7">
-                    <div className="row align-items-center">
+                <div className="schedule-list-top mb-7 border-bottom">
+                    <div className="row">
                     <div className="col-lg-3 col-md-4">
                         <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
                         <h4 className="pink mb-2">2ND DAY</h4>
@@ -619,26 +619,6 @@ function Home() {
                     </div>
                     <div className="col-lg-9 col-md-8">
                         <div className="schedule-list  text-center text-sm-start">
-                        <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/" className="black">Learning Outcomes</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2">
-                                <ul>
-                                    <li>
-                                        Gain foundational skills in producing content for key digital platforms.
-                                    </li>
-                                    <li>
-                                        Learn how to tailor content to audience and platform.
-                                    </li>
-                                    <li>
-                                       Understand branding and digital identity.
-                                    </li>
-                                </ul>
-                            </p>
-                            </div>
-                        </div>
                         <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
                             <div className="schedule-box-title">
                                 <h5 className="mb-2"><Link to="/" className="black">Course Content</Link></h5>
@@ -679,12 +659,32 @@ function Home() {
                             </p>
                             </div>
                         </div>
+                        <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                            <div className="schedule-box-title">
+                                <h5 className="mb-2"><Link to="/" className="black">Learning Outcomes</Link></h5>
+                            </div>
+                            <div className="schedule-box-info">
+                            <p className="mb-2">
+                                <ul>
+                                    <li>
+                                        Gain foundational skills in producing content for key digital platforms.
+                                    </li>
+                                    <li>
+                                        Learn how to tailor content to audience and platform.
+                                    </li>
+                                    <li>
+                                       Understand branding and digital identity.
+                                    </li>
+                                </ul>
+                            </p>
+                            </div>
+                        </div>
                         </div>
                     </div>
                     </div>
                 </div>
-                <div className="schedule-list-top mb-7">
-                    <div className="row align-items-center">
+                <div className="schedule-list-top mb-7 border-bottom">
+                    <div className="row">
                     <div className="col-lg-3 col-md-4">
                         <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
                         <h4 className="pink mb-2">3RD DAY</h4>
@@ -695,26 +695,6 @@ function Home() {
                     </div>
                     <div className="col-lg-9 col-md-8">
                         <div className="schedule-list  text-center text-sm-start">
-                        <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/" className="black">Learning Outcomes</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2">
-                                <ul>
-                                    <li>
-                                        Acquire hands-on skills in basic film production.
-                                    </li>
-                                    <li>
-                                        Learn professional studio and on-location techniques.
-                                    </li>
-                                    <li>
-                                       Understand intellectual property and content protection.
-                                    </li>
-                                </ul>
-                            </p>
-                            </div>
-                        </div>
                         <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
                             <div className="schedule-box-title">
                                 <h5 className="mb-2"><Link to="/" className="black">Course Content</Link></h5>
@@ -755,12 +735,32 @@ function Home() {
                             </p>
                             </div>
                         </div>
+                        <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                            <div className="schedule-box-title">
+                                <h5 className="mb-2"><Link to="/" className="black">Learning Outcomes</Link></h5>
+                            </div>
+                            <div className="schedule-box-info">
+                            <p className="mb-2">
+                                <ul>
+                                    <li>
+                                        Acquire hands-on skills in basic film production.
+                                    </li>
+                                    <li>
+                                        Learn professional studio and on-location techniques.
+                                    </li>
+                                    <li>
+                                       Understand intellectual property and content protection.
+                                    </li>
+                                </ul>
+                            </p>
+                            </div>
+                        </div>
                         </div>
                     </div>
                     </div>
                 </div>
                 <div className="schedule-list-top mb-7">
-                    <div className="row align-items-center">
+                    <div className="row">
                     <div className="col-lg-3 col-md-4">
                         <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
                         <h4 className="pink mb-2">4TH DAY</h4>
@@ -771,26 +771,6 @@ function Home() {
                     </div>
                     <div className="col-lg-9 col-md-8">
                         <div className="schedule-list  text-center text-sm-start">
-                        <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/" className="black">Learning Outcomes</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2">
-                                <ul>
-                                    <li>
-                                         Discover how immersive technologies shape the future of storytelling.
-                                    </li>
-                                    <li>
-                                        Learn user-centred design for gaming and AR/VR projects.
-                                    </li>
-                                    <li>
-                                       Gain confidence working with studio setups and green screen.
-                                    </li>
-                                </ul>
-                            </p>
-                            </div>
-                        </div>
                         <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
                             <div className="schedule-box-title">
                                 <h5 className="mb-2"><Link to="/" className="black">Course Content</Link></h5>
@@ -837,10 +817,37 @@ function Home() {
                             </p>
                             </div>
                         </div>
+                        <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                            <div className="schedule-box-title">
+                                <h5 className="mb-2"><Link to="/" className="black">Learning Outcomes</Link></h5>
+                            </div>
+                            <div className="schedule-box-info">
+                            <p className="mb-2">
+                                <ul>
+                                    <li>
+                                         Discover how immersive technologies shape the future of storytelling.
+                                    </li>
+                                    <li>
+                                        Learn user-centred design for gaming and AR/VR projects.
+                                    </li>
+                                    <li>
+                                       Gain confidence working with studio setups and green screen.
+                                    </li>
+                                </ul>
+                            </p>
+                            </div>
+                        </div>
                         </div>
                     </div>
                     </div>
                 </div>
+                        <div className="banner-button">
+                                <div className="row">
+                                    <div className="col-lg-6 col-md-6 d-flex justify-content-center">
+                                        <Link to="https://docs.google.com/forms/d/1h7rB7jZCF_XXaddmFClBbOxYamXWCi8oD_3mHQcacgY/viewform?edit_requested=true"  className="btn me-3 my-1 w-100">Register Now @ <strike>₹10,000</strike><span className='lead ps-2'>₹6,999/_</span></Link>
+                                    </div>
+                                </div>
+                                </div>
                 {/* <div className="schedule-title-bottom">
                     <div className="row align-items-center">
                     <div className="col-lg-3 col-md-4">

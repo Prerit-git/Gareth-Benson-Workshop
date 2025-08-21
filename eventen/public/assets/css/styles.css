@@ -237,11 +237,11 @@
   background-position: 0% 10%;
 }
 
-.inner-banner{ padding-top: 150px;}
+.inner-banner{ padding-top: 100px;}
 
 
 .countdown-inner span{
-  color: #E91E63A1;
+  color: #e91e63;
 }
 
 .banner-image{
@@ -249,6 +249,9 @@
   background-size: contain;
   background-repeat: no-repeat;
  background-position: center ;
+}
+.banner-image img{
+  width: 90%;
 }
 
 .banner-button .btn2:hover{
