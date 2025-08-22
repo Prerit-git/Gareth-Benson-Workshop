@@ -30,6 +30,7 @@ jQuery(document).ready(function () {
     closedSymbol: '<i class="arrow-indicator fa fa-angle-down"></i>',
     openedSymbol: '<i class="arrow-indicator fa fa-angle-up"></i>',
     prependTo: '#slicknav-mobile',
+    closeOnClick: true,
     allowParentLinks: true,
     label:"" 
   });

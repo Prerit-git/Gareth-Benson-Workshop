@@ -72,11 +72,11 @@ function Footer() {
                 </div>
                 <div className="footer-menu pb-9">
                 <ul className="p-0 m-0">
-                    <li className="d-inline mx-2"><Link to="https://iicsindia.org/about.html"><small>About IICS</small></Link></li>
-                    <li className="d-inline mx-2"><Link to="https://iicsindia.org/sound-design-&-music-video-production.html"><small>Programs</small></Link></li>
-                    <li className="d-inline mx-2"><Link to="https://iicsindia.org/workshops/"><small>Workshops</small></Link></li>
-                    <li className="d-inline mx-2"><Link to="https://iicsindia.org/admission.html"><small>Admission</small></Link></li>
-                    <li className="d-inline mx-2"><Link to="https://iicsindia.org/contact.html"><small>Contact Us</small></Link></li>
+                    <li className="d-block d-lg-inline mx-2 my-2"><Link to="https://iicsindia.org/about.html"><small>About IICS</small></Link></li>
+                    <li className="d-block d-lg-inline mx-2 my-2"><Link to="https://iicsindia.org/sound-design-&-music-video-production.html"><small>Programs</small></Link></li>
+                    <li className="d-block d-lg-inline mx-2 my-2"><Link to="https://iicsindia.org/workshops/"><small>Workshops</small></Link></li>
+                    <li className="d-block d-lg-inline mx-2 my-2"><Link to="https://iicsindia.org/admission.html"><small>Admission</small></Link></li>
+                    <li className="d-block d-lg-inline mx-2 my-2"><Link to="https://iicsindia.org/contact.html"><small>Contact Us</small></Link></li>
                 </ul>
                 </div>
             </div>
