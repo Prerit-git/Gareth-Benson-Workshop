@@ -3,6 +3,25 @@ import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 import Search from '../Components/Search'
 
+const socialIcons = [
+  {
+    icon: 'facebook',
+    link: 'https://www.facebook.com/IICSIndiaorg?mibextid=ZbWKwL'
+  },
+  {
+    icon: 'instagram',
+    link: 'https://www.instagram.com/iicsindiaorg/'
+  },
+  {
+    icon: 'youtube-play',
+    link: 'https://www.youtube.com/@IICSIndiaorg'
+  },
+  {
+    icon: 'whatsapp',
+    link: 'https://wa.me/9594949959'
+  },
+]
+
 const Header = () => {
   return (
     <header className="main_header_area position-absolute w-100 site-header">
@@ -14,10 +33,10 @@ const Header = () => {
               <div className="col-lg-6">
                 <div className="social-links">
                   <ul className="m-0 p-0 d-flex gap-2">
-                    {['facebook', 'instagram', 'youtube-play', 'whatsapp'].map((icon, i) => (
+                    {socialIcons.map((icon, i) => (
                       <li key={i} className="d-inline">
-                        <a href="#">
-                          <i className={`fa fa-${icon} border-social rounded-circle text-center`}></i>
+                        <a href={`${icon.link}`} target='_blank'>
+                          <i className={`fa fa-${icon.icon} border-social rounded-circle text-center`}></i>
                         </a>
                       </li>
                     ))}
@@ -49,13 +68,13 @@ const Header = () => {
         <div className="container">
           <nav className="navbar navbar-expand-lg py-2 w-100">
             <div className="row w-100 align-items-center">
-              <div className="col-lg-2 col-md-6">
+              <div className="col-lg-3 col-md-6">
                 <div className="navbar-brand m-0">
                   <img src="https://iicsindia.org/images/IICS/iics_image/logo_main_white.webp" alt="Logo" className="w-100" />
                 </div>
               </div>
 
-              <div className="col-lg-7 col-md-6">
+              <div className="col-lg-6 col-md-6">
                 <Navbar/>
               </div>  
 

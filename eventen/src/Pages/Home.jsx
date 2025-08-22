@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CountUpBox from '../Components/CountUpBox'
 import TestimonialSlider from '../Components/TestimonialSlider '
 import Gallery from '../Components/Gallery'
@@ -150,181 +150,338 @@ const speakers = [
     role: "Lyricist/Writer",
     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/mr-kausar-munir.png",
   },
+  {
+    id: 25,
+    name: "Mr. Anupam Shobhakar",
+    role: "Indian musician, composer, instrumentalist, record producer, and classically trained sarodist",
+    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Anupam-Shobhakar.png",
+  },
+  {
+    id: 26,
+    name: "Mr. Vaibhav Kumaresh",
+    role: "Founder, Creative Director of Vaibhav Studios",
+    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/vaibhav-kumaresh.png",
+  },
+  {
+    id: 27,
+    name: "Mr. Sumanto Ray",
+    role: "Actor, Voice Artist, Dubbing Director, Dialogue writer, Music creator",
+    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Sumanto-Ray-.png",
+  },
+  {
+    id: 28,
+    name: "Ms. Anusha Srinivasan Iyer",
+    role: "Digital Creator, Filmaker, Director",
+    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/anusha-mam_.png",
+  },
+  {
+    id: 29,
+    name: "Mr. R. Prasanna Venkatesh",
+    role: "Commercial Photographer",
+    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/mr-r-prasana.jpg",
+  },
 ];
 
-function SpeakerList() {
+
+const SpeakersCarousel = () => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+    useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+
+     const carouselEl = document.getElementById("speakersCarousel");
+    if (carouselEl && window.bootstrap) {
+      new window.bootstrap.Carousel(carouselEl, {
+        interval: 4000,
+        ride: "carousel",
+        pause: true,
+      });
+    }
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+   const chunkSize = isMobile ? 1 : 4;
+  const speakerChunks = [];
+  for (let i = 0; i < speakers.length; i += chunkSize) {
+    speakerChunks.push(speakers.slice(i, i + chunkSize));
+  }
+
   return (
-    <div className="sepaker-list text-center text-white">
-      <div className="row">
-        {speakers.map((speaker) => (
-          <div key={speaker.id} className="col-lg-3 col-md-6 p-2">
-            <div className="speaker-box position-relative overflow-hidden text-white">
-              <img
-                className="speaker-image rounded w-100"
-                src={speaker.image}
-                alt={speaker.name}
-              />
-              <div className="box-content position-absolute bottom-0 z-1">
-                <h6 className="speaker-title d-block text-white pb-1">
-                  {speaker.name}
-                </h6>
-                <span className="speaker-post d-block pb-2">
-                  {speaker.role}
-                </span>
-              </div>
+    <div
+      id="speakersCarousel"
+      className="carousel slide"
+      data-bs-ride="carousel"
+      data-bs-interval="3000"
+    >
+      <div className="carousel-inner">
+        {speakerChunks.map((chunk, index) => (
+          <div
+            className={`carousel-item ${index === 0 ? "active" : ""}`}
+            key={index}
+          >
+            <div className="row justify-content-center">
+              {chunk.map((speaker) => (
+                <div className="col-12 col-sm-6 col-md-3 text-center" key={speaker.id}>
+                  <div className="card border-0 shadow-sm p-0 h-100">
+                    <img
+                      src={speaker.image}
+                      alt={speaker.name}
+                      className="card-img-top mx-auto"
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        objectFit: "cover",
+                      }}
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title">{speaker.name}</h5>
+                      <p className="card-text small">{speaker.role}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         ))}
       </div>
+
+      {/* Carousel controls */}
+      <button
+        className="carousel-control-prev"
+        type="button"
+        data-bs-target="#speakersCarousel"
+        data-bs-slide="prev"
+      >
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Previous</span>
+      </button>
+      <button
+        className="carousel-control-next"
+        type="button"
+        data-bs-target="#speakersCarousel"
+        data-bs-slide="next"
+      >
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Next</span>
+      </button>
     </div>
   );
-}
+};
 
 function Home() {
   return (
     <div>
-    
-
-        {/*!-- Bannner section starts --*/}
-        <section className="banner position-relative pb-0" id='home'>
-            <div className="overlay">
-            </div>
-            <div className="container">
-                <div className="inner-banner position-relative text-white ">
+      {/*!-- Bannner section starts --*/}
+      <section className="banner position-relative pb-0" id="home">
+        <div className="overlay"></div>
+        <div className="container">
+          <div className="inner-banner position-relative text-white ">
+            <div className="row">
+              <div className="col-lg-6 order-2 order-lg-1">
+                <div className="banner-left text-center pb-lg-5 p-md-0">
+                  <div className="banner-image">
+                    <img
+                      src="assets/images/team/gareth-picture.png"
+                      alt="banner-image"
+                    />
+                    <br />
+                  </div>
+                  <div className="countdown">
+                    <div
+                      id="countdown"
+                      className="countdown-inner d-flex w-100 bg-white p-2 rounded-5 justify-content-center box-shadow position-relative z-2"
+                    >
+                      <Countdown />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6 order-1 order-lg-2">
+                <div className="banner-right  ms-2 text-center text-lg-start pb-8">
+                  <div className="banner-title pb-3">
+                    <h4 className="text-white pb-3">
+                      {" "}
+                      Learn from the <span className="pink">Living Legend</span>
+                    </h4>
+                    <h1 className="text-white">
+                      Gareth <span className="pink">Benson</span>
+                    </h1>
+                  </div>
+                  <div className="event-discription">
+                    <p className="pb-4 m-0">
+                      Join an exclusive workshop with Gareth Benson, international mentor and creative strategist, as he unlocks the future of creative producing, 3D storytelling, and animation. Discover hands-on skills and global insights in XR, AR, and emerging technologies.{" "}
+                    </p>
+                  </div>
+                  <div className="banner-event-info pb-3">
+                    <ul className="m-0 ps-0 d-sm-flex justify-content-center justify-content-lg-start list-unstyled">
+                      <li className="pe-2 border-end border-1 border-lightgrey">
+                        <i className="fa  fa-calendar-o pe-1"></i> 08-12 SEP
+                        2025
+                      </li>
+                      <li className="ps-2 border-end border-1 border-lightgrey">
+                        <i className="fa  fa-map-marker pe-1"></i> IICS India,
+                        Lajpat Nagar, Delhi
+                      </li>
+                      <li className="ps-2">11:00 A.M - 04:00 P.M</li>
+                    </ul>
+                  </div>
+                  <div className="banner-button">
                     <div className="row">
-                        <div className="col-lg-6 order-2 order-lg-1">
-                            <div className="banner-left text-center pb-lg-5 p-md-0">
-                                <div className="banner-image">
-                                    <img src="assets/images/team/gareth-picture.png" alt="banner-image"/><br/>
-                                </div>
-                                <div className="countdown">
-                                    <div id="countdown"
-                                    className="countdown-inner d-flex w-100 bg-white p-2 rounded-5 justify-content-center box-shadow position-relative z-2">
-                                        <Countdown />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 order-1 order-lg-2">
-                            <div className="banner-right  ms-2 text-center text-lg-start pb-8">
-                            <div className="banner-title pb-3">
-                                <h4 className="text-white pb-3"> Learn from the  <span className="pink">Living Legend</span></h4>
-                                <h1 className="text-white">Gareth <span className="pink">Benson</span></h1>
-                            </div>
-                            <div className="event-discription">
-                                <p className="pb-4 m-0">Digital media Lecturer, Key note presenter & Authour. </p>
-                                
-                            </div>
-                            <div className="banner-event-info pb-3">
-                                <ul className="m-0 ps-0 d-sm-flex justify-content-center justify-content-lg-start list-unstyled">
-                                <li className="pe-2 border-end border-1 border-lightgrey">
-                                    <i className="fa  fa-calendar-o pe-1"></i> 08-12 SEP 2025
-                                </li>
-                                <li className="ps-2 border-end border-1 border-lightgrey">
-                                    <i className="fa  fa-map-marker pe-1"></i> IICS India, Lajpat Nagar, Delhi
-                                </li>
-                                <li className="ps-2">
-                                    09:00 A.M - 04:00 P.M
-                                </li>
-                                </ul>
-                            </div>
-                            <div className="banner-button">
-                                <div className="row">
-                                    <div className="col-lg-12 col-md-6">
-                                        <Link to="https://docs.google.com/forms/d/1h7rB7jZCF_XXaddmFClBbOxYamXWCi8oD_3mHQcacgY/viewform?edit_requested=true"  className="btn me-3 my-1 w-100">Register Now @ <strike>₹10,000</strike><span className='lead ps-2'>₹6,999/_</span></Link>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
+                      <div className="col-lg-12 col-md-6">
+                        <Link
+                          to="https://docs.google.com/forms/d/1h7rB7jZCF_XXaddmFClBbOxYamXWCi8oD_3mHQcacgY/viewform?edit_requested=true"
+                          className="btn me-3 my-1 w-100"
+                        >
+                          Register Now @ <strike>₹9,999/-</strike>
+                          <strong><span className="h4 ps-2 ">₹5,999/-</span></strong>
+                        </Link>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div className="wave overflow-hidden position-absolute w-100 z-0">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"
-                    className="d-block position-relative">
-                    <path className="elementor-shape-fill" d="M790.5,93.1c-59.3-5.3-116.8-18-192.6-50c-29.6-12.7-76.9-31-100.5-35.9c-23.6-4.9-52.6-7.8-75.5-5.3
+          </div>
+        </div>
+        <div className="wave overflow-hidden position-absolute w-100 z-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1000 100"
+            preserveAspectRatio="none"
+            className="d-block position-relative"
+          >
+            <path
+              className="elementor-shape-fill"
+              d="M790.5,93.1c-59.3-5.3-116.8-18-192.6-50c-29.6-12.7-76.9-31-100.5-35.9c-23.6-4.9-52.6-7.8-75.5-5.3
                     c-10.2,1.1-22.6,1.4-50.1,7.4c-27.2,6.3-58.2,16.6-79.4,24.7c-41.3,15.9-94.9,21.9-134,22.6C72,58.2,0,25.8,0,25.8V100h1000V65.3
-                    c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"></path>
-                </svg>
-            </div>
-        </section>
-        {/*--Banner Section end--*/}
+                    c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
+            ></path>
+          </svg>
+        </div>
+      </section>
+      {/*--Banner Section end--*/}
 
-        {/*--Overview Section start--*/}
-        <section className="overview pb-0" id='about'>
-            <div className="container">
-            <div className="inner-overview pb-10 position-relative">
-                <div className="row">
-                <div className="col-lg-6">
-                    <div className="overview-left text-center text-lg-start">
-                    <div className="overview-title pb-4">
-                        <p className="mb-1 pink">OVERVIEW</p>
-                        <h2 className="mb-2">GET THE LATEST INFO ABOUT <span className="pink">WORKSHOP</span></h2>
-                        <p>This one-of-a-kind session is designed for aspiring creators, entrepreneurs, & industry professionals eager to sharpen their skills and understand the evolving landscape of entertainment & bring their ideas to a larger stage. Participants will gain valuable insights into producing professional-quality music, planning & executing impactful events, & leveraging digital platforms to reach wider audiences.</p>
-                        <p className="mb-2">With Gareth’s proven track record of blending creativity & strategy, the workshop promises to deliver practical tools, insider tips, & real-world case studies. Whether you’re a budding musician, an event planner, or a digital marketer, this interactive workshop will provide inspiration & actionable strategies to elevate your craft. Don’t miss this opportunity to learn from a thought leader who bridges art, business, & innovation seamlessly.</p>
-                    </div>
-                    <div className="overview-event-info pb-6 g-4 text-start position-absolute">
-                        <div className="row justify-content-around ">
-                        <div className="col-lg-6 col-md-6">
-                            <a>
-                            <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
-                                <div className="event-info-icon text-center ">
-                                    <i className="fa fa-map-marker  text-white bg-pink rounded-circle me-3"></i>
-                                </div>
-                                <div className="location-info">
-                                    <h5 className="mb-1">WHERE</h5>
-                                    <small>Indian Institue of Creative Skills</small>
-                                </div>
+      {/*--Overview Section start--*/}
+      <section className="overview pb-0" id="about">
+        <div className="container">
+          <div className="inner-overview pb-10 position-relative">
+            <div className="row">
+              <div className="col-lg-6">
+                <div className="overview-left text-center text-lg-start">
+                  <div className="overview-title pb-4">
+                    <p className="mb-1 pink">OVERVIEW</p>
+                    <h2 className="mb-2">
+                      GET THE LATEST INFO ABOUT{" "}
+                      <span className="pink">WORKSHOP</span>
+                    </h2>
+                    <p>
+                      This one-of-a-kind session is designed for aspiring
+                      creators, entrepreneurs, & industry professionals eager to
+                      sharpen their skills and understand the evolving landscape
+                      of entertainment & bring their ideas to a larger stage.
+                      Participants will gain valuable insights into producing
+                      professional-quality music, planning & executing impactful
+                      events, & leveraging digital platforms to reach wider
+                      audiences.
+                    </p>
+                    <p className="mb-2">
+                      With Gareth’s proven track record of blending creativity &
+                      strategy, the workshop promises to deliver practical
+                      tools, insider tips, & real-world case studies. Whether
+                      you’re a budding musician, an event planner, or a digital
+                      marketer, this interactive workshop will provide
+                      inspiration & actionable strategies to elevate your craft.
+                      Don’t miss this opportunity to learn from a thought leader
+                      who bridges art, business, & innovation seamlessly.
+                    </p>
+                  </div>
+                  <div className="overview-event-info pb-6 g-4 text-start position-absolute">
+                    <div className="row justify-content-around ">
+                      <div className="col-lg-6 col-md-6">
+                        <a>
+                          <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
+                            <div className="event-info-icon text-center ">
+                              <i className="fa fa-map-marker  text-white bg-pink rounded-circle me-3"></i>
                             </div>
-                            </a>
-                        </div>
-                        <div className="col-lg-6 col-md-6">
-                            <a>
-                            <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
-                                <div className="event-info-icon text-center">
-                                    <i className="fa fa-calendar-o  text-white bg-pink rounded-circle me-3"></i>
-                                </div>
-                                <div className="time-info">
-                                    <h5 className="mb-1">WHEN</h5>
-                                    <small>Monday To Friday <br/> Sep, 08-12, 2025</small>
-                                </div>
+                            <div className="location-info">
+                              <h5 className="mb-1">WHERE</h5>
+                              <small>Indian Institue of Creative Skills</small>
                             </div>
-                            </a>
-                        </div>
-                        </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div className="col-lg-6 col-md-6">
+                        <a>
+                          <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
+                            <div className="event-info-icon text-center">
+                              <i className="fa fa-calendar-o  text-white bg-pink rounded-circle me-3"></i>
+                            </div>
+                            <div className="time-info">
+                              <h5 className="mb-1">WHEN</h5>
+                              <small>
+                                Monday To Friday <br /> Sep, 08-12, 2025
+                              </small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
                     </div>
-                    </div>
+                  </div>
                 </div>
-                <div className="col-lg-6 mt-10">
-                    <div className="overview-img">
-                    <div className="row align-items-center">
-                        <div className="col-lg-6 col-md-6 p-0 ">
-                        <div className="container-img-left mb-2">
-                            <div className="img-left-1 float-end w-lg-80">
-                                <img className="mb-2 w-100 rounded" src="assets/images/group/social_media.jpg" alt="group-image"/>
-                            </div>
-                            <div className="img-left-2">
-                                <img src="assets/images/group/animation_VR.jpg" alt="group-image" className="w-100 rounded"/>
-                            </div>
+              </div>
+              <div className="col-lg-6 mt-10">
+                <div className="overview-img">
+                  <div className="row align-items-center">
+                    <div className="col-lg-6 col-md-6 p-0 ">
+                      <div className="container-img-left mb-2">
+                        <div className="img-left-1 float-end w-lg-80">
+                          <img
+                            className="mb-2 w-100 rounded"
+                            src="assets/images/group/social_media.jpg"
+                            alt="group-image"
+                          />
                         </div>
+                        <div className="img-left-2">
+                          <img
+                            src="assets/images/group/animation_VR.jpg"
+                            alt="group-image"
+                            className="w-100 rounded"
+                          />
                         </div>
-                        <div className="col-lg-6 col-md-6">
-                        <div className="container-img-right w-lg-75">
-                            <img src="assets/images/group/film_making.jpg" alt="group-image" className="w-100 rounded"/>
-                        </div>
-                        </div>
+                      </div>
                     </div>
+                    <div className="col-lg-6 col-md-6">
+                      <div className="container-img-right w-lg-75">
+                        <img
+                          src="assets/images/group/film_making.jpg"
+                          alt="group-image"
+                          className="w-100 rounded"
+                        />
+                      </div>
                     </div>
+                  </div>
                 </div>
-                </div>
+                    <div className="row justify-content-center">
+              <div className="col-lg-10 col-md-8 d-flex justify-content-center">
+                <Link
+                  to="https://docs.google.com/forms/d/1h7rB7jZCF_XXaddmFClBbOxYamXWCi8oD_3mHQcacgY/viewform?edit_requested=true"
+                  className="btn btn-primary me-3 my-1 w-100 text-center"
+                >
+                  Register Now @ <strike>₹9,999/-</strike>
+                  <strong><span className="h4 ps-2 ">₹5,999/-</span></strong>
+                </Link>
+              </div>
             </div>
+              </div>
             </div>
-        </section>
-        {/*--Overview Section end--*/}
+          </div>
+        </div>
+      </section>
+      {/*--Overview Section end--*/}
 
-        {/*--Partners Section start--*/}
-        {/* <section className="partners">
+      {/*--Partners Section start--*/}
+      {/* <section className="partners">
             <div className="container">
             <div className="partner-inner">
                 <div className="partner-title text-center pb-6 w-lg-60 m-auto">
@@ -393,10 +550,10 @@ function Home() {
             </div>
             </div>
         </section> */}
-        {/*--Partners Section end--*/}
+      {/*--Partners Section end--*/}
 
-        {/*--Features Section start--*/}
-        {/* <section className="feature text-white position-relative z-0 start-0">
+      {/*--Features Section start--*/}
+      {/* <section className="feature text-white position-relative z-0 start-0">
             <div className="overlay z-n1">
             </div>
             <div className="container">
@@ -518,337 +675,402 @@ function Home() {
                 </div>
             </div>    
         </section> */}
-        {/*--Features Section end--*/}
+      {/*--Features Section end--*/}
 
-            {/*--Schedules Section start--*/}
-        <section className="schedules" id='workshop-schedule'>
-            <div className="container">
-            <div className="schedule-inner">
-                <div className="schedule-title text-center mb-6 w-lg-60 mx-auto">
-                <p className="mb-1 pink">WORKSHOP SCHEDULE</p>
-                <h2 className="mb-1">FOLLOW <span className="pink">EVENT</span> SCHEDULE</h2>
-                {/* <p className="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
+      {/*--Schedules Section start--*/}
+      <section className="schedules" id="workshop-schedule">
+        <div className="container">
+          <div className="schedule-inner">
+            <div className="schedule-title text-center mb-6 w-lg-60 mx-auto">
+              <p className="mb-1 pink">WORKSHOP SCHEDULE</p>
+              <h2 className="mb-1">
+                FOLLOW <span className="pink">EVENT</span> SCHEDULE
+              </h2>
+              {/* <p className="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
                     mattis, pulvinar dapibus leo.</p> */}
+            </div>
+            <div className="schedule-list-outer">
+              <div className="schedule-list-top mb-7 border-bottom">
+                <div className="row">
+                  <div className="col-lg-3 col-md-4">
+                    <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
+                      <h4 className="pink mb-2">1ST DAY</h4>
+                      {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
+                      <p>
+                        Follow Your Story — <br />
+                        Digital Industries Pathways to Employment
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-lg-9 col-md-8">
+                    <div className="schedule-list  text-center text-sm-start">
+                      <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                        <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Course Content
+                            </Link>
+                          </h5>
+                        </div>
+                        <div className="schedule-box-info">
+                            <ul  className="mb-2">
+                              <li>
+                                Introduction to the Global and fast-growing
+                                digital economy
+                              </li>
+                              <li>
+                                Where the jobs are: digital marketing,
+                                animation, AR/VR, AI
+                              </li>
+                              <li>
+                                Crafting your personal story into a digital
+                                narrative
+                              </li>
+                            </ul>
+                        </div>
+                      </div>
+                      <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
+                        <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Practical Component
+                            </Link>
+                          </h5>
+                        </div>
+                        <div className="schedule-box-info">
+                            <ul  className="mb-2">
+                              <li>
+                                <strong>The Art of the Pitch:</strong> Students
+                                compete to pitch their own story or idea.
+                              </li>
+                              <li>
+                                Peer-to peer feedback on delivery, storytelling
+                                structure, and emotional connection
+                              </li>
+                              <li>
+                                <strong>Pitching Skills for Success:</strong>{" "}
+                                turning passion into professional presence
+                              </li>
+                            </ul>
+                        </div>
+                      </div>
+                      <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                        <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Learning Outcomes
+                            </Link>
+                          </h5>
+                        </div>
+                        <div className="schedule-box-info">
+                            <ul className="mb-2">
+                              <li>
+                                Understand career opportunities digital
+                                industries and emerging job opportunities
+                              </li>
+                              <li>
+                                Build confidence in storytelling and pitching
+                                skills
+                              </li>
+                              <li>
+                                Explore future pathways in AI, AR, and immersive
+                                storytelling
+                              </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="schedule-list-outer">
-                <div className="schedule-list-top mb-7 border-bottom">
-                    <div className="row">
-                    <div className="col-lg-3 col-md-4">
-                        <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
-                        <h4 className="pink mb-2">1ST DAY</h4>
-                        {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
-                        <p>Follow Your Story — <br/>
-                            Digital Industries Pathways to Employment</p>
-                        </div>
+              </div>
+              <div className="schedule-list-top mb-7 border-bottom">
+                <div className="row">
+                  <div className="col-lg-3 col-md-4">
+                    <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
+                      <h4 className="pink mb-2">2ND DAY</h4>
+                      {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
+                      <p>
+                        Digital & Social Media <br />
+                        Content Production
+                      </p>
                     </div>
-                    <div className="col-lg-9 col-md-8">
-                        <div className="schedule-list  text-center text-sm-start">
-                        <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/" className="black">Course Content</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2">
-                                <ul>
-                                    <li>
-                                         Introduction to the Global and fast-growing digital economy
-                                    </li>
-                                    <li>
-                                        Where the jobs are: digital marketing, animation, AR/VR, AI
-                                    </li>
-                                    <li>
-                                        Crafting your personal story into a digital narrative
-                                    </li>
-                                </ul>
-                            </p>
-                            </div>
+                  </div>
+                  <div className="col-lg-9 col-md-8">
+                    <div className="schedule-list  text-center text-sm-start">
+                      <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                        <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Course Content
+                            </Link>
+                          </h5>
                         </div>
-                        <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/" className="black">Practical Component</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2">
-                                <ul>
-                                    <li>
-                                        <strong>The Art of the Pitch:</strong> Students compete to pitch their own story or idea.
-                                    </li>
-                                    <li>
-                                        Peer-to peer feedback on delivery, storytelling structure, and emotional connection
-                                    </li>
-                                    <li>
-                                       <strong>Pitching Skills for Success:</strong> turning passion into professional presence
-                                    </li>
-                                </ul>
-                            </p>
-                            </div>
+                        <div className="schedule-box-info">
+                            <ul className="mb-2">
+                              <li>
+                                Platform differences: how to adapt your story
+                                for each.
+                              </li>
+                              <li>Trends in social media storytelling.</li>
+                              <li>
+                                Designing a campaign: hashtags, visuals, and
+                                engagement tactics.
+                              </li>
+                            </ul>
                         </div>
-                        <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/" className="black">Learning Outcomes</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2">
-                                <ul>
-                                    <li>
-                                        Understand career opportunities digital industries and emerging job opportunities
-                                    </li>
-                                    <li>
-                                        Build confidence in storytelling and pitching skills
-                                    </li>
-                                    <li>
-                                        Explore future pathways in AI, AR, and immersive storytelling
-                                    </li>
-                                </ul>
-                            </p>
-                            </div>
+                      </div>
+                      <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
+                        <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Practical Component
+                            </Link>
+                          </h5>
                         </div>
+                        <div className="schedule-box-info">
+                            <ul className="mb-2">
+                              <li>
+                                <strong>Social Media Campaign Creation:</strong>{" "}
+                                Based on Diploma-level Social Media Marketing.
+                              </li>
+                              <li>
+                                Design and deliver a brand story in teams.
+                              </li>
+                              <li>
+                                Present your mini-campaign strategy to the
+                                group.
+                              </li>
+                            </ul>
                         </div>
+                      </div>
+                      <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                        <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Learning Outcomes
+                            </Link>
+                          </h5>
+                        </div>
+                        <div className="schedule-box-info">
+                          
+                            <ul className="mb-2">
+                              <li>
+                                Gain foundational skills in producing content
+                                for key digital platforms.
+                              </li>
+                              <li>
+                                Learn how to tailor content to audience and
+                                platform.
+                              </li>
+                              <li>Understand branding and digital identity.</li>
+                            </ul>
+                        </div>
+                      </div>
                     </div>
-                    </div>
+                  </div>
                 </div>
-                <div className="schedule-list-top mb-7 border-bottom">
-                    <div className="row">
-                    <div className="col-lg-3 col-md-4">
-                        <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
-                        <h4 className="pink mb-2">2ND DAY</h4>
-                        {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
-                        <p>Digital & Social Media  <br/>
-                            Content Production</p>
-                        </div>
+              </div>
+              <div className="schedule-list-top mb-7 border-bottom">
+                <div className="row">
+                  <div className="col-lg-3 col-md-4">
+                    <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
+                      <h4 className="pink mb-2">3RD DAY</h4>
+                      {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
+                      <p>
+                        Filmmaking & Studio <br />
+                        Content Production
+                      </p>
                     </div>
-                    <div className="col-lg-9 col-md-8">
-                        <div className="schedule-list  text-center text-sm-start">
-                        <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/" className="black">Course Content</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2">
-                                <ul>
-                                    <li>
-                                         Platform differences: how to adapt your story for each.
-                                    </li>
-                                    <li>
-                                        Trends in social media storytelling.
-                                    </li>
-                                    <li>
-                                        Designing a campaign: hashtags, visuals, and engagement tactics.
-                                    </li>
-                                </ul>
-                            </p>
-                            </div>
+                  </div>
+                  <div className="col-lg-9 col-md-8">
+                    <div className="schedule-list  text-center text-sm-start">
+                      <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                        <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Course Content
+                            </Link>
+                          </h5>
                         </div>
-                        <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/" className="black">Practical Component</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2">
-                                <ul>
-                                    <li>
-                                        <strong>Social Media Campaign Creation:</strong> Based on Diploma-level Social Media Marketing.
-                                    </li>
-                                    <li>
-                                        Design and deliver a brand story in teams.
-                                    </li>
-                                    <li>
-                                        Present your mini-campaign strategy to the group.
-                                    </li>
-                                </ul>
-                            </p>
-                            </div>
+                        <div className="schedule-box-info">
+                            <ul className="mb-2">
+                              <li>
+                                <strong>The language of film:</strong> shots,
+                                storyboards, and sequences.
+                              </li>
+                              <li>
+                                Basic lighting and camera techniques (including
+                                smartphones).
+                              </li>
+                              <li>
+                                <strong>Protecting your creative work:</strong>{" "}
+                                copyright and ownership.
+                              </li>
+                            </ul>
                         </div>
-                        <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/" className="black">Learning Outcomes</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2">
-                                <ul>
-                                    <li>
-                                        Gain foundational skills in producing content for key digital platforms.
-                                    </li>
-                                    <li>
-                                        Learn how to tailor content to audience and platform.
-                                    </li>
-                                    <li>
-                                       Understand branding and digital identity.
-                                    </li>
-                                </ul>
-                            </p>
-                            </div>
+                      </div>
+                      <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
+                        <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Practical Component
+                            </Link>
+                          </h5>
                         </div>
+                        <div className="schedule-box-info">
+                            <ul className="mb-2">
+                              <li>
+                                <strong> Follow Your Story:</strong> Documentary
+                                Production
+                              </li>
+                              <li>
+                                Write, shoot, and direct a mini-documentary
+                              </li>
+                              <li>
+                                Small groups produce a 2-3 minute film, screened
+                                in class.
+                              </li>
+                            </ul>
                         </div>
+                      </div>
+                      <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                        <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Learning Outcomes
+                            </Link>
+                          </h5>
+                        </div>
+                        <div className="schedule-box-info">
+                            <ul className="mb-2">
+                              <li>
+                                Acquire hands-on skills in basic film
+                                production.
+                              </li>
+                              <li>
+                                Learn professional studio and on-location
+                                techniques.
+                              </li>
+                              <li>
+                                Understand intellectual property and content
+                                protection.
+                              </li>
+                            </ul>
+                        </div>
+                      </div>
                     </div>
-                    </div>
+                  </div>
                 </div>
-                <div className="schedule-list-top mb-7 border-bottom">
-                    <div className="row">
-                    <div className="col-lg-3 col-md-4">
-                        <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
-                        <h4 className="pink mb-2">3RD DAY</h4>
-                        {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
-                        <p>Filmmaking & Studio   <br/>
-                            Content Production</p>
-                        </div>
+              </div>
+              <div className="schedule-list-top mb-7">
+                <div className="row">
+                  <div className="col-lg-3 col-md-4">
+                    <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
+                      <h4 className="pink mb-2">4TH DAY</h4>
+                      {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
+                      <p>
+                        Filmmaking & Studio <br />
+                        Content Production
+                      </p>
                     </div>
-                    <div className="col-lg-9 col-md-8">
-                        <div className="schedule-list  text-center text-sm-start">
-                        <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/" className="black">Course Content</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2">
-                                <ul>
-                                    <li>
-                                         <strong>The language of film:</strong> shots, storyboards, and sequences.
-                                    </li>
-                                    <li>
-                                        Basic lighting and camera techniques (including smartphones).
-                                    </li>
-                                    <li>
-                                        <strong>Protecting your creative work:</strong> copyright and ownership.
-                                    </li>
-                                </ul>
-                            </p>
-                            </div>
+                  </div>
+                  <div className="col-lg-9 col-md-8">
+                    <div className="schedule-list  text-center text-sm-start">
+                      <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                        <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Course Content
+                            </Link>
+                          </h5>
                         </div>
-                        <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/" className="black">Practical Component</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2">
-                                <ul>
-                                    <li>
-                                        <strong> Follow Your Story:</strong> Documentary Production
-                                    </li>
-                                    <li>
-                                         Write, shoot, and direct a mini-documentary
-                                    </li>
-                                    <li>
-                                         Small groups produce a 2-3 minute film, screened in class.
-                                    </li>
-                                </ul>
-                            </p>
-                            </div>
+                        <div className="schedule-box-info">
+                            <ul className="mb-2">
+                              <li>
+                                <strong> AR/VR:</strong> Introduction to
+                                immersive worlds and applications in education,
+                                tourism, gaming
+                              </li>
+                              <li>
+                                <strong>
+                                  Designing engaging user experiences:{" "}
+                                </strong>{" "}
+                                '3 Acts of a Story'
+                              </li>
+                              <li>
+                                Basics of studio setup and green screen
+                                integration
+                              </li>
+                            </ul>
                         </div>
-                        <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/" className="black">Learning Outcomes</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2">
-                                <ul>
-                                    <li>
-                                        Acquire hands-on skills in basic film production.
-                                    </li>
-                                    <li>
-                                        Learn professional studio and on-location techniques.
-                                    </li>
-                                    <li>
-                                       Understand intellectual property and content protection.
-                                    </li>
-                                </ul>
-                            </p>
-                            </div>
+                      </div>
+                      <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
+                        <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Practical Component
+                            </Link>
+                          </h5>
                         </div>
+                        <div className="schedule-box-info">
+                            <ul className="mb-2">
+                              <li>
+                                <strong> Immersive Production:</strong> Design
+                                and deliver a green screen AR experience
+                              </li>
+                              <li>Teams create a short AR-enhanced story.</li>
+                              <li>Showcase immersive experiences to peers</li>
+                              <li>
+                                Deliver an Animation piece using
+                                Midjourney/Canva/Leanardo AI
+                              </li>
+                              <li>
+                                Storyboarding for success in Immersive Mediums
+                              </li>
+                            </ul>
                         </div>
+                      </div>
+                      <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                        <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Learning Outcomes
+                            </Link>
+                          </h5>
+                        </div>
+                        <div className="schedule-box-info">
+                            <ul className="mb-2">
+                              <li>
+                                Discover how immersive technologies shape the
+                                future of storytelling.
+                              </li>
+                              <li>
+                                Learn user-centred design for gaming and AR/VR
+                                projects.
+                              </li>
+                              <li>
+                                Gain confidence working with studio setups and
+                                green screen.
+                              </li>
+                            </ul>
+                        </div>
+                      </div>
                     </div>
-                    </div>
+                  </div>
                 </div>
-                <div className="schedule-list-top mb-7">
-                    <div className="row">
-                    <div className="col-lg-3 col-md-4">
-                        <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
-                        <h4 className="pink mb-2">4TH DAY</h4>
-                        {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
-                        <p>Filmmaking & Studio   <br/>
-                            Content Production</p>
-                        </div>
-                    </div>
-                    <div className="col-lg-9 col-md-8">
-                        <div className="schedule-list  text-center text-sm-start">
-                        <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/" className="black">Course Content</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2">
-                                <ul>
-                                    <li>
-                                         <strong> AR/VR:</strong> Introduction to immersive worlds and applications in education, tourism, gaming
-                                    </li>
-                                    <li>
-                                         <strong>Designing engaging user experiences: </strong>  '3 Acts of a Story'
-                                    </li>
-                                    <li>
-                                        Basics of studio setup and green screen integration
-                                    </li>
-                                </ul>
-                            </p>
-                            </div>
-                        </div>
-                        <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/" className="black">Practical Component</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2">
-                                <ul>
-                                    <li>
-                                        <strong>  Immersive Production:</strong>  Design and deliver a green screen AR experience
-                                    </li>
-                                    <li>
-                                         Teams create a short AR-enhanced story.
-                                    </li>
-                                    <li>
-                                         Showcase immersive experiences to peers
-                                    </li>
-                                    <li>
-                                         Deliver an Animation piece using Midjourney/Canva/Leanardo AI
-                                    </li>
-                                    <li>
-                                         Storyboarding for success in Immersive Mediums
-                                    </li>
-                                </ul>
-                            </p>
-                            </div>
-                        </div>
-                        <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/" className="black">Learning Outcomes</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2">
-                                <ul>
-                                    <li>
-                                         Discover how immersive technologies shape the future of storytelling.
-                                    </li>
-                                    <li>
-                                        Learn user-centred design for gaming and AR/VR projects.
-                                    </li>
-                                    <li>
-                                       Gain confidence working with studio setups and green screen.
-                                    </li>
-                                </ul>
-                            </p>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                        <div className="banner-button">
-                                <div className="row">
-                                    <div className="col-lg-6 col-md-6 d-flex justify-content-center">
-                                        <Link to="https://docs.google.com/forms/d/1h7rB7jZCF_XXaddmFClBbOxYamXWCi8oD_3mHQcacgY/viewform?edit_requested=true"  className="btn me-3 my-1 w-100">Register Now @ <strike>₹10,000</strike><span className='lead ps-2'>₹6,999/_</span></Link>
-                                    </div>
-                                </div>
-                                </div>
-                {/* <div className="schedule-title-bottom">
+              </div>
+              <div className="row justify-content-center">
+              <div className="col-lg-6 col-md-8 d-flex justify-content-center">
+                <Link
+                  to="https://docs.google.com/forms/d/1h7rB7jZCF_XXaddmFClBbOxYamXWCi8oD_3mHQcacgY/viewform?edit_requested=true"
+                  className="btn btn-primary me-3 my-1 w-100 text-center"
+                >
+                  Register Now @ <strike>₹9,999/-</strike>
+                  <strong><span className="h4 ps-2 ">₹5,999/-</span></strong>
+                </Link>
+              </div>
+            </div>
+              {/* <div className="schedule-title-bottom">
                     <div className="row align-items-center">
                     <div className="col-lg-3 col-md-4">
                         <div className="schedule-day text-center position-relative text-sm-start py-6 ps-2 z-1">
@@ -917,203 +1139,276 @@ function Home() {
                     </div>
                     </div>
                 </div> */}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/*--Schedules Section end--*/}
+      {/*--Speakers Section Start--*/}
+      <section className="speakers" id="mentors">
+        <div className="container">
+          <div className="speaker-inner">
+            <div className="speaker-title text-center p-2">
+              <div className="row align-items-center ">
+                <div className="col-lg-6">
+                  <div className="title-content  text-lg-start mb-2">
+                    <p className="mb-1 pink">
+                      NURTURING YOUR JOURNEY WITH INDIA’S CREATIVE LEGENDS
+                    </p>
+                    <h2 className="mb-1">
+                      MEET OUR <span className="pink">INDUSTRY MENTORS</span>
+                    </h2>
+                    <p className="m-0">At the Indian Institute of Creative Skills, leadership is more than a designation — it's a driving force of transformation. Our advisory board is composed of legendary figures from the Media & Entertainment industry who bring unmatched insight, global perspective, and creative excellence.</p>
+                  </div>
                 </div>
-            </div>
-            </div>
-        </section>
-        {/*--Schedules Section end--*/}
-        {/*--Speakers Section Start--*/}
-        <section className="speakers" id='mentors'>
-            <div className="container">
-            <div className="speaker-inner">
-                <div className="speaker-title text-center p-2">
-                    <div className="row align-items-center ">
-                        <div className="col-lg-6">
-                            <div className="title-content  text-lg-start mb-2">
-                                <p className="mb-1 pink">NURTURING YOUR JOURNEY WITH INDIA’S CREATIVE LEGENDS</p>
-                                <h2 className="mb-1">MEET OUR <span className="pink">INDUSTRY MENTORS</span></h2>
-                                {/* <p className="m-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                                anim id est laborum.</p> */}
-                            </div>
-                        </div>
-                        {/* <div className="col-lg-6">
+                {/* <div className="col-lg-6">
                             <div className="speaker-button text-lg-end">
                                 <Link to="/Speakerlist"  className="btn my-2">VIEW MORE SPEAKERS</Link>
                             </div>
                         </div> */}
-                    </div>
-                </div>
-                <SpeakerList/>
+              </div>
             </div>
-            </div>
-        </section>
-        {/*--Speakers Section end--*/}
+            <SpeakersCarousel id="speakersCarousel"/>
+          </div>
+        </div>
+      </section>
+      {/*--Speakers Section end--*/}
 
-        {/*--Ticketbook Section start--*/}
-        <section className="ticket position-relative">
-            <div className="overlay">
+      {/*--Ticketbook Section start--*/}
+      <section className="ticket position-relative">
+        <div className="overlay"></div>
+        <div className="container">
+          <div className="ticket-inner w-lg-75 mx-auto text-center position-relative text-white">
+            <div className="ticket-title">
+              <h5 className="text-white mb-1">LET'S DO IT HURRY</h5>
+              <h1 className="text-white mb-2">
+                HAVEN'T BOOKED YOUR SEAT YET?{" "}
+                <span className="pink">Get Ticket</span>
+              </h1>
             </div>
-            <div className="container">
-                <div className="ticket-inner w-lg-75 mx-auto text-center position-relative text-white">
+            <div className="row justify-content-center">
+              <div className="col-lg-6 col-md-8 d-flex justify-content-center">
+                <Link
+                  to="https://docs.google.com/forms/d/1h7rB7jZCF_XXaddmFClBbOxYamXWCi8oD_3mHQcacgY/viewform?edit_requested=true"
+                  className="btn btn-primary me-3 my-1 w-100 text-center"
+                >
+                  Register Now @ <strike>₹9,999/-</strike>
+                  <strong><span className="h4 ps-2 ">₹5,999/-</span></strong>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/*--Ticketbook Section end--*/}
+
+      {/*--Pricing Section start--*/}
+      {/* <section className="price bg-lightgrey" id="pricing">
+        <div className="container">
+          <div className="price-inner text-center">
+            <div className="price-title mb-7 w-lg-60 m-auto">
+              <p className="mb-1 pink">PRICING TABLE</p>
+              <h2 className="mb-1">
+                EXPLORE FLEXIBLE <span className="pink">PRICING</span> PLANS
+              </h2>
+              <p className="m-0">
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+            <div className="price-options g-2 pb-6">
+              <div className="row">
+                <div className="col-lg-4 col-md-6">
+                  <div className="ticket-box">
+                    <div className="ticket-box-inner bg-white position-relative rounded-bottom-5">
+                      <img
+                        src="assets/images/pattern/1.png"
+                        alt="pattern"
+                        className="w-100 pattern position-absolute rounded-top"
+                      />
+                      <div className="ticket-title">
+                        <h4 className="pt-6  mb-1">BASIC TICKET</h4>
+                        <p>Stander Package</p>
+                      </div>
+                      <div className="ticket-price bg-white py-6">
+                        <div className="ticket-price-inner d-flex justify-content-center align-items-start black fw-bold">
+                          <span className="me-1 mb-0 currency">$</span>
+                          <span className="me-1 m-0 dollor">19</span>
+                          <span className="me-1 mb-0 cents">99</span>
+                        </div>
+                        <p className="m-0">Person</p>
+                      </div>
+                      <div className="benifit-list bg-white px-5">
+                        <ul className="m-auto p-0 list-unstyled">
+                          <li className="py-2 text-capitalize lh-1  border-dashed-bottom-1">
+                            <p className="my-1">
+                              <small>Second Balcony Seat</small>
+                            </p>
+                          </li>
+                          <li className="py-2 text-capitalize lh-1  border-dashed-bottom-1">
+                            <p className="my-1">
+                              <small>Snack & software</small>
+                            </p>
+                          </li>
+                          <li className="py-2 text-capitalize lh-1  border-dashed-bottom-1">
+                            <p className="my-1">
+                              <small>Certificates</small>
+                            </p>
+                          </li>
+                          <li className="pt-2 border border-0 text-capitalize lh-1">
+                            <p className="my-1">
+                              <small>Private access</small>
+                            </p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="ticket-button  m-auto p-6">
+                        <Link to="/Pricing" className="btn">
+                          PURCHASE
+                        </Link>
+                        <p className="mt-4">
+                          <small>
+                            *Please read our term and condition before order
+                            ticket
+                          </small>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-4 col-md-6">
+                  <div className="ticket-box-inner bg-white position-relative rounded-bottom-5">
+                    <img
+                      src="assets/images/pattern/2.png"
+                      alt="pattern"
+                      className="w-100 pattern position-absolute rounded-top"
+                    />
+                    <div className="ticket-title py-6 bg-pink text-white ">
+                      <h4 className="text-white  mb-1">SILVER TICKET</h4>
+                      <p>Pro Package</p>
+                    </div>
+                    <div className="ticket-price bg-white py-6">
+                      <div className="ticket-price-inner d-flex justify-content-center align-items-start fw-bold">
+                        <span className="me-1 mb-0 currency pink">$</span>
+                        <span className="me-1 m-0 dollor pink">39</span>
+                        <span className="me-1 mb-0 cents pink">99</span>
+                      </div>
+                      <p className="m-0">Person</p>
+                    </div>
+                    <div className="benifit-list bg-white">
+                      <ul className=" m-auto p-0 list-unstyled">
+                        <li className="pb-2 border border-0 text-capitalize lh-1">
+                          <p className="my-1">
+                            <small>Second Balcony Seat</small>
+                          </p>
+                        </li>
+                        <li className="py-2 border border-0 text-capitalize lh-1">
+                          <p className="my-1">
+                            <small>Snack & software</small>
+                          </p>
+                        </li>
+                        <li className="py-2 border border-0 text-capitalize lh-1">
+                          <p className="my-1">
+                            <small>Certificates</small>
+                          </p>
+                        </li>
+                        <li className="py-2 border border-0 text-capitalize lh-1">
+                          <p className="my-1">
+                            <small>Private access</small>
+                          </p>
+                        </li>
+                        <li className="pt-2 border border-0 text-capitalize lh-1">
+                          <p className="my-1">
+                            <small>Printed material</small>
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="partner-button  m-auto p-6">
+                      <Link to="/Pricing" className="btn">
+                        PURCHASE
+                      </Link>
+                      <p className="mt-4">
+                        <small>
+                          *Please read our term and condition before order
+                          ticket
+                        </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-lg-4 col-md-6">
+                  <div className="ticket-box-inner  bg-white position-relative rounded-bottom-5">
+                    <img
+                      src="assets/images/pattern/1.png"
+                      alt="pattern"
+                      className="w-100 pattern position-absolute rounded-top"
+                    />
                     <div className="ticket-title">
-                        <h5 className="text-white mb-1">LET'S DO IT HURRY</h5>
-                        <h1 className="text-white mb-2">HAVEN'T BOOKED YOUR SEAT YET? <span className='pink'>Get Ticket</span>
-                        </h1>
-                        
+                      <h4 className="pt-6 mb-1">GOLDEN TICKET</h4>
+                      <p>Enterprise Package</p>
                     </div>
-                    <div className="ticket-info">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
-                            pulvinar dapibus leo.</p>
-                        <div className="ticket-button">
-                            <Link to="/Booknow" className="btn">GET TICKETS NOW</Link>
-                        </div>
+                    <div className="ticket-price bg-white py-6">
+                      <div className="ticket-price-inner d-flex justify-content-center align-items-start black fw-bold">
+                        <span className="me-1 mb-0 currency">$</span>
+                        <span className="me-1 m-0 dollor">199</span>
+                        <span className="me-1 mb-0 cents">99</span>
+                      </div>
+                      <p className="m-0">Person</p>
                     </div>
+                    <div className="benifit-list bg-white px-5">
+                      <ul className=" m-auto p-0 list-unstyled">
+                        <li className="py-2 text-capitalize lh-1  border-dashed-bottom-1">
+                          <p className="my-1">
+                            <small>Second Balcony Seat</small>
+                          </p>
+                        </li>
+                        <li className="py-2 text-capitalize lh-1  border-dashed-bottom-1">
+                          <p className="my-1">
+                            <small>Snack & software</small>
+                          </p>
+                        </li>
+                        <li className="py-2 text-capitalize lh-1  border-dashed-bottom-1">
+                          <p className="my-1">
+                            <small>Certificates</small>
+                          </p>
+                        </li>
+                        <li className="pt-2 border border-0 text-capitalize lh-1">
+                          <p className="my-1">
+                            <small>Private access</small>
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="partner-button  m-auto p-5">
+                      <Link to="/Pricing" className="btn">
+                        PURCHASE
+                      </Link>
+                      <p className="mt-4">
+                        <small>
+                          *Please read our term and condition before order
+                          ticket
+                        </small>
+                      </p>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </section>
-        {/*--Ticketbook Section end--*/}
+            <p className="m-0">
+              All prices exclude 25% VAT. For more details, view our{" "}
+              <a href="" className="pink">
+                Terms & Policy
+              </a>
+            </p>
+          </div>
+        </div>
+      </section> */}
+      {/*--Pricing Section end--*/}
 
-        
-
-        {/*--Pricing Section start--*/}
-        <section className="price bg-lightgrey">
-            <div className="container">
-                <div className="price-inner text-center">
-                    <div className="price-title mb-7 w-lg-60 m-auto">
-                        <p className="mb-1 pink">PRICING TABLE</p>
-                        <h2 className="mb-1">EXPLORE FLEXIBLE <span className="pink">PRICING</span> PLANS</h2>
-                        <p className="m-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-                            id est laborum.</p>
-                    </div>
-                    <div className="price-options g-2 pb-6">
-                        <div className="row">
-                            <div className="col-lg-4 col-md-6">
-                                <div className="ticket-box">
-                                    <div className="ticket-box-inner bg-white position-relative rounded-bottom-5">
-                                        <img src="assets/images/pattern/1.png" alt="pattern" className="w-100 pattern position-absolute rounded-top"/>
-                                        <div className="ticket-title">
-                                            <h4 className="pt-6  mb-1">BASIC TICKET</h4>
-                                            <p>Stander Package</p>
-                                        </div>
-                                        <div className="ticket-price bg-white py-6">
-                                            <div className="ticket-price-inner d-flex justify-content-center align-items-start black fw-bold">
-                                                <span className="me-1 mb-0 currency">$</span>
-                                                <span className="me-1 m-0 dollor">19</span>
-                                                <span className="me-1 mb-0 cents">99</span>
-                                            </div>
-                                            <p className="m-0">Person</p>
-                                        </div>
-                                        <div className="benifit-list bg-white px-5">
-                                            <ul className="m-auto p-0 list-unstyled">
-                                            <li className="py-2 text-capitalize lh-1  border-dashed-bottom-1">
-                                                <p className="my-1"><small>Second Balcony Seat</small></p>
-                                            </li>
-                                            <li className="py-2 text-capitalize lh-1  border-dashed-bottom-1">
-                                                <p className="my-1"><small>Snack & software</small></p>
-                                            </li>
-                                            <li className="py-2 text-capitalize lh-1  border-dashed-bottom-1">
-                                                <p className="my-1"><small>Certificates</small></p>
-                                            </li>
-                                            <li className="pt-2 border border-0 text-capitalize lh-1">
-                                                <p className="my-1"><small>Private access</small></p>
-                                            </li>
-                                            </ul>
-                                        </div>
-                                        <div className="ticket-button  m-auto p-6">
-                                            <Link to="/Pricing" className="btn">PURCHASE</Link>
-                                            <p className="mt-4"><small>*Please read our term and condition before order ticket</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                                <div className="ticket-box-inner bg-white position-relative rounded-bottom-5">
-                                    <img src="assets/images/pattern/2.png" alt="pattern" className="w-100 pattern position-absolute rounded-top"/>
-                                    <div className="ticket-title py-6 bg-pink text-white ">
-                                    <h4 className="text-white  mb-1">SILVER TICKET</h4>
-                                    <p>Pro Package</p>
-                                    </div>
-                                    <div className="ticket-price bg-white py-6">
-                                    <div className="ticket-price-inner d-flex justify-content-center align-items-start fw-bold">
-                                        <span className="me-1 mb-0 currency pink">$</span>
-                                        <span className="me-1 m-0 dollor pink">39</span>
-                                        <span className="me-1 mb-0 cents pink">99</span>
-                                    </div>
-                                    <p className="m-0">Person</p>
-                                    </div>
-                                    <div className="benifit-list bg-white">
-                                    <ul className=" m-auto p-0 list-unstyled">
-                                        <li className="pb-2 border border-0 text-capitalize lh-1">
-                                        <p className="my-1"><small>Second Balcony Seat</small></p>
-                                        </li>
-                                        <li className="py-2 border border-0 text-capitalize lh-1">
-                                        <p className="my-1"><small>Snack & software</small></p>
-                                        </li>
-                                        <li className="py-2 border border-0 text-capitalize lh-1">
-                                        <p className="my-1"><small>Certificates</small></p>
-                                        </li>
-                                        <li className="py-2 border border-0 text-capitalize lh-1">
-                                        <p className="my-1"><small>Private access</small></p>
-                                        </li>
-                                        <li className="pt-2 border border-0 text-capitalize lh-1">
-                                        <p className="my-1"><small>Printed material</small></p>
-                                        </li>
-                                    </ul>
-                                    </div>
-                                    <div className="partner-button  m-auto p-6">
-                                    <Link to="/Pricing" className="btn">PURCHASE</Link>
-                                    <p className="mt-4"><small>*Please read our term and condition before order ticket</small></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="col-lg-4 col-md-6">
-                                <div className="ticket-box-inner  bg-white position-relative rounded-bottom-5">
-                                    <img src="assets/images/pattern/1.png" alt="pattern" className="w-100 pattern position-absolute rounded-top"/>
-                                    <div className="ticket-title">
-                                    <h4 className="pt-6 mb-1">GOLDEN TICKET</h4>
-                                    <p>Enterprise Package</p>
-                                    </div>
-                                    <div className="ticket-price bg-white py-6">
-                                    <div className="ticket-price-inner d-flex justify-content-center align-items-start black fw-bold">
-                                        <span className="me-1 mb-0 currency">$</span>
-                                        <span className="me-1 m-0 dollor">199</span>
-                                        <span className="me-1 mb-0 cents">99</span>
-                                    </div>
-                                    <p className="m-0">Person</p>
-                                    </div>
-                                    <div className="benifit-list bg-white px-5">
-                                    <ul className=" m-auto p-0 list-unstyled">
-                                        <li className="py-2 text-capitalize lh-1  border-dashed-bottom-1">
-                                        <p className="my-1"><small>Second Balcony Seat</small></p>
-                                        </li>
-                                        <li className="py-2 text-capitalize lh-1  border-dashed-bottom-1">
-                                        <p className="my-1"><small>Snack & software</small></p>
-                                        </li>
-                                        <li className="py-2 text-capitalize lh-1  border-dashed-bottom-1">
-                                        <p className="my-1"><small>Certificates</small></p>
-                                        </li>
-                                        <li className="pt-2 border border-0 text-capitalize lh-1">
-                                        <p className="my-1"><small>Private access</small></p>
-                                        </li>
-                                    </ul>
-                                    </div>
-                                    <div className="partner-button  m-auto p-5">
-                                    <Link to="/Pricing" className="btn">PURCHASE</Link>
-                                    <p className="mt-4"><small>*Please read our term and condition before order ticket</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p className="m-0">All prices exclude 25% VAT. For more details, view our <a href="" className="pink">Terms & Policy</a></p>
-                </div>
-            </div>
-        </section>
-        {/*--Pricing Section end--*/}
-
-         {/*--Gallery Section end--*/}
-        {/* <section className="gallery">
+      {/*--Gallery Section end--*/}
+      {/* <section className="gallery">
             <div className="container">
                 <div className="galler-inner">
                     <div className="section-title text-center">
@@ -1137,10 +1432,10 @@ function Home() {
                 </div>
             </div>
         </section> */}
-        {/*--Gallery Section end--*/}
+      {/*--Gallery Section end--*/}
 
-        {/*--Testimonials Section start--*/}
-        {/* <section className="testimonial bg-lightgrey">
+      {/*--Testimonials Section start--*/}
+      {/* <section className="testimonial bg-lightgrey">
             <div className="container">
                 <div className="section-title w-lg-60 m-auto text-center pb-5">
                     <p className="mb-1  pink">OUR TESTIMONIALS</p>
@@ -1152,10 +1447,10 @@ function Home() {
                 <TestimonialSlider />
             </div>
         </section> */}
-        {/*--Testimonials Section end--*/}
+      {/*--Testimonials Section end--*/}
 
-        {/*--FAQ Section start--*/}
-        {/* <section className="faq pb-0 overflow-visible d-block position-relative z-1">
+      {/*--FAQ Section start--*/}
+      {/* <section className="faq pb-0 overflow-visible d-block position-relative z-1">
             <div className="overlay bg-blue opacity-25 z-n1">
             </div>
             <div className="container">
@@ -1252,60 +1547,96 @@ function Home() {
             </div>
             </div>
         </section> */}
-        {/*--FAQ Section end--*/}
-        
+      {/*--FAQ Section end--*/}
 
-        {/*--Direction Section start--*/}
-        <section className="direction pb-0">
-            <div className="container">
-            <div className="section-title text-center pb-2 w-lg-60 m-auto">
-                <p className="mb-1  pink">REACH US</p>
-                <h2 className="mb-1">GET DIRECTION TO THE <span className="pink">EVENT HALL</span></h2>
-                <p className="mb-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-                id est laborum.
-                </p>
+      {/*--Direction Section start--*/}
+      <section className="direction pb-0" id='contact'>
+        <div className="container">
+          <div className="section-title text-center pb-2 w-lg-60 m-auto">
+            <p className="mb-1  pink">REACH US</p>
+            <h2 className="mb-1">
+              GET DIRECTION TO THE <span className="pink">Venue</span>
+            </h2>
+          </div>
+          <div className="direction-content">
+            <div className="direction-info">
+              <div className="row">
+                <div className="col-lg-5 col-md-5 px-1">
+                  <div className="p-6 d-flex text-white w-100 h-100 rounded bg-pink ">
+                    <div className="justify-content-center align-self-center ms-6">
+                      <h5 className="text-white pb-2">EVENT VENUE:</h5>
+                      <p className="pb-5 m-0">
+                        Indian Institute of Creative Skills
+                      </p>
+                      <h5 className="text-white pb-2">ADDRESS:</h5>
+                      <p className="pb-5 m-0">
+                        2nd and 3rd Floor, Plot No 13A, Ring Rd, Vikram Vihar,
+                        Lajpat Nagar 4, Lajpat Nagar, New Delhi, Delhi 110024
+                      </p>
+                      <h5 className="text-white pb-2">RECEPTION INFO:</h5>
+                      <p className="pb-5 m-0">+91 959-4949-959</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-7 col-md-7 px-1 py-2">
+                  <iframe
+                    height="400"
+                    className="rounded w-100"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112133.21715156469!2d77.09253054335936!3d28.5648666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3f04e64e845%3A0x6887befefe82c0f3!2sIndian%20Institute%20of%20Creative%20Skills!5e0!3m2!1sen!2sin!4v1755685995139!5m2!1sen!2sin"
+                    
+                    loading="lazy"
+                    // referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+              </div>
             </div>
-            <div className="direction-content">
-                <div className="direction-info">
-                <div className="row">
-                    <div className="col-lg-5 col-md-5 px-1">
-                    <div className="p-6 d-flex text-white w-100 h-100 rounded bg-pink ">
-                        <div className="justify-content-center align-self-center ms-6">
-                        <h5 className="text-white pb-2">EVENT VENUE:</h5>
-                        <p className="pb-5 m-0">Indian Institute of Creative Skills</p>
-                        <h5 className="text-white pb-2">ADDRESS:</h5>
-                        <p className="pb-5 m-0">2nd and 3rd Floor, Plot No 13A, Ring Rd, Vikram Vihar, Lajpat Nagar 4, Lajpat Nagar, New Delhi, Delhi 110024</p>
-                        <h5 className="text-white pb-2">RECEPTION INFO:</h5>
-                        <p className="pb-5 m-0">+91 959-4949-959</p>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="col-lg-7 col-md-7 px-1 py-2">
-                    <iframe height="400" className="rounded w-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112133.21715156469!2d77.09253054335936!3d28.5648666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3f04e64e845%3A0x6887befefe82c0f3!2sIndian%20Institute%20of%20Creative%20Skills!5e0!3m2!1sen!2sin!4v1755685995139!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+            <div className="location-gallery">
+              <div id="selector" className="row pt-1 justify-content-center">
+                <div
+                  className="item col-lg-4 col-md-6 p-1"
+                  data-src="images/group/4.jpg"
+                >
+                  <a>
+                    <img
+                      src="assets/images/group/img1.jpg"
+                      className="w-100 rounded"
+                      alt="VR Presentation and conference"
+                    />
+                  </a>
                 </div>
+                <div
+                  className="item col-lg-4 col-md-6 p-1"
+                  data-src="images/group/7.jpg"
+                >
+                  <a>
+                    <img
+                      src="assets/images/group/img2.jpg"
+                      className="w-100 rounded"
+                      alt="VR Presentation and conference"
+                    />
+                  </a>
                 </div>
-                <div className="location-gallery">
-                <div id="selector" className="row pt-1 justify-content-center">
-                    <div className="item col-lg-4 col-md-6 p-1" data-src="images/group/4.jpg">
-                    <a><img src="assets/images/group/img1.jpg" className="w-100 rounded" alt="VR Presentation and conference"/></a>
-                    </div>
-                    <div className="item col-lg-4 col-md-6 p-1" data-src="images/group/7.jpg">
-                    <a><img src="assets/images/group/img2.jpg" className="w-100 rounded" alt="VR Presentation and conference"/></a>
-                    </div>
-                    <div className="item col-lg-4 col-md-6 p-1" data-src="images/group/1.jpg">
-                    <a><img src="assets/images/group/img3.jpg" className="w-100 rounded" alt="VR Presentation and conference"/></a>
-                    </div>
+                <div
+                  className="item col-lg-4 col-md-6 p-1"
+                  data-src="images/group/1.jpg"
+                >
+                  <a>
+                    <img
+                      src="assets/images/group/img3.jpg"
+                      className="w-100 rounded"
+                      alt="VR Presentation and conference"
+                    />
+                  </a>
                 </div>
-                </div>
+              </div>
             </div>
-            </div>
-        </section>
-        {/*--Direction Section end--*/}
+          </div>
+        </div>
+      </section>
+      {/*--Direction Section end--*/}
 
-        {/*--Blog Section start--*/}
-        {/* <section className="blog">
+      {/*--Blog Section start--*/}
+      {/* <section className="blog">
             <div className="container">
                 <div className="blog-inner">
                     <div className="row align-items-center">
@@ -1363,10 +1694,9 @@ function Home() {
                 </div>
             </div>
         </section> */}
-        {/*--Blog Section end--*/}
-
+      {/*--Blog Section end--*/}
     </div>
-  )
+  );
 }
 
 export default Home

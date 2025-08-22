@@ -44,7 +44,7 @@ const Navbar = () => {
             <a href="#mentors" className="nav-link px-2 my-4 py-0 text-white">Our Mentors</a>
           </li>
           <li className="nav-item">
-            <Link to="https://iicsindia.org/contact.html" className="nav-link px-2 my-4 py-0 text-white">Contact</Link>
+            <a href="#contact" className="nav-link px-2 my-4 py-0 text-white">Contact</a>
           </li>
 
         </ul>

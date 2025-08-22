@@ -3,6 +3,25 @@ import { Link } from 'react-router-dom'
 import BackToTop from '../Components/Backtotop'
 import SubscribeForm from './SubscribeForm'
 
+const socialIcons = [
+  {
+    icon: 'facebook',
+    link: 'https://www.facebook.com/IICSIndiaorg?mibextid=ZbWKwL'
+  },
+  {
+    icon: 'instagram',
+    link: 'https://www.instagram.com/iicsindiaorg/'
+  },
+  {
+    icon: 'youtube-play',
+    link: 'https://www.youtube.com/@IICSIndiaorg'
+  },
+  {
+    icon: 'whatsapp',
+    link: 'https://wa.me/9594949959'
+  },
+]
+
 function Footer() {
   return (
     <div>
@@ -41,10 +60,10 @@ function Footer() {
                 <p className=" mb-6">info@iicsindia.org | +91 959-4949-959</p>
                 <div className="footer-socials pb-6">
                     <ul className="m-0 p-0 d-flex gap-2 justify-content-center">
-                        {['facebook', 'instagram', 'youtube-play', 'whatsapp'].map((icon, i) => (
+                        {socialIcons.map((icon, i) => (
                         <li key={i} className="d-inline">
-                            <a href="#" className="d-inline-block rounded-circle bg-white  bg-opacity-25">
-                            <i className={`fa fa-${icon}`}></i>
+                            <a href={`${icon.link}`} target='_blank' className="d-inline-block rounded-circle bg-white  bg-opacity-25">
+                            <i className={`fa fa-${icon.icon}`}></i>
                             </a>
                         </li>
                         ))}
@@ -53,11 +72,11 @@ function Footer() {
                 </div>
                 <div className="footer-menu pb-9">
                 <ul className="p-0 m-0">
-                    <li className="d-inline mx-2"><Link to="/"><small>About IICS</small></Link></li>
-                    <li className="d-inline mx-2"><Link to="/"><small>Programs</small></Link></li>
-                    <li className="d-inline mx-2"><Link to="/"><small>Workshops</small></Link></li>
-                    <li className="d-inline mx-2"><Link to="/"><small>Admission</small></Link></li>
-                    <li className="d-inline mx-2"><Link to="/"><small>Contact Us</small></Link></li>
+                    <li className="d-inline mx-2"><Link to="https://iicsindia.org/about.html"><small>About IICS</small></Link></li>
+                    <li className="d-inline mx-2"><Link to="https://iicsindia.org/sound-design-&-music-video-production.html"><small>Programs</small></Link></li>
+                    <li className="d-inline mx-2"><Link to="https://iicsindia.org/workshops/"><small>Workshops</small></Link></li>
+                    <li className="d-inline mx-2"><Link to="https://iicsindia.org/admission.html"><small>Admission</small></Link></li>
+                    <li className="d-inline mx-2"><Link to="https://iicsindia.org/contact.html"><small>Contact Us</small></Link></li>
                 </ul>
                 </div>
             </div>
