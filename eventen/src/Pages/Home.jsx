@@ -193,7 +193,7 @@ const SpeakersCarousel = () => {
      const carouselEl = document.getElementById("speakersCarousel");
     if (carouselEl && window.bootstrap) {
       new window.bootstrap.Carousel(carouselEl, {
-        interval: 4000,
+        interval: 3000,
         ride: "carousel",
         pause: true,
       });
@@ -223,7 +223,7 @@ const SpeakersCarousel = () => {
             <div className="row justify-content-center">
               {chunk.map((speaker) => (
                 <div className="col-12 col-sm-6 col-md-3 text-center" key={speaker.id}>
-                  <div className="card border-0 shadow-sm p-0 h-100">
+                  <div className="card border-0 p-0 h-100">
                     <img
                       src={speaker.image}
                       alt={speaker.name}
@@ -314,27 +314,25 @@ function Home() {
                     </p>
                   </div>
                   <div className="banner-event-info pb-3">
-                    <ul className="m-0 ps-0 d-sm-flex justify-content-center justify-content-lg-start list-unstyled">
-                      <li className="pe-2 border-end border-1 border-lightgrey">
-                        <i className="fa  fa-calendar-o pe-1"></i> 08-12 SEP
-                        2025
+                    <ul className="m-0 ps-0 d-sm-flex justify-content-center list-unstyled">
+                      <li className="pe-2 border-end border-1 border-lightgrey text-center">
+                        <i className="pe-1"></i> 8th-11th <br />SEPTEMBER
                       </li>
-                      <li className="ps-2 border-end border-1 border-lightgrey">
-                        <i className="fa  fa-map-marker pe-1"></i> IICS India,
-                        Lajpat Nagar, Delhi
+                      <li className="pe-2 ps-2 border-end border-1 border-lightgrey text-center">
+                        <i className="pe-1"></i> Indian Institute of  <br />Creative Skills
                       </li>
-                      <li className="ps-2">11:00 A.M - 04:00 P.M</li>
+                      <li className="ps-2 text-center">Time: <br />09:30 A.M - 05:00 P.M</li>
                     </ul>
                   </div>
                   <div className="banner-button">
                     <div className="row">
                       <div className="col-lg-12 col-md-6">
                         <Link
-                          to="https://docs.google.com/forms/d/1h7rB7jZCF_XXaddmFClBbOxYamXWCi8oD_3mHQcacgY/viewform?edit_requested=true"
+                          to="https://rzp.io/rzp/QaOH6esm"
                           className="btn me-3 my-1 w-100"
                         >
-                          Register Now @ <strike>₹9,999/-</strike>
-                          <strong><span className="h4 ps-2 ">₹5,999/-</span></strong>
+                          Register Now @ <strike className="h5">₹5,000/-</strike>
+                          <strong><span className="h4 ps-2 ">₹2,999/-</span></strong>
                         </Link>
                       </div>
                     </div>
@@ -465,11 +463,11 @@ function Home() {
                     <div className="row justify-content-center">
               <div className="col-lg-10 col-md-8 d-flex justify-content-center">
                 <Link
-                  to="https://docs.google.com/forms/d/1h7rB7jZCF_XXaddmFClBbOxYamXWCi8oD_3mHQcacgY/viewform?edit_requested=true"
+                  to="https://rzp.io/rzp/QaOH6esm"
                   className="btn btn-primary me-3 my-1 w-100 text-center"
                 >
-                  Register Now @ <strike>₹9,999/-</strike>
-                  <strong><span className="h4 ps-2 ">₹5,999/-</span></strong>
+                  Register Now @ <strike>₹5,000/-</strike>
+                  <strong><span className="h4 ps-2 ">₹2,999/-</span></strong>
                 </Link>
               </div>
             </div>
@@ -1062,11 +1060,11 @@ function Home() {
               <div className="row justify-content-center">
               <div className="col-lg-6 col-md-8 d-flex justify-content-center">
                 <Link
-                  to="https://docs.google.com/forms/d/1h7rB7jZCF_XXaddmFClBbOxYamXWCi8oD_3mHQcacgY/viewform?edit_requested=true"
+                  to="https://rzp.io/rzp/QaOH6esm"
                   className="btn btn-primary me-3 my-1 w-100 text-center"
                 >
-                  Register Now @ <strike>₹9,999/-</strike>
-                  <strong><span className="h4 ps-2 ">₹5,999/-</span></strong>
+                  Register Now @ <strike>₹5,000/-</strike>
+                  <strong><span className="h4 ps-2 ">₹2,999/-</span></strong>
                 </Link>
               </div>
             </div>
@@ -1189,11 +1187,11 @@ function Home() {
             <div className="row justify-content-center">
               <div className="col-lg-6 col-md-8 d-flex justify-content-center">
                 <Link
-                  to="https://docs.google.com/forms/d/1h7rB7jZCF_XXaddmFClBbOxYamXWCi8oD_3mHQcacgY/viewform?edit_requested=true"
+                  to="https://rzp.io/rzp/QaOH6esm"
                   className="btn btn-primary me-3 my-1 w-100 text-center"
                 >
-                  Register Now @ <strike>₹9,999/-</strike>
-                  <strong><span className="h4 ps-2 ">₹5,999/-</span></strong>
+                  Register Now @ <strike>₹5,000/-</strike>
+                  <strong><span className="h4 ps-2 ">₹2,999/-</span></strong>
                 </Link>
               </div>
             </div>
