@@ -53,7 +53,9 @@ const Header = () => {
                     </li>
                     <li className="px-2 border-end border-lightgrey border-opacity-50 d-inline">
                       <i className="fa fa-envelope-o pe-1"></i>
+                      <a href="mailto:info@iicsindia.org">
                       <small>info@iicsindia.org</small>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -81,9 +83,9 @@ const Header = () => {
               <div className="col-lg-3">
                 <div className="menu-search text-end">
                   {/* <Search /> */}
-                  <Link to="https://rzp.io/rzp/QaOH6esm" className="btn btn3">
+                  <a href="https://rzp.io/rzp/QaOH6esm" target='_blank' className="btn btn3">
                     Register Now <i className="fa fa-long-arrow-right ms-4"></i>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

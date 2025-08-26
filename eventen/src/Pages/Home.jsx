@@ -327,13 +327,14 @@ function Home() {
                   <div className="banner-button">
                     <div className="row">
                       <div className="col-lg-12 col-md-6">
-                        <Link
-                          to="https://rzp.io/rzp/QaOH6esm"
+                        <a
+                          href="https://rzp.io/rzp/QaOH6esm"
+                          target='_blank'
                           className="btn me-3 my-1 w-100"
                         >
                           Register Now @ <strike className="h5">₹5,000/-</strike>
                           <strong><span className="h4 ps-2 ">₹2,999/-</span></strong>
-                        </Link>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -418,7 +419,7 @@ function Home() {
                             <div className="time-info">
                               <h5 className="mb-1">WHEN</h5>
                               <small>
-                                Monday To Friday <br /> Sep, 08-12, 2025
+                                Monday To Friday <br /> Sep, 08-11, 2025
                               </small>
                             </div>
                           </div>
@@ -462,13 +463,14 @@ function Home() {
                 </div>
                     <div className="row justify-content-center">
               <div className="col-lg-10 col-md-8 d-flex justify-content-center">
-                <Link
-                  to="https://rzp.io/rzp/QaOH6esm"
+                <a
+                  href="https://rzp.io/rzp/QaOH6esm"
+                  target='_blank'
                   className="btn btn-primary me-3 my-1 w-100 text-center"
                 >
                   Register Now @ <strike>₹5,000/-</strike>
                   <strong><span className="h4 ps-2 ">₹2,999/-</span></strong>
-                </Link>
+                </a>
               </div>
             </div>
               </div>
@@ -695,14 +697,14 @@ function Home() {
                       <h4 className="pink mb-2">1ST DAY</h4>
                       {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
                       <p>
-                        Follow Your Story — <br />
-                        Digital Industries Pathways to Employment
+                        Digital <br />
+                        Industries
                       </p>
                     </div>
                   </div>
                   <div className="col-lg-9 col-md-8">
                     <div className="schedule-list  text-center text-sm-start">
-                      <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
                         <div className="schedule-box-title">
                           <h5 className="mb-2">
                             <Link to="/" className="black">
@@ -726,17 +728,17 @@ function Home() {
                               </li>
                             </ul>
                         </div>
-                      </div>
+                      </div> */}
                       <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                        <div className="schedule-box-title">
+                        {/* <div className="schedule-box-title">
                           <h5 className="mb-2">
                             <Link to="/" className="black">
                               Practical Component
                             </Link>
                           </h5>
-                        </div>
+                        </div> */}
                         <div className="schedule-box-info">
-                            <ul  className="mb-2">
+                            {/* <ul  className="mb-2">
                               <li>
                                 <strong>The Art of the Pitch:</strong> Students
                                 compete to pitch their own story or idea.
@@ -749,10 +751,11 @@ function Home() {
                                 <strong>Pitching Skills for Success:</strong>{" "}
                                 turning passion into professional presence
                               </li>
-                            </ul>
+                            </ul> */}
+                            <p>This opening module introduces students to the vast world of digital industries, mapping out opportunities and career pathways. Participants will explore the foundations of digital media, social media marketing, and the role of content creation in today’s fast-changing landscape. The session also highlights animation, augmented reality, and artificial intelligence—showing how technology and creativity merge to shape industries of the future. With Gareth Benson’s expertise, students gain an understanding of where digital careers are headed and how to position themselves at the forefront of this revolution. Perfect for anyone curious about the future of work in the digital age.</p>
                         </div>
                       </div>
-                      <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
                         <div className="schedule-box-title">
                           <h5 className="mb-2">
                             <Link to="/" className="black">
@@ -776,7 +779,7 @@ function Home() {
                               </li>
                             </ul>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -795,7 +798,7 @@ function Home() {
                   </div>
                   <div className="col-lg-9 col-md-8">
                     <div className="schedule-list  text-center text-sm-start">
-                      <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
                         <div className="schedule-box-title">
                           <h5 className="mb-2">
                             <Link to="/" className="black">
@@ -816,17 +819,17 @@ function Home() {
                               </li>
                             </ul>
                         </div>
-                      </div>
+                      </div> */}
                       <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                        <div className="schedule-box-title">
+                        {/* <div className="schedule-box-title">
                           <h5 className="mb-2">
                             <Link to="/" className="black">
                               Practical Component
                             </Link>
                           </h5>
-                        </div>
+                        </div> */}
                         <div className="schedule-box-info">
-                            <ul className="mb-2">
+                            {/* <ul className="mb-2">
                               <li>
                                 <strong>Social Media Campaign Creation:</strong>{" "}
                                 Based on Diploma-level Social Media Marketing.
@@ -838,10 +841,11 @@ function Home() {
                                 Present your mini-campaign strategy to the
                                 group.
                               </li>
-                            </ul>
+                            </ul> */}
+                            <p>Module two dives deep into the world of content creation across platforms like YouTube, Instagram, Facebook, and LinkedIn. Students will learn how to produce engaging videos, design effective campaigns, and tailor content to fit different audiences and platforms. Gareth will walk participants through the essentials of storytelling for digital media, while also introducing the strategies behind successful social campaigns. This module emphasizes not just how to create content, but how to ensure it reaches, engages, and resonates with audiences. By the end, students will be able to think like digital creators and strategists combined.</p>
                         </div>
                       </div>
-                      <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
                         <div className="schedule-box-title">
                           <h5 className="mb-2">
                             <Link to="/" className="black">
@@ -863,7 +867,7 @@ function Home() {
                               <li>Understand branding and digital identity.</li>
                             </ul>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -882,7 +886,7 @@ function Home() {
                   </div>
                   <div className="col-lg-9 col-md-8">
                     <div className="schedule-list  text-center text-sm-start">
-                      <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
                         <div className="schedule-box-title">
                           <h5 className="mb-2">
                             <Link to="/" className="black">
@@ -906,17 +910,17 @@ function Home() {
                               </li>
                             </ul>
                         </div>
-                      </div>
+                      </div> */}
                       <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                        <div className="schedule-box-title">
+                        {/* <div className="schedule-box-title">
                           <h5 className="mb-2">
                             <Link to="/" className="black">
                               Practical Component
                             </Link>
                           </h5>
-                        </div>
+                        </div> */}
                         <div className="schedule-box-info">
-                            <ul className="mb-2">
+                            {/* <ul className="mb-2">
                               <li>
                                 <strong> Follow Your Story:</strong> Documentary
                                 Production
@@ -928,10 +932,12 @@ function Home() {
                                 Small groups produce a 2-3 minute film, screened
                                 in class.
                               </li>
-                            </ul>
+                            </ul> */}
+                            <p>In this module, students step into the world of filmmaking and studio-based production. The session covers the complete production cycle: from conceptualizing an idea and writing scripts to shooting and directing. Gareth will introduce the basics of production planning and guide participants in handling practical aspects of storytelling on camera. A special focus will be given to documentary filmmaking- its purpose, structure, and execution. This module offers hands-on insight into the mechanics of studio work, empowering students to create polished, professional content. For aspiring filmmakers, it is an immersive introduction to the art and craft of production.
+                        </p>
                         </div>
                       </div>
-                      <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
                         <div className="schedule-box-title">
                           <h5 className="mb-2">
                             <Link to="/" className="black">
@@ -955,7 +961,7 @@ function Home() {
                               </li>
                             </ul>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -967,14 +973,14 @@ function Home() {
                       <h4 className="pink mb-2">4TH DAY</h4>
                       {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
                       <p>
-                        Filmmaking & Studio <br />
-                        Content Production
+                        Animation, AR/VR &  <br />
+                        Immersive Production
                       </p>
                     </div>
                   </div>
                   <div className="col-lg-9 col-md-8">
                     <div className="schedule-list  text-center text-sm-start">
-                      <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
                         <div className="schedule-box-title">
                           <h5 className="mb-2">
                             <Link to="/" className="black">
@@ -1001,17 +1007,17 @@ function Home() {
                               </li>
                             </ul>
                         </div>
-                      </div>
+                      </div> */}
                       <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                        <div className="schedule-box-title">
+                        {/* <div className="schedule-box-title">
                           <h5 className="mb-2">
                             <Link to="/" className="black">
                               Practical Component
                             </Link>
                           </h5>
-                        </div>
+                        </div> */}
                         <div className="schedule-box-info">
-                            <ul className="mb-2">
+                            {/* <ul className="mb-2">
                               <li>
                                 <strong> Immersive Production:</strong> Design
                                 and deliver a green screen AR experience
@@ -1025,10 +1031,11 @@ function Home() {
                               <li>
                                 Storyboarding for success in Immersive Mediums
                               </li>
-                            </ul>
+                            </ul> */}
+                            <p>The final module unlocks the cutting edge of immersive media. Students will explore how to design projects for animation, AR, VR, and gaming, gaining insights into emerging trends shaping the creative industries. Gareth introduces practical knowledge of green screen setups and immersive studio environments while showcasing how AI tools like Midjourney, Canva, and Leonardo AI can transform concepts into cinematic creations. This session blends imagination with technology, offering students the chance to experience the future of storytelling firsthand. Whether building virtual worlds or crafting animated visuals, this module encourages innovation and future-ready creative thinking.</p>
                         </div>
                       </div>
-                      <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
                         <div className="schedule-box-title">
                           <h5 className="mb-2">
                             <Link to="/" className="black">
@@ -1052,20 +1059,21 @@ function Home() {
                               </li>
                             </ul>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
               </div>
               <div className="row justify-content-center">
               <div className="col-lg-6 col-md-8 d-flex justify-content-center">
-                <Link
-                  to="https://rzp.io/rzp/QaOH6esm"
+                <a
+                  href="https://rzp.io/rzp/QaOH6esm"
+                  target='_blank'
                   className="btn btn-primary me-3 my-1 w-100 text-center"
                 >
                   Register Now @ <strike>₹5,000/-</strike>
                   <strong><span className="h4 ps-2 ">₹2,999/-</span></strong>
-                </Link>
+                </a>
               </div>
             </div>
               {/* <div className="schedule-title-bottom">
@@ -1186,13 +1194,14 @@ function Home() {
             </div>
             <div className="row justify-content-center">
               <div className="col-lg-6 col-md-8 d-flex justify-content-center">
-                <Link
-                  to="https://rzp.io/rzp/QaOH6esm"
+                <a
+                  href="https://rzp.io/rzp/QaOH6esm"
+                  target='_blank'
                   className="btn btn-primary me-3 my-1 w-100 text-center"
                 >
                   Register Now @ <strike>₹5,000/-</strike>
                   <strong><span className="h4 ps-2 ">₹2,999/-</span></strong>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
