@@ -28,18 +28,21 @@ const Navbar = () => {
             </a>
             {/* <ul className="dropdown-menu bg-lightgrey p-0 rounded" aria-labelledby="scheduleDropdown">
               <li>
-                <Link className="dropdown-item py-3 px-6 text-capitalize black border-0" to="/Eventlists">
-                  Event List
-                </Link>
+              <Link className="dropdown-item py-3 px-6 text-capitalize black border-0" to="/Eventlists">
+              Event List
+              </Link>
               </li>
               <li>
-                <Link className="dropdown-item py-3 px-6 text-capitalize black border-0" to="/Eventdetail">
-                  Event Details
-                </Link>
+              <Link className="dropdown-item py-3 px-6 text-capitalize black border-0" to="/Eventdetail">
+              Event Details
+              </Link>
               </li>
-            </ul> */}
+              </ul> */}
           </li>
 
+              <li className="nav-item">
+                <a href="#gareth-benson" className="nav-link px-2 my-4 py-0 text-white">Gareth Benson</a>
+              </li>
           <li className="nav-item">
             <a href="#contact" className="nav-link px-2 my-4 py-0 text-white">Contact</a>
           </li>

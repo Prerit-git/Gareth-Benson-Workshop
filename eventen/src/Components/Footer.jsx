@@ -57,7 +57,7 @@ function Footer() {
                 <a href="index.html"><img src="https://iicsindia.org/images/IICS/iics_image/main-logo-iics.png" className="w-60 bg-white" alt="footer-logo"/></a>
                 </div>
                 <div className="footer-disciption border-bottom border-white border-opacity-25 m-auto mb-6">
-                <p className=" mb-6">info@iicsindia.org | +91 959-4949-959</p>
+                <p className=" mb-6"><a href="mailto:info@iicsindia.org">info@iicsindia.org</a> | <a href="tel:959-4949-959">+91 959-4949-959</a></p>
                 <div className="footer-socials pb-6">
                     <ul className="m-0 p-0 d-flex gap-2 justify-content-center">
                         {socialIcons.map((icon, i) => (

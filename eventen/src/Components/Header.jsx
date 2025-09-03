@@ -49,7 +49,9 @@ const Header = () => {
                   <ul className="m-0 p-0">
                     <li className="px-2 border-end border-lightgrey border-opacity-50 d-inline">
                       <i className="fa fa-phone pe-1"></i>
+                      <a href="tel:959-4949-959">
                       <small>+91 959-4949-959</small>
+                      </a>
                     </li>
                     <li className="px-2 border-end border-lightgrey border-opacity-50 d-inline">
                       <i className="fa fa-envelope-o pe-1"></i>

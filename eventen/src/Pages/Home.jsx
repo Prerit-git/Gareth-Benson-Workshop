@@ -317,21 +317,21 @@ function Home() {
                     </p>
                   </div>  */}
                      <div className="banner-event-info pb-3">
-                    <ul className="m-0 ps-0 d-sm-flex justify-content-center list-unstyled">
-                      <li className="pe-3 border-end border-1 border-lightgrey text-center">
-                        Delhi Students: <br />
+                    <ul className="m-0 ps-0 d-sm-flex justify-content-center list-unstyled banner-details">
+                      <li className="pe-3 border-end border-1 border-lightgrey text-center banner-details-li">
+                       For Delhi Students: <br />
                         <i className="pe-1"></i> 8th-11th <br />SEPTEMBER
                       </li>
-                      <li className="ps-2 pe-2 border-end border-1 border-lightgrey text-center">
-                        Delhi Trainers: <br />
+                      <li className="ps-2 pe-2 border-end border-1 border-lightgrey text-center banner-details-li">
+                       For Delhi Trainers: <br />
                         <i className="pe-1"></i> 12th-13th <br />SEPTEMBER
                       </li>
-                      <li className="ps-2 pe-2 border-end border-1 border-lightgrey text-center">
-                        Bhopal Students: <br />
+                      <li className="ps-2 pe-2 border-end border-1 border-lightgrey text-center banner-details-li m-top">
+                       For Bhopal Students: <br />
                         <i className="pe-1"></i> 15th-18th <br />SEPTEMBER
                       </li>
-                      <li className="ps-2 pe-2 border-end border-1 border-lightgrey text-center">
-                        Bhopal Trainers: <br />
+                      <li className="ps-2 pe-2 border-end border-1 border-lightgrey text-center banner-details-li m-top">
+                       For Bhopal Trainers: <br />
                         <i className="pe-1"></i> 19th-20th <br />SEPTEMBER
                       </li>
                       {/* <li className="pe-2 ps-2 border-end border-1 border-lightgrey text-center">
@@ -557,10 +557,10 @@ function Home() {
               {/* <p className="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
                     mattis, pulvinar dapibus leo.</p> */}
             </div>
-            <div className="schedule-list-outer">
-              <div className="schedule-list-top mb-7 border-bottom">
-                <div className="row">
-                  <div className="col-lg-3 col-md-4">
+            <div className="schedule-list-outer areas_container">
+              <div className="schedule-list-top mb-7 areas_inner">
+                <div className="col">
+                  <div className="col-lg-12 col-md-4">
                     <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
                       <h4 className="pink mb-2">Students Interested in :</h4>
                       {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
@@ -570,7 +570,7 @@ function Home() {
                       </p> */}
                     </div>
                   </div>
-                  <div className="col-lg-9 col-md-8">
+                  <div className="col-lg-10 col-md-8">
                     <div className="schedule-list text-sm-start">
                       {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
                         <div className="schedule-box-title">
@@ -597,7 +597,7 @@ function Home() {
                             </ul>
                         </div>
                       </div> */}
-                      <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
+                      <div className=" schedule-list-box bg-lightgrey border border-white border-2 rounded px-6 py-4 mb-5">
                         {/* <div className="schedule-box-title">
                           <h5 className="mb-2">
                             <Link to="/" className="black">
@@ -663,11 +663,11 @@ function Home() {
                   </div>
                 </div>
               </div>
-              <div className="schedule-list-top mb-7">
-                <div className="row">
-                  <div className="col-lg-3 col-md-4">
+              <div className="schedule-list-top mb-7 areas_inner">
+                <div className="col">
+                  <div className="col-lg-12 col-md-4">
                     <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
-                      <h4 className="pink mb-2">Professionals working in</h4>
+                      <h4 className="pink mb-2">Professionals working in :</h4>
                       {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
                       {/* <p>
                         Digital & Social Media <br />
@@ -675,7 +675,7 @@ function Home() {
                       </p> */}
                     </div>
                   </div>
-                  <div className="col-lg-9 col-md-8">
+                  <div className="col-lg-10 col-md-8">
                     <div className="schedule-list text-sm-start">
                       {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
                         <div className="schedule-box-title">
@@ -761,16 +761,6 @@ function Home() {
                   </div>
                 </div>
               </div>
-            
-              <div className="row justify-content-center">
-              <div className="col-lg-4 col-md-8 d-flex justify-content-center">
-                <a href='#home'
-                  className="btn btn-primary me-3 my-1 w-100 text-center"
-                >
-                  Register Now 
-                </a>
-              </div>
-            </div>
               {/* <div className="schedule-title-bottom">
                     <div className="row align-items-center">
                     <div className="col-lg-3 col-md-4">
@@ -841,13 +831,22 @@ function Home() {
                     </div>
                 </div> */}
             </div>
+            <div className="row justify-content-center">
+              <div className="col-lg-4 col-md-8 d-flex justify-content-center">
+                <a href='#home'
+                  className="btn btn-primary me-3 my-1 w-100 text-center"
+                >
+                  Register Now 
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
       {/*--Schedules Section end--*/}
 
       {/*--Overview Section start--*/}
-      <section className="overview pb-0 " id="gareth">
+      <section className="overview pb-0 " id="gareth-benson">
         <div className="container">
           <div className="inner-overview pb-10 position-relative">
             <div className="row">
@@ -867,7 +866,7 @@ function Home() {
                     </p>
                     <p>His professional journey includes roles at CSIRO, SBS Television, and the Australian Centre for the Moving Image (ACMI), where he managed contracts and content pathways for global exhibitions, including collaborations with Disney, Warner Brothers, and Paramount.</p>
                   </div>
-                  <div className="overview-event-info pb-6 g-4 text-start position-absolute">
+                  {/* <div className="overview-event-info pb-6 g-4 text-start position-absolute">
                     <div className="row justify-content-around ">
                       <div className="col-lg-6 col-md-6">
                         <a>
@@ -898,7 +897,37 @@ function Home() {
                         </a>
                       </div>
                     </div>
-                  </div>
+                    <div className="row justify-content-around">
+                      <div className="col-lg-6 col-md-6">
+                        <a>
+                          <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
+                            <div className="event-info-icon text-center ">
+                              <i className="fa fa-map-marker  text-white bg-pink rounded-circle me-3"></i>
+                            </div>
+                            <div className="location-info">
+                              <h5 className="mb-1">WHERE</h5>
+                              <small>Jagran Lakecity University, Bhopal</small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div className="col-lg-6 col-md-6 ">
+                        <a>
+                          <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
+                            <div className="event-info-icon text-center">
+                              <i className="fa fa-calendar-o  text-white bg-pink rounded-circle me-3"></i>
+                            </div>
+                            <div className="time-info">
+                              <h5 className="mb-1">WHEN</h5>
+                              <small>
+                                 Sep, 15-20, 2025
+                              </small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div> */}
                 </div>
               </div>
               <div className="col-lg-6 mt-10">
@@ -1438,10 +1467,14 @@ function Home() {
                       <p className="pb-5 m-0">
                         Indian Institute of Creative Skills
                       </p>
-                      <h5 className="text-white pb-2">ADDRESS:</h5>
+                      <h5 className="text-white pb-2">DELHI ADDRESS:</h5>
                       <p className="pb-5 m-0">
                         2nd and 3rd Floor, Plot No 13A, Ring Rd, Vikram Vihar,
                         Lajpat Nagar 4, Lajpat Nagar, New Delhi, Delhi 110024
+                      </p>
+                      <h5 className="text-white pb-2">BHOPAL ADDRESS:</h5>
+                      <p className="pb-5 m-0">
+                        Jagran Lakecity University, Near Kaliasot Barrage 83/2 Chandanpura, Bhopal-462016
                       </p>
                       <h5 className="text-white pb-2">RECEPTION INFO:</h5>
                       <p className="pb-5 m-0">+91 959-4949-959</p>
