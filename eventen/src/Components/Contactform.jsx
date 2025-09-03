@@ -5,45 +5,66 @@ const Contactform = () => {
     name: "",
     email: "",
     phone: "",
+    role: "",
     subject: "",
     message: "",
   });
 
-  const [status, setStatus] = useState(""); // Success or error message
+  const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const phoneRegex = /^[0-9]{10,15}$/; // Adjust as needed
+  const { name, email, phone, role } = formData;
 
-    // Example: Validate required fields
-    if (!formData.name || !formData.email || !formData.message) {
-      setStatus("Please fill in all required fields.");
-      return;
+  if (!name || !email || !phone) {
+    setStatus("Please fill in all required fields.");
+    return;
+  }
+
+   setIsSubmitting(true);
+
+  const formBody = new URLSearchParams();
+  formBody.append("name", name);
+  formBody.append("email", email);
+  formBody.append("phone", phone);
+  formBody.append("role", role);
+
+  try {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbyXrv4joFpPD9frgzEVScZLGlPn0_-U_t8Zz_PNbtAcir0e27xB3ShF5F1yYZpNo94D/exec", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: formBody.toString(),
+    });
+
+    if (response.ok) {
+      // setStatus("Your message has been sent successfully!");
+      setFormData({ name: "", email: "", phone: "", role: "", subject: "", message: "" });
+      if (formData.role === "student") {
+    window.location.href = "https://pages.razorpay.com/pl_R8IzACN6XXMIU0/view";
+  } else if (formData.role === "teacher") {
+    window.location.href = "https://pages.razorpay.com/pl_R9v8YW5FSCBue6/view";
+  } else {
+    setStatus("Please select a role.");
+  }
+    } else {
+      setStatus("Failed to submit. Please try again.");
     }
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    setStatus("Something went wrong. Please try again.");
+  }
+};
 
-    // Simulate a successful form submission (replace with real API call)
-    try {
-      console.log("Submitted:", formData);
-      setStatus("Your message has been sent successfully!");
-
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-      });
-    } catch (error) {
-      setStatus("Something went wrong. Please try again.");
-    }
-  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -53,7 +74,7 @@ const Contactform = () => {
             type="text"
             name="name"
             placeholder="Name"
-            className="mb-3"
+            className="mb-3 form-control"
             value={formData.name}
             onChange={handleChange}
             required
@@ -64,32 +85,48 @@ const Contactform = () => {
             type="email"
             name="email"
             placeholder="Email"
-            className="mb-3"
+            className="mb-3 form-control"
             value={formData.email}
             onChange={handleChange}
             required
           />
         </div>
       </div>
-      <div className="phone-no">
+      <div className="row">
+      <div className="phone-no col-lg-6">
         <input
           type="tel"
           name="phone"
           placeholder="Phone No."
-          className="mb-3"
+          className="mb-3 form-control"
           value={formData.phone}
-        onChange={handleChange}
-        pattern="[0-9]{10,15}"
-        title="Please enter a valid phone number (10–15 digits)"
-        required
+          onChange={handleChange}
+          pattern="[0-9]{10,15}"
+          title="Please enter a valid phone number"
+          required
         />
       </div>
-      <div className="subject">
+      <div className="role mb-3 col-lg-6">
+      <select
+    name="role"
+    className="form-select rounded p-2"
+    value={formData.role}
+    onChange={handleChange}
+    required
+      >
+    <option value="">Select Profession</option>
+    <option value="student">Student</option>
+    <option value="teacher">Teacher/Working Professional</option>
+      </select>
+      </div>
+      </div>
+
+      {/* <div className="subject">
         <input
           type="text"
           name="subject"
           placeholder="Subject"
-          className="mb-3"
+          className="mb-3 form-control"
           value={formData.subject}
           onChange={handleChange}
         />
@@ -99,17 +136,29 @@ const Contactform = () => {
           name="message"
           placeholder="Message"
           rows="4"
-          className="mb-3"
+          className="mb-3 form-control"
           value={formData.message}
           onChange={handleChange}
-          required
         />
-      </div>
-      <button type="submit" className="btn">
-        Send Message <i className="fa fa-long-arrow-right ms-3"></i>
-      </button>
+      </div> */}
+      <button
+  type="submit"
+  className="btn btn-primary"
+  disabled={isSubmitting}
+>
+  {isSubmitting ? (
+    <>
+      <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+      Please wait..
+    </>
+  ) : (
+    <>
+      Register Now <i className="fa fa-long-arrow-right ms-3"></i>
+    </>
+  )}
+</button>
 
-      {/* Status message */}
+
       {status && (
         <div className="mt-3 alert alert-info" role="alert">
           {status}
@@ -119,4 +168,4 @@ const Contactform = () => {
   );
 };
 
-export default Contactform
+export default Contactform;

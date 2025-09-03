@@ -481,7 +481,7 @@
   font-family: "FontAwesome";
   font-size: 100px;
   color: #70707021;
-  content: "\f073";
+  /* content: "\f073"; */
   top: -30%;
   left: -5%;
   z-index: -1;

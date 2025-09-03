@@ -4,270 +4,271 @@ import TestimonialSlider from '../Components/TestimonialSlider '
 import Gallery from '../Components/Gallery'
 import { Link } from 'react-router-dom'
 import Countdown from '../Components/Countdown'
+import Contactform from '../Components/Contactform'
 
-const speakers = [
-  {
-    id: 1,
-    name: "Padma Shri Resul Pookutty",
-    role: "Indian film director, film production designer, television host Academy Award winner Sound Designer, and Chairperson, IICS",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Padma-Shri-Resul-Pookutty.png",
-  },
-  {
-    id: 2,
-    name: "Padma Shri Shankar Mahadevann",
-    role: "Indian singer and composer",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Padma-Shri-Shankar-Mahadevan.png",
-  },
-  {
-    id: 3,
-    name: "Ms.Dia Mirza",
-    role: "Actor",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Ms-Dia-Mirza.jpg",
-  },
-  {
-    id: 4,
-    name: "Ms. Kavita Krishnamurthy",
-    role: "Indian playback singer",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Ms-Kavita-Krishnamurthy.png",
-  },
-  {
-    id: 5,
-    name: "Ms. Neeta Lulla",
-    role: "Costume Designer",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Ms-Neeta-Lulla.png",
-  },
-  {
-    id: 6,
-    name: "Ms. Revathy Asha Kelunni",
-    role: "Indian Actress and Director",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Ms-Revathy-Asha-Kelunni.png",
-  },
-  {
-    id: 7,
-    name: "Ms.Sushma Gaikwad",
-    role: "Co-founder Ice Global, Wizcraft MIME & Sukhoon",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/sushma.png",
-  },
-  {
-    id: 8,
-    name: "Mr. Manvendra Shukul",
-    role: "CEO of Lakshaya Digital",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/manvendra%20shukul.png",
-  },
-  {
-    id: 9,
-    name: "Mr. Suresh Eriyat",
-    role: "Indian animator & director",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Suresh-Eriyat.png",
-  },
-  {
-    id: 10,
-    name: "Mr. Bharat Dabholkar",
-    role: "Actor",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Bharat-Dabholkar.png",
-  },
-  {
-    id: 11,
-    name: "Mr. Amit Sadh",
-    role: "Actor",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/amit-sadh.png",
-  },
-  {
-    id: 12,
-    name: "Mr. Sameer Tobaccowala",
-    role: "CEO, Shobiz Experiential Communications",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/sameer-tobaccowala.png",
-  },
-  {
-    id: 13,
-    name: "Mr. Amit Behl",
-    role: "Indian Theatre, Television and Film Actor",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/amit-behl.png",
-  },
+// const speakers = [
+//   {
+//     id: 1,
+//     name: "Padma Shri Resul Pookutty",
+//     role: "Indian film director, film production designer, television host Academy Award winner Sound Designer, and Chairperson, IICS",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Padma-Shri-Resul-Pookutty.png",
+//   },
+//   {
+//     id: 2,
+//     name: "Padma Shri Shankar Mahadevann",
+//     role: "Indian singer and composer",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Padma-Shri-Shankar-Mahadevan.png",
+//   },
+//   {
+//     id: 3,
+//     name: "Ms.Dia Mirza",
+//     role: "Actor",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Ms-Dia-Mirza.jpg",
+//   },
+//   {
+//     id: 4,
+//     name: "Ms. Kavita Krishnamurthy",
+//     role: "Indian playback singer",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Ms-Kavita-Krishnamurthy.png",
+//   },
+//   {
+//     id: 5,
+//     name: "Ms. Neeta Lulla",
+//     role: "Costume Designer",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Ms-Neeta-Lulla.png",
+//   },
+//   {
+//     id: 6,
+//     name: "Ms. Revathy Asha Kelunni",
+//     role: "Indian Actress and Director",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Ms-Revathy-Asha-Kelunni.png",
+//   },
+//   {
+//     id: 7,
+//     name: "Ms.Sushma Gaikwad",
+//     role: "Co-founder Ice Global, Wizcraft MIME & Sukhoon",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/sushma.png",
+//   },
+//   {
+//     id: 8,
+//     name: "Mr. Manvendra Shukul",
+//     role: "CEO of Lakshaya Digital",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/manvendra%20shukul.png",
+//   },
+//   {
+//     id: 9,
+//     name: "Mr. Suresh Eriyat",
+//     role: "Indian animator & director",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Suresh-Eriyat.png",
+//   },
+//   {
+//     id: 10,
+//     name: "Mr. Bharat Dabholkar",
+//     role: "Actor",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Bharat-Dabholkar.png",
+//   },
+//   {
+//     id: 11,
+//     name: "Mr. Amit Sadh",
+//     role: "Actor",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/amit-sadh.png",
+//   },
+//   {
+//     id: 12,
+//     name: "Mr. Sameer Tobaccowala",
+//     role: "CEO, Shobiz Experiential Communications",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/sameer-tobaccowala.png",
+//   },
+//   {
+//     id: 13,
+//     name: "Mr. Amit Behl",
+//     role: "Indian Theatre, Television and Film Actor",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/amit-behl.png",
+//   },
 //   {
 //     id: 14,
 //     name: "Ms. Sohini Dasgupta",
 //     role: "Director of Sound Design & Music Video Production Course, Writer, Director",
 //     image: "https://iicsindia.org/images/IICS/iics_image/management/sohini.webp",
 //   },
-  {
-    id: 15,
-    name: "Ms. Bina Paul",
-    role: "Indian film editor",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/bina-paul.png",
-  },
-  {
-    id: 16,
-    name: "Mr. Omung Kumar",
-    role: "Indian film director, film production designer, and television host",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/omung_kumar.png",
-  },
-  {
-    id: 17,
-    name: "Mr. Kamlesh Pandey",
-    role: "Writer",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Kamlesh-Pandey_.png",
-  },
-  {
-    id: 18,
-    name: "Mr. Sham Kaushal",
-    role: "Action Director",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Shayam-Kaushal.png",
-  },
-  {
-    id: 19,
-    name: "Ms. Jaya Bhattacharya",
-    role: "Indian television actress",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/jaya-bhattacharya.png",
-  },
-  {
-    id: 20,
-    name: "Mr. Rahul Rawail",
-    role: "Indian Film Director",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Rahul-Rawail.png",
-  },
-  {
-    id: 21,
-    name: "Mr. Jaya Kumar",
-    role: "CEO, Toonz Media Group",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/jaya-kumar.png",
-  },
-  {
-    id: 22,
-    name: "Mr. Salim Arif",
-    role: "Indian Theatre & Film Actor",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/salim-arif.png",
-  },
-  {
-    id: 23,
-    name: "Dr. L. Subramaniam",
-    role: "Indian Violinist",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/L-Subramaniam-4.png",
-  },
-  {
-    id: 24,
-    name: "Ms. Kausar Munir",
-    role: "Lyricist/Writer",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/mr-kausar-munir.png",
-  },
-  {
-    id: 25,
-    name: "Mr. Anupam Shobhakar",
-    role: "Indian musician, composer, instrumentalist, record producer, and classically trained sarodist",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Anupam-Shobhakar.png",
-  },
-  {
-    id: 26,
-    name: "Mr. Vaibhav Kumaresh",
-    role: "Founder, Creative Director of Vaibhav Studios",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/vaibhav-kumaresh.png",
-  },
-  {
-    id: 27,
-    name: "Mr. Sumanto Ray",
-    role: "Actor, Voice Artist, Dubbing Director, Dialogue writer, Music creator",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Sumanto-Ray-.png",
-  },
-  {
-    id: 28,
-    name: "Ms. Anusha Srinivasan Iyer",
-    role: "Digital Creator, Filmaker, Director",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/anusha-mam_.png",
-  },
-  {
-    id: 29,
-    name: "Mr. R. Prasanna Venkatesh",
-    role: "Commercial Photographer",
-    image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/mr-r-prasana.jpg",
-  },
-];
+//   {
+//     id: 15,
+//     name: "Ms. Bina Paul",
+//     role: "Indian film editor",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/bina-paul.png",
+//   },
+//   {
+//     id: 16,
+//     name: "Mr. Omung Kumar",
+//     role: "Indian film director, film production designer, and television host",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/omung_kumar.png",
+//   },
+//   {
+//     id: 17,
+//     name: "Mr. Kamlesh Pandey",
+//     role: "Writer",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Kamlesh-Pandey_.png",
+//   },
+//   {
+//     id: 18,
+//     name: "Mr. Sham Kaushal",
+//     role: "Action Director",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Shayam-Kaushal.png",
+//   },
+//   {
+//     id: 19,
+//     name: "Ms. Jaya Bhattacharya",
+//     role: "Indian television actress",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/jaya-bhattacharya.png",
+//   },
+//   {
+//     id: 20,
+//     name: "Mr. Rahul Rawail",
+//     role: "Indian Film Director",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Rahul-Rawail.png",
+//   },
+//   {
+//     id: 21,
+//     name: "Mr. Jaya Kumar",
+//     role: "CEO, Toonz Media Group",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/jaya-kumar.png",
+//   },
+//   {
+//     id: 22,
+//     name: "Mr. Salim Arif",
+//     role: "Indian Theatre & Film Actor",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/salim-arif.png",
+//   },
+//   {
+//     id: 23,
+//     name: "Dr. L. Subramaniam",
+//     role: "Indian Violinist",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/L-Subramaniam-4.png",
+//   },
+//   {
+//     id: 24,
+//     name: "Ms. Kausar Munir",
+//     role: "Lyricist/Writer",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/mr-kausar-munir.png",
+//   },
+//   {
+//     id: 25,
+//     name: "Mr. Anupam Shobhakar",
+//     role: "Indian musician, composer, instrumentalist, record producer, and classically trained sarodist",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Anupam-Shobhakar.png",
+//   },
+//   {
+//     id: 26,
+//     name: "Mr. Vaibhav Kumaresh",
+//     role: "Founder, Creative Director of Vaibhav Studios",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/vaibhav-kumaresh.png",
+//   },
+//   {
+//     id: 27,
+//     name: "Mr. Sumanto Ray",
+//     role: "Actor, Voice Artist, Dubbing Director, Dialogue writer, Music creator",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Sumanto-Ray-.png",
+//   },
+//   {
+//     id: 28,
+//     name: "Ms. Anusha Srinivasan Iyer",
+//     role: "Digital Creator, Filmaker, Director",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/anusha-mam_.png",
+//   },
+//   {
+//     id: 29,
+//     name: "Mr. R. Prasanna Venkatesh",
+//     role: "Commercial Photographer",
+//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/mr-r-prasana.jpg",
+//   },
+// ];
 
 
-const SpeakersCarousel = () => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+// const SpeakersCarousel = () => {
+//     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-    useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
+//     useEffect(() => {
+//     const handleResize = () => setIsMobile(window.innerWidth < 768);
+//     window.addEventListener("resize", handleResize);
 
-     const carouselEl = document.getElementById("speakersCarousel");
-    if (carouselEl && window.bootstrap) {
-      new window.bootstrap.Carousel(carouselEl, {
-        interval: 3000,
-        ride: "carousel",
-        pause: true,
-      });
-    }
+//      const carouselEl = document.getElementById("speakersCarousel");
+//     if (carouselEl && window.bootstrap) {
+//       new window.bootstrap.Carousel(carouselEl, {
+//         interval: 3000,
+//         ride: "carousel",
+//         pause: true,
+//       });
+//     }
 
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-   const chunkSize = isMobile ? 1 : 4;
-  const speakerChunks = [];
-  for (let i = 0; i < speakers.length; i += chunkSize) {
-    speakerChunks.push(speakers.slice(i, i + chunkSize));
-  }
+//     return () => window.removeEventListener("resize", handleResize);
+//   }, []);
+//    const chunkSize = isMobile ? 1 : 4;
+//   const speakerChunks = [];
+//   for (let i = 0; i < speakers.length; i += chunkSize) {
+//     speakerChunks.push(speakers.slice(i, i + chunkSize));
+//   }
 
-  return (
-    <div
-      id="speakersCarousel"
-      className="carousel slide"
-      data-bs-ride="carousel"
-      data-bs-interval="3000"
-    >
-      <div className="carousel-inner">
-        {speakerChunks.map((chunk, index) => (
-          <div
-            className={`carousel-item ${index === 0 ? "active" : ""}`}
-            key={index}
-          >
-            <div className="row justify-content-center">
-              {chunk.map((speaker) => (
-                <div className="col-12 col-sm-6 col-md-3 text-center" key={speaker.id}>
-                  <div className="card border-0 p-0 h-100">
-                    <img
-                      src={speaker.image}
-                      alt={speaker.name}
-                      className="card-img-top mx-auto"
-                      style={{
-                        width: "200px",
-                        height: "200px",
-                        objectFit: "cover",
-                      }}
-                    />
-                    <div className="card-body">
-                      <h5 className="card-title">{speaker.name}</h5>
-                      <p className="card-text small">{speaker.role}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
+//   return (
+//     <div
+//       id="speakersCarousel"
+//       className="carousel slide"
+//       data-bs-ride="carousel"
+//       data-bs-interval="3000"
+//     >
+//       <div className="carousel-inner">
+//         {speakerChunks.map((chunk, index) => (
+//           <div
+//             className={`carousel-item ${index === 0 ? "active" : ""}`}
+//             key={index}
+//           >
+//             <div className="row justify-content-center">
+//               {chunk.map((speaker) => (
+//                 <div className="col-12 col-sm-6 col-md-3 text-center" key={speaker.id}>
+//                   <div className="card border-0 p-0 h-100">
+//                     <img
+//                       src={speaker.image}
+//                       alt={speaker.name}
+//                       className="card-img-top mx-auto"
+//                       style={{
+//                         width: "200px",
+//                         height: "200px",
+//                         objectFit: "cover",
+//                       }}
+//                     />
+//                     <div className="card-body">
+//                       <h5 className="card-title">{speaker.name}</h5>
+//                       <p className="card-text small">{speaker.role}</p>
+//                     </div>
+//                   </div>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         ))}
+//       </div>
 
       {/* Carousel controls */}
-      <button
-        className="carousel-control-prev"
-        type="button"
-        data-bs-target="#speakersCarousel"
-        data-bs-slide="prev"
-      >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
-      <button
-        className="carousel-control-next"
-        type="button"
-        data-bs-target="#speakersCarousel"
-        data-bs-slide="next"
-      >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
-    </div>
-  );
-};
+//       <button
+//         className="carousel-control-prev"
+//         type="button"
+//         data-bs-target="#speakersCarousel"
+//         data-bs-slide="prev"
+//       >
+//         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+//         <span className="visually-hidden">Previous</span>
+//       </button>
+//       <button
+//         className="carousel-control-next"
+//         type="button"
+//         data-bs-target="#speakersCarousel"
+//         data-bs-slide="next"
+//       >
+//         <span className="carousel-control-next-icon" aria-hidden="true"></span>
+//         <span className="visually-hidden">Next</span>
+//       </button>
+//     </div>
+//   );
+// };
 
 function Home() {
   return (
@@ -298,33 +299,48 @@ function Home() {
                 </div>
               </div>
               <div className="col-lg-6 order-1 order-lg-2">
-                <div className="banner-right  ms-2 text-center text-lg-start pb-8">
+                <div className="banner-right  ms-2 text-center text-lg-start pb-0">
                   <div className="banner-title pb-3">
                     <h4 className="text-white pb-3">
                       {" "}
-                      Learn from the <span className="pink">Living Legend</span>
+                      Learn from <span className="pink">International Expert</span>
                     </h4>
                     <h1 className="text-white">
-                      Gareth <span className="pink">Benson</span>
+                      Gareth <span className="pink">Benson</span> 
                     </h1>
+                    <p>An Australian IP lawyer, storyteller, scriptwriter, and seasoned advisor to various governments, winner of Toastmasters international award.</p>
+                      <h4 className='text-white'>World class workshops exclusively in <span className='pink'>Delhi and Bhopal </span></h4>
                   </div>
-                  <div className="event-discription">
+                  {/* <div className="event-discription">
                     <p className="pb-4 m-0">
-                      Join an exclusive workshop with Gareth Benson, international mentor and creative strategist, as he unlocks the future of creative producing, 3D storytelling, and animation. Discover hands-on skills and global insights in XR, AR, and emerging technologies.{" "}
+                      The workshop gives you insider knowledge, hands-on learning & global insights on AR/VR, Film making and Content Creation that you won’t find in classrooms.    
                     </p>
-                  </div>
-                  <div className="banner-event-info pb-3">
+                  </div>  */}
+                     <div className="banner-event-info pb-3">
                     <ul className="m-0 ps-0 d-sm-flex justify-content-center list-unstyled">
-                      <li className="pe-2 border-end border-1 border-lightgrey text-center">
+                      <li className="pe-3 border-end border-1 border-lightgrey text-center">
+                        Delhi Students: <br />
                         <i className="pe-1"></i> 8th-11th <br />SEPTEMBER
                       </li>
-                      <li className="pe-2 ps-2 border-end border-1 border-lightgrey text-center">
-                        <i className="pe-1"></i> Indian Institute of  <br />Creative Skills
+                      <li className="ps-2 pe-2 border-end border-1 border-lightgrey text-center">
+                        Delhi Trainers: <br />
+                        <i className="pe-1"></i> 12th-13th <br />SEPTEMBER
                       </li>
-                      <li className="ps-2 text-center">Time: <br />09:30 A.M - 05:00 P.M</li>
+                      <li className="ps-2 pe-2 border-end border-1 border-lightgrey text-center">
+                        Bhopal Students: <br />
+                        <i className="pe-1"></i> 15th-18th <br />SEPTEMBER
+                      </li>
+                      <li className="ps-2 pe-2 border-end border-1 border-lightgrey text-center">
+                        Bhopal Trainers: <br />
+                        <i className="pe-1"></i> 19th-20th <br />SEPTEMBER
+                      </li>
+                      {/* <li className="pe-2 ps-2 border-end border-1 border-lightgrey text-center">
+                        <i className="pe-1"></i> Indian Institute of  <br />Creative Skills
+                      </li> */}
+                      {/* <li className="ps-2 text-center">Time: <br />09:30 A.M - 05:00 P.M</li> */}
                     </ul>
                   </div>
-                  <div className="banner-button">
+                  {/* <div className="banner-button">
                     <div className="row">
                       <div className="col-lg-12 col-md-6">
                         <a
@@ -337,13 +353,14 @@ function Home() {
                         </a>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
+                <Contactform/>
               </div>
             </div>
           </div>
         </div>
-        <div className="wave overflow-hidden position-absolute w-100 z-0">
+        {/* <div className="wave overflow-hidden position-absolute w-100 z-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1000 100"
@@ -357,43 +374,498 @@ function Home() {
                     c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
             ></path>
           </svg>
-        </div>
+        </div> */}
       </section>
       {/*--Banner Section end--*/}
 
+      
+      {/*--Features Section start--*/}
+      <section className="feature text-white position-relative z-0 start-0" id='modules'>
+            <div className="overlay z-n1">
+            </div>
+            <div className="container">
+                <div className="feature-inner">
+                    {/* <div className="counter text-center border-bottom border-white border-opacity-25">
+                        <div className="inner-counter mb-7">
+                            <div className="row">
+                                <div className="col-lg-3 col-md-3 p-2">
+                                    <div className="counter-box p-2 border-end border-white border-opacity-25">
+                                        <CountUpBox end={300} label="Journalist" /> 
+                                    </div>
+                                </div>
+                                <div className="col-lg-3 col-md-3 p-2">
+                                    <div className="counter-box p-2 border-end border-white border-opacity-25">
+                                        <CountUpBox end={120} label="Events" />
+                                    </div>
+                                </div>
+                                <div className="col-lg-3 col-md-3 p-2">
+                                    <div className="counter-box p-2 border-end border-white border-opacity-25">
+                                        <CountUpBox end={50} label="Awards" />
+                                    </div>
+                                </div>
+                                <div className="col-lg-3 col-md-3 p-2">
+                                    <div className="counter-box p-2 border-opacity-25">
+                                        <CountUpBox end={1000} label="Members" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>     */}
+
+                    <div className="row">
+              <div className="col-lg-8">
+                <div className="overview-left text-center text-lg-start">
+                  <div className="overview-title pb-4">
+                    {/* <p className="mb-1 ">FOCUS POINTS</p> */}
+                    <h2 className="mb-2 text-white">
+                      WHAT YOU WILL{" "}
+                      <span className="">LEARN ?</span>
+                    </h2>
+                    <p>The Indian Institute of Creative Skills proudly presents an exclusive workshop with Gareth Benson, a global expert in Creative Producing, 3D Storytelling, Animation, XR and AR. Known for bridging the gap between creativity and technology, Gareth brings his international expertise to Delhi, offering students a once-in-a-lifetime opportunity to learn, create, and innovate under his guidance. </p>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div className="feature-lists pt-2">
+                        <div className="row g-2">
+                            <div className="col-lg-3 col-md-6 d-flex">
+                            <div className="feature-box py-7 px-3 rounded text bg-black bg-opacity-25 w-100">
+                                <a>
+                                {/* <div className="feature-box-icon mb-4">
+                                    <i className="fa fa-address-book-o text-white bg-pink rounded-circle text-center"></i>
+                                </div> */}
+                                <div className="feature-box-info ">
+                                    <h6 className="text-white mb-2">Module 1- Digital Industries</h6>
+                                    <ul>
+                                        <li>Focus Points: Digital media marketing, Content Creation & Animation</li>
+                                        <li>Crafting your story on a digital narrative</li>
+                                        <li>Social media marketing and the role of content creation in a dynamic world</li>
+                                        <li>Animation, Augmented reality (AR/VR) & Artificial intelligence(AI)</li>
+                                    </ul>
+                                </div>
+                                </a>
+                            </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6 d-flex">
+                            <div className="feature-box py-7 px-3 rounded  bg-black bg-opacity-25 w-100">
+                                <a>
+                                {/* <div className="feature-box-icon mb-4">
+                                    <i className="fa fa-comments text-white bg-pink rounded-circle text-center"></i>
+                                </div> */}
+                                <div className="feature-box-info">
+                                    <h6 className="text-white mb-2">Module 2- Digital & Social Media Content Production</h6>
+                                    <ul>
+                                        <li>Focus Points: YouTube, Instagram & LinkedIn</li>
+                                        <li>Design and Deliver brand stories</li>
+                                        <li>Essentials of brand storytelling for digital media: strategies behind successful social campaigns.</li>
+                                        <li>Create content that reaches, engages, and resonates with audiences.</li>
+                                    </ul>
+                                </div>
+                                </a>
+                            </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6 d-flex">
+                            <div className="feature-box py-7 px-3 rounded bg-black bg-opacity-25 w-100">
+                                <a>
+                                {/* <div className="feature-box-icon mb-4">
+                                    <i className="fa fa-desktop text-white bg-pink rounded-circle text-center"></i>
+                                </div> */}
+                                <div className="feature-box-info">
+                                    <h6 className="text-white mb-2">Module 3- Filmmaking & Studio Content Production</h6>
+                                    <ul>
+                                        <li>Focus Points: Production, Camera Setup & Content Protection</li>
+                                        <li>Acquiring hands on skills in basic film production </li>
+                                        <li>The Language of film: Shots, Storyboard & Sequences</li>
+                                        <li>Protect your content: Copyright & Ownership </li>
+                                    </ul>
+                                </div>
+                                </a>
+                            </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6 d-flex">
+                            <div className="feature-box py-7 px-3 rounded bg-black bg-opacity-25 w-100">
+                                <a>
+                                {/* <div className="feature-box-icon mb-4">
+                                    <i className="fa fa-cogs text-white bg-pink rounded-circle text-center"></i>
+                                </div> */}
+                                <div className="feature-box-info">
+                                    <h6 className="text-white mb-2">Module 4- Animation, AR/VR & Immersive Production</h6>
+                                   <ul>
+                                        <li>Focus Points: AR/VR, Gaming Projects & UX Design </li>
+                                        <li>Craft Immersive animated stories</li>
+                                        <li>Understand Softwares: Midjourney, Canva & Leonardo AI</li>
+                                        <li>Gain confidence working on Greenscreen and studio set ups   </li>
+                                    </ul>
+                                </div>
+                                </a>
+                            </div>
+                            </div>
+                            {/* <div className="col-lg-4 col-md-6">
+                            <div className="feature-box py-7 px-6 rounded bg-black bg-opacity-25">
+                                <a>
+                                <div className="feature-box-icon mb-4">
+                                    <i className="fa fa-gift text-white bg-pink rounded-circle text-center"></i>
+                                </div>
+                                <div className="feature-box-info">
+                                    <h5 className="text-white mb-2">EXICITING GIVEAWAYS</h5>
+                                    <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore.</small>
+                                </div>
+                                </a>
+                            </div>
+                            </div> */}
+                            {/* <div className="col-lg-4 col-md-6">
+                            <div className="feature-box py-7 px-6 rounded bg-black bg-opacity-25">
+                                <a>
+                                <div className="feature-box-icon mb-4">
+                                    <i className="fa fa-graduation-cap text-white bg-pink rounded-circle text-center"></i>
+                                </div>
+                                <div className="feature-box-info">
+                                    <h5 className="text-white mb-2">1-ON-1 SESSIONS</h5>
+                                    <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore.</small>
+                                </div>
+                                </a>
+                            </div>
+                            </div> */}
+                        </div>
+                    </div>
+                     <div className="row justify-content-center">
+              <div className="col-lg-4 col-md-8 d-flex justify-content-center">
+                <a href='#home'
+                  className="btn btn-primary me-3 my-1 w-100 text-center"
+                >
+                  Register Now 
+                </a>
+              </div>
+            </div>
+                </div>
+            </div>    
+        </section>
+      {/*--Features Section end--*/}
+
+      
+      {/*--Schedules Section start--*/}
+      <section className="schedules" id="areas">
+        <div className="container">
+          <div className="schedule-inner">
+            <div className="schedule-title text-center mb-6 w-lg-60 mx-auto">
+              {/* <p className="mb-1 pink">WORKSHOP SCHEDULE</p> */}
+              <h2 className="mb-1">
+                BEST <span className="pink">SUITED</span> FOR
+              </h2>
+              {/* <p className="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
+                    mattis, pulvinar dapibus leo.</p> */}
+            </div>
+            <div className="schedule-list-outer">
+              <div className="schedule-list-top mb-7 border-bottom">
+                <div className="row">
+                  <div className="col-lg-3 col-md-4">
+                    <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
+                      <h4 className="pink mb-2">Students Interested in :</h4>
+                      {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
+                      {/* <p>
+                        Digital <br />
+                        Industries
+                      </p> */}
+                    </div>
+                  </div>
+                  <div className="col-lg-9 col-md-8">
+                    <div className="schedule-list text-sm-start">
+                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                        <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Course Content
+                            </Link>
+                          </h5>
+                        </div>
+                        <div className="schedule-box-info">
+                            <ul  className="mb-2">
+                              <li>
+                                Introduction to the Global and fast-growing
+                                digital economy
+                              </li>
+                              <li>
+                                Where the jobs are: digital marketing,
+                                animation, AR/VR, AI
+                              </li>
+                              <li>
+                                Crafting your personal story into a digital
+                                narrative
+                              </li>
+                            </ul>
+                        </div>
+                      </div> */}
+                      <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
+                        {/* <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Practical Component
+                            </Link>
+                          </h5>
+                        </div> */}
+                        <div className="schedule-box-info">
+                            {/* <ul  className="mb-2">
+                              <li>
+                                <strong>The Art of the Pitch:</strong> Students
+                                compete to pitch their own story or idea.
+                              </li>
+                              <li>
+                                Peer-to peer feedback on delivery, storytelling
+                                structure, and emotional connection
+                              </li>
+                              <li>
+                                <strong>Pitching Skills for Success:</strong>{" "}
+                                turning passion into professional presence
+                              </li>
+                            </ul> */}
+                            {/* <p>This opening module introduces students to the vast world of digital industries, mapping out opportunities and career pathways. Participants will explore the foundations of digital media, social media marketing, and the role of content creation in today’s fast-changing landscape. The session also highlights animation, augmented reality, and artificial intelligence—showing how technology and creativity merge to shape industries of the future. With Gareth Benson’s expertise, students gain an understanding of where digital careers are headed and how to position themselves at the forefront of this revolution. Perfect for anyone curious about the future of work in the digital age.</p> */}
+
+                            <ul>
+                                <li>Animation</li>
+                                <li>Graphic design</li>
+                                <li>AR/VR Technology</li>
+                                <li>Film making</li>
+                                <li>Content Creation </li>
+                                <li>Game designers  </li>
+                                <li>Social Media Management </li>
+                                <li>Digital Media Production </li>
+                            </ul>
+                        </div>
+                      </div>
+                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                        <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Learning Outcomes
+                            </Link>
+                          </h5>
+                        </div>
+                        <div className="schedule-box-info">
+                            <ul className="mb-2">
+                              <li>
+                                Understand career opportunities digital
+                                industries and emerging job opportunities
+                              </li>
+                              <li>
+                                Build confidence in storytelling and pitching
+                                skills
+                              </li>
+                              <li>
+                                Explore future pathways in AI, AR, and immersive
+                                storytelling
+                              </li>
+                            </ul>
+                        </div>
+                      </div> */}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="schedule-list-top mb-7">
+                <div className="row">
+                  <div className="col-lg-3 col-md-4">
+                    <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
+                      <h4 className="pink mb-2">Professionals working in</h4>
+                      {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
+                      {/* <p>
+                        Digital & Social Media <br />
+                        Content Production
+                      </p> */}
+                    </div>
+                  </div>
+                  <div className="col-lg-9 col-md-8">
+                    <div className="schedule-list text-sm-start">
+                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                        <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Course Content
+                            </Link>
+                          </h5>
+                        </div>
+                        <div className="schedule-box-info">
+                            <ul className="mb-2">
+                              <li>
+                                Platform differences: how to adapt your story
+                                for each.
+                              </li>
+                              <li>Trends in social media storytelling.</li>
+                              <li>
+                                Designing a campaign: hashtags, visuals, and
+                                engagement tactics.
+                              </li>
+                            </ul>
+                        </div>
+                      </div> */}
+                      <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
+                        {/* <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Practical Component
+                            </Link>
+                          </h5>
+                        </div> */}
+                        <div className="schedule-box-info">
+                            {/* <ul className="mb-2">
+                              <li>
+                                <strong>Social Media Campaign Creation:</strong>{" "}
+                                Based on Diploma-level Social Media Marketing.
+                              </li>
+                              <li>
+                                Design and deliver a brand story in teams.
+                              </li>
+                              <li>
+                                Present your mini-campaign strategy to the
+                                group.
+                              </li>
+                            </ul> */}
+                            {/* <p>Module two dives deep into the world of content creation across platforms like YouTube, Instagram, Facebook, and LinkedIn. Students will learn how to produce engaging videos, design effective campaigns, and tailor content to fit different audiences and platforms. Gareth will walk participants through the essentials of storytelling for digital media, while also introducing the strategies behind successful social campaigns. This module emphasizes not just how to create content, but how to ensure it reaches, engages, and resonates with audiences. By the end, students will be able to think like digital creators and strategists combined.</p> */}
+                            <ul>
+                                <li>AR/VR sectors </li>
+                                <li>Graphic design</li>
+                                <li>Content Creation</li>
+                                <li>Film making </li>
+                                <li>Documentaries </li>
+                                <li>Educational Trainers </li>
+                                <li>Cinematographers </li>
+                                <li>Professional game designers. </li>
+                            </ul>
+                        </div>
+                      </div>
+                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
+                        <div className="schedule-box-title">
+                          <h5 className="mb-2">
+                            <Link to="/" className="black">
+                              Learning Outcomes
+                            </Link>
+                          </h5>
+                        </div>
+                        <div className="schedule-box-info">
+                          
+                            <ul className="mb-2">
+                              <li>
+                                Gain foundational skills in producing content
+                                for key digital platforms.
+                              </li>
+                              <li>
+                                Learn how to tailor content to audience and
+                                platform.
+                              </li>
+                              <li>Understand branding and digital identity.</li>
+                            </ul>
+                        </div>
+                      </div> */}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div className="row justify-content-center">
+              <div className="col-lg-4 col-md-8 d-flex justify-content-center">
+                <a href='#home'
+                  className="btn btn-primary me-3 my-1 w-100 text-center"
+                >
+                  Register Now 
+                </a>
+              </div>
+            </div>
+              {/* <div className="schedule-title-bottom">
+                    <div className="row align-items-center">
+                    <div className="col-lg-3 col-md-4">
+                        <div className="schedule-day text-center position-relative text-sm-start py-6 ps-2 z-1">
+                        <h4 className=" pink mb-2">2ND DAY</h4>
+                        <h6 className="mb-2">APRIL 24, 2024</h6>
+                        <p>William Mathew Theater<br/>
+                            2390 NW 2nd Ave, Miami, FL 33127</p>
+                        </div>
+                    </div>
+                    <div className="col-lg-9 col-md-8">
+                        <div className="schedule-list text-center text-sm-start">
+                        <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
+                            <div className="schedule-box-title">
+                                <h5 className="mb-2"><Link to="/Eventdetail" className="black">REGISTRATION & BREAKFAST</Link></h5>
+                            </div>
+                            <div className="schedule-box-info">
+                            <p className="mb-2"><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
+                                luctus nec ullamcorper mattis, pulvinar dapibus leo, luctus nec ullamcorper mattis, pulvinar
+                                dapibus leo.</small></p>
+                            <ul className="mb-2 p-0">
+                                <li className="d-inline"><i className="fa fa-clock-o pink me-2" aria-hidden="true"></i><small>08:30 -
+                                    09:30 AM</small></li>
+                                <li className="d-inline"><i className="fa fa-thumb-tack pink mx-2"
+                                    aria-hidden="true"></i><small>Exploration Hall</small></li>
+                            </ul>
+                            </div>
+                            <div className="schedule-box-bio d-md-flex">
+                            <div className="schedule-bio-image">
+                                <img src="assets/images/team/3.jpg" alt="team-image" className="me-2 rounded-circle"/>
+                            </div>
+                            <div className="schedule-bio-info">
+                                <p className="mt-1 mb-0"><Link to="/Eventdetail" className="pink">PEELRS HELM</Link></p>
+                                <small>Host & Speaker</small>
+                            </div>
+                            </div>
+                        </div>
+                        <div className=" schedule-list-box bg-white border-lightgrey border border-2 rounded px-6 py-4 mb-5">
+                            <div className="schedule-box-title">
+                                <h5 className="mb-2"><Link to="/Eventdetail" className="black">EXPLORATIONS OF NEW APPROACHES</Link></h5>
+                            </div>
+                            <div className="schedule-box-info">
+                            <p className="mb-2"><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
+                                luctus nec ullamcorper mattis, pulvinar dapibus leo, luctus nec ullamcorper mattis, pulvinar
+                                dapibus leo.</small></p>
+                            <ul className="mb-2 p-0">
+                                <li className="d-inline"><i className="fa fa-clock-o pink me-2" aria-hidden="true"></i><small>08:30 -
+                                    09:30 AM</small></li>
+                                <li className="d-inline"><i className="fa fa-thumb-tack pink mx-2"
+                                    aria-hidden="true"></i><small>Exploration Hall</small></li>
+                            </ul>
+                            </div>
+                            <div className="schedule-box-bio d-md-flex">
+                            <div className="schedule-bio-image">
+                                <img src="assets/images/team/1.jpg" alt="team-image" className="me-2 rounded-circle"/>
+                            </div>
+                            <div className="schedule-bio-info">
+                                <p className="mt-1 mb-0 pink"><Link to="/Eventdetail" className="pink">JESUS HOLLAND</Link></p>
+                                <small>Host & Speaker</small>
+                            </div>
+                            </div>
+                        </div>
+                        <div className="partner-button mt-6">
+                            <Link to="/Eventlists"  className="btn">VIEW MORE DETAILS</Link>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div> */}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/*--Schedules Section end--*/}
+
       {/*--Overview Section start--*/}
-      <section className="overview pb-0" id="about">
+      <section className="overview pb-0 " id="gareth">
         <div className="container">
           <div className="inner-overview pb-10 position-relative">
             <div className="row">
               <div className="col-lg-6">
                 <div className="overview-left text-center text-lg-start">
                   <div className="overview-title pb-4">
-                    <p className="mb-1 pink">OVERVIEW</p>
+                    {/* <p className="mb-1 pink">OVERVIEW</p> */}
                     <h2 className="mb-2">
-                      GET THE LATEST INFO ABOUT{" "}
-                      <span className="pink">WORKSHOP</span>
+                      GETTING TO KNOW ABOUT {" "}
+                      <span className="pink">GARETH BENSON</span>
                     </h2>
                     <p>
-                      This one-of-a-kind session is designed for aspiring
-                      creators, entrepreneurs, & industry professionals eager to
-                      sharpen their skills and understand the evolving landscape
-                      of entertainment & bring their ideas to a larger stage.
-                      Participants will gain valuable insights into producing
-                      professional-quality music, planning & executing impactful
-                      events, & leveraging digital platforms to reach wider
-                      audiences.
+                      Gareth Benson is a published author, Commercial and Intellectual Property Lawyer, Animator, AR/VR Content creator, Digital Media Lecturer and Keynote Presenter with over two decades of global experience.
                     </p>
                     <p className="mb-2">
-                      With Gareth’s proven track record of blending creativity &
-                      strategy, the workshop promises to deliver practical
-                      tools, insider tips, & real-world case studies. Whether
-                      you’re a budding musician, an event planner, or a digital
-                      marketer, this interactive workshop will provide
-                      inspiration & actionable strategies to elevate your craft.
-                      Don’t miss this opportunity to learn from a thought leader
-                      who bridges art, business, & innovation seamlessly.
+                      He is admitted as a Solicitor of the Supreme Court of Victoria and has worked extensively in private practice, government, and commercial law firms. His expertise spans Intellectual Property, Digital Innovation, Contract Law, Film making, Content development for AR/VR and Creative Commercialisation; making him a trusted advisor for governments, startups, corporates, and creative entrepreneurs alike.
                     </p>
+                    <p>His professional journey includes roles at CSIRO, SBS Television, and the Australian Centre for the Moving Image (ACMI), where he managed contracts and content pathways for global exhibitions, including collaborations with Disney, Warner Brothers, and Paramount.</p>
                   </div>
                   <div className="overview-event-info pb-6 g-4 text-start position-absolute">
                     <div className="row justify-content-around ">
@@ -405,7 +877,7 @@ function Home() {
                             </div>
                             <div className="location-info">
                               <h5 className="mb-1">WHERE</h5>
-                              <small>Indian Institue of Creative Skills</small>
+                              <small>Indian Institue of Creative Skills, Delhi</small>
                             </div>
                           </div>
                         </a>
@@ -419,7 +891,7 @@ function Home() {
                             <div className="time-info">
                               <h5 className="mb-1">WHEN</h5>
                               <small>
-                                Monday To Friday <br /> Sep, 08-11, 2025
+                                 Sep, 08-13, 2025
                               </small>
                             </div>
                           </div>
@@ -437,13 +909,13 @@ function Home() {
                         <div className="img-left-1 float-end w-lg-80">
                           <img
                             className="mb-2 w-100 rounded"
-                            src="assets/images/group/social_media.jpg"
+                            src="https://iicsindia.org/blog/wp-content/uploads/2025/09/img2Gareth-scaled.jpg"
                             alt="group-image"
                           />
                         </div>
                         <div className="img-left-2">
                           <img
-                            src="assets/images/group/animation_VR.jpg"
+                            src="https://iicsindia.org/blog/wp-content/uploads/2025/09/img1Gareth-scaled.jpg"
                             alt="group-image"
                             className="w-100 rounded"
                           />
@@ -451,25 +923,22 @@ function Home() {
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-6">
-                      <div className="container-img-right w-lg-75">
+                      <div className="container-img-right w-lg-80">
                         <img
-                          src="assets/images/group/film_making.jpg"
+                          src="https://iicsindia.org/blog/wp-content/uploads/2025/09/gareth_pic-scaled.png"
                           alt="group-image"
-                          className="w-100 rounded"
+                          className="w-100 rounded bg-lightgrey"
                         />
                       </div>
                     </div>
                   </div>
                 </div>
                     <div className="row justify-content-center">
-              <div className="col-lg-10 col-md-8 d-flex justify-content-center">
-                <a
-                  href="https://rzp.io/rzp/QaOH6esm"
-                  target='_blank'
+              <div className="col-lg-8 col-md-8 d-flex justify-content-center">
+                <a href='#home'
                   className="btn btn-primary me-3 my-1 w-100 text-center"
                 >
-                  Register Now @ <strike>₹5,000/-</strike>
-                  <strong><span className="h4 ps-2 ">₹2,999/-</span></strong>
+                  Register Now 
                 </a>
               </div>
             </div>
@@ -552,606 +1021,8 @@ function Home() {
         </section> */}
       {/*--Partners Section end--*/}
 
-      {/*--Features Section start--*/}
-      {/* <section className="feature text-white position-relative z-0 start-0">
-            <div className="overlay z-n1">
-            </div>
-            <div className="container">
-                <div className="feature-inner">
-                    <div className="counter text-center border-bottom border-white border-opacity-25">
-                        <div className="inner-counter mb-7">
-                            <div className="row">
-                                <div className="col-lg-3 col-md-3 p-2">
-                                    <div className="counter-box p-2 border-end border-white border-opacity-25">
-                                        <CountUpBox end={300} label="Journalist" /> 
-                                    </div>
-                                </div>
-                                <div className="col-lg-3 col-md-3 p-2">
-                                    <div className="counter-box p-2 border-end border-white border-opacity-25">
-                                        <CountUpBox end={120} label="Events" />
-                                    </div>
-                                </div>
-                                <div className="col-lg-3 col-md-3 p-2">
-                                    <div className="counter-box p-2 border-end border-white border-opacity-25">
-                                        <CountUpBox end={50} label="Awards" />
-                                    </div>
-                                </div>
-                                <div className="col-lg-3 col-md-3 p-2">
-                                    <div className="counter-box p-2 border-opacity-25">
-                                        <CountUpBox end={1000} label="Members" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>    
-                    <div className="feature-lists pt-8">
-                        <div className="row g-4">
-                            <div className="col-lg-4 col-md-6">
-                            <div className="feature-box py-7 px-6 rounded text bg-black bg-opacity-25">
-                                <a>
-                                <div className="feature-box-icon mb-4">
-                                    <i className="fa fa-address-book-o text-white bg-pink rounded-circle text-center"></i>
-                                </div>
-                                <div className="feature-box-info ">
-                                    <h5 className="text-white mb-2">LIVE STREAMING</h5>
-                                    <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore.</small>
-                                </div>
-                                </a>
-                            </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                            <div className="feature-box py-7 px-6 rounded  bg-black bg-opacity-25">
-                                <a>
-                                <div className="feature-box-icon mb-4">
-                                    <i className="fa fa-comments text-white bg-pink rounded-circle text-center"></i>
-                                </div>
-                                <div className="feature-box-info">
-                                    <h5 className="text-white mb-2">FIRESIDE CHATS</h5>
-                                    <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore.</small>
-                                </div>
-                                </a>
-                            </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                            <div className="feature-box py-7 px-6 rounded bg-black bg-opacity-25">
-                                <a>
-                                <div className="feature-box-icon mb-4">
-                                    <i className="fa fa-desktop text-white bg-pink rounded-circle text-center"></i>
-                                </div>
-                                <div className="feature-box-info">
-                                    <h5 className="text-white mb-2">NETWORKING</h5>
-                                    <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore.</small>
-                                </div>
-                                </a>
-                            </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                            <div className="feature-box py-7 px-6 rounded bg-black bg-opacity-25">
-                                <a>
-                                <div className="feature-box-icon mb-4">
-                                    <i className="fa fa-cogs text-white bg-pink rounded-circle text-center"></i>
-                                </div>
-                                <div className="feature-box-info">
-                                    <h5 className="text-white mb-2">HIGH VALUE LEARNING</h5>
-                                    <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore.</small>
-                                </div>
-                                </a>
-                            </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                            <div className="feature-box py-7 px-6 rounded bg-black bg-opacity-25">
-                                <a>
-                                <div className="feature-box-icon mb-4">
-                                    <i className="fa fa-gift text-white bg-pink rounded-circle text-center"></i>
-                                </div>
-                                <div className="feature-box-info">
-                                    <h5 className="text-white mb-2">EXICITING GIVEAWAYS</h5>
-                                    <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore.</small>
-                                </div>
-                                </a>
-                            </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                            <div className="feature-box py-7 px-6 rounded bg-black bg-opacity-25">
-                                <a>
-                                <div className="feature-box-icon mb-4">
-                                    <i className="fa fa-graduation-cap text-white bg-pink rounded-circle text-center"></i>
-                                </div>
-                                <div className="feature-box-info">
-                                    <h5 className="text-white mb-2">1-ON-1 SESSIONS</h5>
-                                    <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore.</small>
-                                </div>
-                                </a>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        </section> */}
-      {/*--Features Section end--*/}
-
-      {/*--Schedules Section start--*/}
-      <section className="schedules" id="workshop-schedule">
-        <div className="container">
-          <div className="schedule-inner">
-            <div className="schedule-title text-center mb-6 w-lg-60 mx-auto">
-              <p className="mb-1 pink">WORKSHOP SCHEDULE</p>
-              <h2 className="mb-1">
-                FOLLOW <span className="pink">EVENT</span> SCHEDULE
-              </h2>
-              {/* <p className="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
-                    mattis, pulvinar dapibus leo.</p> */}
-            </div>
-            <div className="schedule-list-outer">
-              <div className="schedule-list-top mb-7 border-bottom">
-                <div className="row">
-                  <div className="col-lg-3 col-md-4">
-                    <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
-                      <h4 className="pink mb-2">1ST DAY</h4>
-                      {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
-                      <p>
-                        Digital <br />
-                        Industries
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-lg-9 col-md-8">
-                    <div className="schedule-list  text-center text-sm-start">
-                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
-                        <div className="schedule-box-title">
-                          <h5 className="mb-2">
-                            <Link to="/" className="black">
-                              Course Content
-                            </Link>
-                          </h5>
-                        </div>
-                        <div className="schedule-box-info">
-                            <ul  className="mb-2">
-                              <li>
-                                Introduction to the Global and fast-growing
-                                digital economy
-                              </li>
-                              <li>
-                                Where the jobs are: digital marketing,
-                                animation, AR/VR, AI
-                              </li>
-                              <li>
-                                Crafting your personal story into a digital
-                                narrative
-                              </li>
-                            </ul>
-                        </div>
-                      </div> */}
-                      <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                        {/* <div className="schedule-box-title">
-                          <h5 className="mb-2">
-                            <Link to="/" className="black">
-                              Practical Component
-                            </Link>
-                          </h5>
-                        </div> */}
-                        <div className="schedule-box-info">
-                            {/* <ul  className="mb-2">
-                              <li>
-                                <strong>The Art of the Pitch:</strong> Students
-                                compete to pitch their own story or idea.
-                              </li>
-                              <li>
-                                Peer-to peer feedback on delivery, storytelling
-                                structure, and emotional connection
-                              </li>
-                              <li>
-                                <strong>Pitching Skills for Success:</strong>{" "}
-                                turning passion into professional presence
-                              </li>
-                            </ul> */}
-                            <p>This opening module introduces students to the vast world of digital industries, mapping out opportunities and career pathways. Participants will explore the foundations of digital media, social media marketing, and the role of content creation in today’s fast-changing landscape. The session also highlights animation, augmented reality, and artificial intelligence—showing how technology and creativity merge to shape industries of the future. With Gareth Benson’s expertise, students gain an understanding of where digital careers are headed and how to position themselves at the forefront of this revolution. Perfect for anyone curious about the future of work in the digital age.</p>
-                        </div>
-                      </div>
-                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
-                        <div className="schedule-box-title">
-                          <h5 className="mb-2">
-                            <Link to="/" className="black">
-                              Learning Outcomes
-                            </Link>
-                          </h5>
-                        </div>
-                        <div className="schedule-box-info">
-                            <ul className="mb-2">
-                              <li>
-                                Understand career opportunities digital
-                                industries and emerging job opportunities
-                              </li>
-                              <li>
-                                Build confidence in storytelling and pitching
-                                skills
-                              </li>
-                              <li>
-                                Explore future pathways in AI, AR, and immersive
-                                storytelling
-                              </li>
-                            </ul>
-                        </div>
-                      </div> */}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="schedule-list-top mb-7 border-bottom">
-                <div className="row">
-                  <div className="col-lg-3 col-md-4">
-                    <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
-                      <h4 className="pink mb-2">2ND DAY</h4>
-                      {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
-                      <p>
-                        Digital & Social Media <br />
-                        Content Production
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-lg-9 col-md-8">
-                    <div className="schedule-list  text-center text-sm-start">
-                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
-                        <div className="schedule-box-title">
-                          <h5 className="mb-2">
-                            <Link to="/" className="black">
-                              Course Content
-                            </Link>
-                          </h5>
-                        </div>
-                        <div className="schedule-box-info">
-                            <ul className="mb-2">
-                              <li>
-                                Platform differences: how to adapt your story
-                                for each.
-                              </li>
-                              <li>Trends in social media storytelling.</li>
-                              <li>
-                                Designing a campaign: hashtags, visuals, and
-                                engagement tactics.
-                              </li>
-                            </ul>
-                        </div>
-                      </div> */}
-                      <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                        {/* <div className="schedule-box-title">
-                          <h5 className="mb-2">
-                            <Link to="/" className="black">
-                              Practical Component
-                            </Link>
-                          </h5>
-                        </div> */}
-                        <div className="schedule-box-info">
-                            {/* <ul className="mb-2">
-                              <li>
-                                <strong>Social Media Campaign Creation:</strong>{" "}
-                                Based on Diploma-level Social Media Marketing.
-                              </li>
-                              <li>
-                                Design and deliver a brand story in teams.
-                              </li>
-                              <li>
-                                Present your mini-campaign strategy to the
-                                group.
-                              </li>
-                            </ul> */}
-                            <p>Module two dives deep into the world of content creation across platforms like YouTube, Instagram, Facebook, and LinkedIn. Students will learn how to produce engaging videos, design effective campaigns, and tailor content to fit different audiences and platforms. Gareth will walk participants through the essentials of storytelling for digital media, while also introducing the strategies behind successful social campaigns. This module emphasizes not just how to create content, but how to ensure it reaches, engages, and resonates with audiences. By the end, students will be able to think like digital creators and strategists combined.</p>
-                        </div>
-                      </div>
-                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
-                        <div className="schedule-box-title">
-                          <h5 className="mb-2">
-                            <Link to="/" className="black">
-                              Learning Outcomes
-                            </Link>
-                          </h5>
-                        </div>
-                        <div className="schedule-box-info">
-                          
-                            <ul className="mb-2">
-                              <li>
-                                Gain foundational skills in producing content
-                                for key digital platforms.
-                              </li>
-                              <li>
-                                Learn how to tailor content to audience and
-                                platform.
-                              </li>
-                              <li>Understand branding and digital identity.</li>
-                            </ul>
-                        </div>
-                      </div> */}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="schedule-list-top mb-7 border-bottom">
-                <div className="row">
-                  <div className="col-lg-3 col-md-4">
-                    <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
-                      <h4 className="pink mb-2">3RD DAY</h4>
-                      {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
-                      <p>
-                        Filmmaking & Studio <br />
-                        Content Production
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-lg-9 col-md-8">
-                    <div className="schedule-list  text-center text-sm-start">
-                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
-                        <div className="schedule-box-title">
-                          <h5 className="mb-2">
-                            <Link to="/" className="black">
-                              Course Content
-                            </Link>
-                          </h5>
-                        </div>
-                        <div className="schedule-box-info">
-                            <ul className="mb-2">
-                              <li>
-                                <strong>The language of film:</strong> shots,
-                                storyboards, and sequences.
-                              </li>
-                              <li>
-                                Basic lighting and camera techniques (including
-                                smartphones).
-                              </li>
-                              <li>
-                                <strong>Protecting your creative work:</strong>{" "}
-                                copyright and ownership.
-                              </li>
-                            </ul>
-                        </div>
-                      </div> */}
-                      <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                        {/* <div className="schedule-box-title">
-                          <h5 className="mb-2">
-                            <Link to="/" className="black">
-                              Practical Component
-                            </Link>
-                          </h5>
-                        </div> */}
-                        <div className="schedule-box-info">
-                            {/* <ul className="mb-2">
-                              <li>
-                                <strong> Follow Your Story:</strong> Documentary
-                                Production
-                              </li>
-                              <li>
-                                Write, shoot, and direct a mini-documentary
-                              </li>
-                              <li>
-                                Small groups produce a 2-3 minute film, screened
-                                in class.
-                              </li>
-                            </ul> */}
-                            <p>In this module, students step into the world of filmmaking and studio-based production. The session covers the complete production cycle: from conceptualizing an idea and writing scripts to shooting and directing. Gareth will introduce the basics of production planning and guide participants in handling practical aspects of storytelling on camera. A special focus will be given to documentary filmmaking- its purpose, structure, and execution. This module offers hands-on insight into the mechanics of studio work, empowering students to create polished, professional content. For aspiring filmmakers, it is an immersive introduction to the art and craft of production.
-                        </p>
-                        </div>
-                      </div>
-                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
-                        <div className="schedule-box-title">
-                          <h5 className="mb-2">
-                            <Link to="/" className="black">
-                              Learning Outcomes
-                            </Link>
-                          </h5>
-                        </div>
-                        <div className="schedule-box-info">
-                            <ul className="mb-2">
-                              <li>
-                                Acquire hands-on skills in basic film
-                                production.
-                              </li>
-                              <li>
-                                Learn professional studio and on-location
-                                techniques.
-                              </li>
-                              <li>
-                                Understand intellectual property and content
-                                protection.
-                              </li>
-                            </ul>
-                        </div>
-                      </div> */}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="schedule-list-top mb-7">
-                <div className="row">
-                  <div className="col-lg-3 col-md-4">
-                    <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
-                      <h4 className="pink mb-2">4TH DAY</h4>
-                      {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
-                      <p>
-                        Animation, AR/VR &  <br />
-                        Immersive Production
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-lg-9 col-md-8">
-                    <div className="schedule-list  text-center text-sm-start">
-                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
-                        <div className="schedule-box-title">
-                          <h5 className="mb-2">
-                            <Link to="/" className="black">
-                              Course Content
-                            </Link>
-                          </h5>
-                        </div>
-                        <div className="schedule-box-info">
-                            <ul className="mb-2">
-                              <li>
-                                <strong> AR/VR:</strong> Introduction to
-                                immersive worlds and applications in education,
-                                tourism, gaming
-                              </li>
-                              <li>
-                                <strong>
-                                  Designing engaging user experiences:{" "}
-                                </strong>{" "}
-                                '3 Acts of a Story'
-                              </li>
-                              <li>
-                                Basics of studio setup and green screen
-                                integration
-                              </li>
-                            </ul>
-                        </div>
-                      </div> */}
-                      <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                        {/* <div className="schedule-box-title">
-                          <h5 className="mb-2">
-                            <Link to="/" className="black">
-                              Practical Component
-                            </Link>
-                          </h5>
-                        </div> */}
-                        <div className="schedule-box-info">
-                            {/* <ul className="mb-2">
-                              <li>
-                                <strong> Immersive Production:</strong> Design
-                                and deliver a green screen AR experience
-                              </li>
-                              <li>Teams create a short AR-enhanced story.</li>
-                              <li>Showcase immersive experiences to peers</li>
-                              <li>
-                                Deliver an Animation piece using
-                                Midjourney/Canva/Leanardo AI
-                              </li>
-                              <li>
-                                Storyboarding for success in Immersive Mediums
-                              </li>
-                            </ul> */}
-                            <p>The final module unlocks the cutting edge of immersive media. Students will explore how to design projects for animation, AR, VR, and gaming, gaining insights into emerging trends shaping the creative industries. Gareth introduces practical knowledge of green screen setups and immersive studio environments while showcasing how AI tools like Midjourney, Canva, and Leonardo AI can transform concepts into cinematic creations. This session blends imagination with technology, offering students the chance to experience the future of storytelling firsthand. Whether building virtual worlds or crafting animated visuals, this module encourages innovation and future-ready creative thinking.</p>
-                        </div>
-                      </div>
-                      {/* <div className=" schedule-list-box bg-white   border border-lightgrey border-2 rounded px-6 py-4 mb-5">
-                        <div className="schedule-box-title">
-                          <h5 className="mb-2">
-                            <Link to="/" className="black">
-                              Learning Outcomes
-                            </Link>
-                          </h5>
-                        </div>
-                        <div className="schedule-box-info">
-                            <ul className="mb-2">
-                              <li>
-                                Discover how immersive technologies shape the
-                                future of storytelling.
-                              </li>
-                              <li>
-                                Learn user-centred design for gaming and AR/VR
-                                projects.
-                              </li>
-                              <li>
-                                Gain confidence working with studio setups and
-                                green screen.
-                              </li>
-                            </ul>
-                        </div>
-                      </div> */}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="row justify-content-center">
-              <div className="col-lg-6 col-md-8 d-flex justify-content-center">
-                <a
-                  href="https://rzp.io/rzp/QaOH6esm"
-                  target='_blank'
-                  className="btn btn-primary me-3 my-1 w-100 text-center"
-                >
-                  Register Now @ <strike>₹5,000/-</strike>
-                  <strong><span className="h4 ps-2 ">₹2,999/-</span></strong>
-                </a>
-              </div>
-            </div>
-              {/* <div className="schedule-title-bottom">
-                    <div className="row align-items-center">
-                    <div className="col-lg-3 col-md-4">
-                        <div className="schedule-day text-center position-relative text-sm-start py-6 ps-2 z-1">
-                        <h4 className=" pink mb-2">2ND DAY</h4>
-                        <h6 className="mb-2">APRIL 24, 2024</h6>
-                        <p>William Mathew Theater<br/>
-                            2390 NW 2nd Ave, Miami, FL 33127</p>
-                        </div>
-                    </div>
-                    <div className="col-lg-9 col-md-8">
-                        <div className="schedule-list text-center text-sm-start">
-                        <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/Eventdetail" className="black">REGISTRATION & BREAKFAST</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2"><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-                                luctus nec ullamcorper mattis, pulvinar dapibus leo, luctus nec ullamcorper mattis, pulvinar
-                                dapibus leo.</small></p>
-                            <ul className="mb-2 p-0">
-                                <li className="d-inline"><i className="fa fa-clock-o pink me-2" aria-hidden="true"></i><small>08:30 -
-                                    09:30 AM</small></li>
-                                <li className="d-inline"><i className="fa fa-thumb-tack pink mx-2"
-                                    aria-hidden="true"></i><small>Exploration Hall</small></li>
-                            </ul>
-                            </div>
-                            <div className="schedule-box-bio d-md-flex">
-                            <div className="schedule-bio-image">
-                                <img src="assets/images/team/3.jpg" alt="team-image" className="me-2 rounded-circle"/>
-                            </div>
-                            <div className="schedule-bio-info">
-                                <p className="mt-1 mb-0"><Link to="/Eventdetail" className="pink">PEELRS HELM</Link></p>
-                                <small>Host & Speaker</small>
-                            </div>
-                            </div>
-                        </div>
-                        <div className=" schedule-list-box bg-white border-lightgrey border border-2 rounded px-6 py-4 mb-5">
-                            <div className="schedule-box-title">
-                                <h5 className="mb-2"><Link to="/Eventdetail" className="black">EXPLORATIONS OF NEW APPROACHES</Link></h5>
-                            </div>
-                            <div className="schedule-box-info">
-                            <p className="mb-2"><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-                                luctus nec ullamcorper mattis, pulvinar dapibus leo, luctus nec ullamcorper mattis, pulvinar
-                                dapibus leo.</small></p>
-                            <ul className="mb-2 p-0">
-                                <li className="d-inline"><i className="fa fa-clock-o pink me-2" aria-hidden="true"></i><small>08:30 -
-                                    09:30 AM</small></li>
-                                <li className="d-inline"><i className="fa fa-thumb-tack pink mx-2"
-                                    aria-hidden="true"></i><small>Exploration Hall</small></li>
-                            </ul>
-                            </div>
-                            <div className="schedule-box-bio d-md-flex">
-                            <div className="schedule-bio-image">
-                                <img src="assets/images/team/1.jpg" alt="team-image" className="me-2 rounded-circle"/>
-                            </div>
-                            <div className="schedule-bio-info">
-                                <p className="mt-1 mb-0 pink"><Link to="/Eventdetail" className="pink">JESUS HOLLAND</Link></p>
-                                <small>Host & Speaker</small>
-                            </div>
-                            </div>
-                        </div>
-                        <div className="partner-button mt-6">
-                            <Link to="/Eventlists"  className="btn">VIEW MORE DETAILS</Link>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div> */}
-            </div>
-          </div>
-        </div>
-      </section>
-      {/*--Schedules Section end--*/}
       {/*--Speakers Section Start--*/}
-      <section className="speakers" id="mentors">
+      {/* <section className="speakers" id="mentors">
         <div className="container">
           <div className="speaker-inner">
             <div className="speaker-title text-center p-2">
@@ -1167,17 +1038,12 @@ function Home() {
                     <p className="m-0">At the Indian Institute of Creative Skills, leadership is more than a designation — it's a driving force of transformation. Our advisory board is composed of legendary figures from the Media & Entertainment industry who bring unmatched insight, global perspective, and creative excellence.</p>
                   </div>
                 </div>
-                {/* <div className="col-lg-6">
-                            <div className="speaker-button text-lg-end">
-                                <Link to="/Speakerlist"  className="btn my-2">VIEW MORE SPEAKERS</Link>
-                            </div>
-                        </div> */}
               </div>
             </div>
             <SpeakersCarousel id="speakersCarousel"/>
           </div>
         </div>
-      </section>
+      </section> */}
       {/*--Speakers Section end--*/}
 
       {/*--Ticketbook Section start--*/}
@@ -1193,14 +1059,11 @@ function Home() {
               </h1>
             </div>
             <div className="row justify-content-center">
-              <div className="col-lg-6 col-md-8 d-flex justify-content-center">
-                <a
-                  href="https://rzp.io/rzp/QaOH6esm"
-                  target='_blank'
+              <div className="col-lg-4 col-md-8 d-flex justify-content-center">
+                <a href='#home'
                   className="btn btn-primary me-3 my-1 w-100 text-center"
                 >
-                  Register Now @ <strike>₹5,000/-</strike>
-                  <strong><span className="h4 ps-2 ">₹2,999/-</span></strong>
+                  Register Now 
                 </a>
               </div>
             </div>

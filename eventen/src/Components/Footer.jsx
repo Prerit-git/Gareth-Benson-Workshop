@@ -81,7 +81,7 @@ function Footer() {
                 </div>
             </div>
             <div className="copyright pb-6 pt-1">
-                <small>Copyright {new Date().getFullYear()} IICS. All Rights Reserved Copyright</small>
+                <small>Copyright {new Date().getFullYear()} All Rights Reserved.</small>
             </div>
             </div>
         </footer>

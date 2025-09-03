@@ -83,9 +83,9 @@ const Header = () => {
               <div className="col-lg-3">
                 <div className="menu-search text-end">
                   {/* <Search /> */}
-                  <a href="https://rzp.io/rzp/QaOH6esm" target='_blank' className="btn btn3">
+                  {/* <a href="https://rzp.io/rzp/QaOH6esm" target='_blank' className="btn btn3">
                     Register Now <i className="fa fa-long-arrow-right ms-4"></i>
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>

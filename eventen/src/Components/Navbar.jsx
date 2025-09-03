@@ -12,19 +12,19 @@ const Navbar = () => {
           </li>
 
           <li className="nav-item">
-            <a href="#about" className="nav-link px-2 my-4 py-0 text-white">About</a>
+            <a href="#modules" className="nav-link px-2 my-4 py-0 text-white">About</a>
           </li>
 
           {/* Repeat the same pattern for other dropdowns */}
 
           <li className="nav-item dropdown">
-            <a href='#workshop-schedule'
+            <a href='#areas'
               className="nav-link px-2 my-4 py-0 text-white"
               // id="scheduleDropdown"
               // data-bs-toggle="dropdown"
               // aria-expanded="false"
             >
-              Schedule
+              Key Areas
             </a>
             {/* <ul className="dropdown-menu bg-lightgrey p-0 rounded" aria-labelledby="scheduleDropdown">
               <li>
@@ -40,9 +40,6 @@ const Navbar = () => {
             </ul> */}
           </li>
 
-          <li className="nav-item">
-            <a href="#mentors" className="nav-link px-2 my-4 py-0 text-white">Our Mentors</a>
-          </li>
           <li className="nav-item">
             <a href="#contact" className="nav-link px-2 my-4 py-0 text-white">Contact</a>
           </li>
