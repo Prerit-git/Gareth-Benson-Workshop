@@ -288,6 +288,7 @@ function Home() {
                     />
                     <br />
                   </div>
+                      <h4 className='text-white'>Gareth Benson is Coming to India in:</h4>
                   <div className="countdown">
                     <div
                       id="countdown"
@@ -299,7 +300,7 @@ function Home() {
                 </div>
               </div>
               <div className="col-lg-6 order-1 order-lg-2">
-                <div className="banner-right  ms-2 text-center text-lg-start pb-0">
+                <div className="banner-right  ms-2 text-center pb-0">
                   <div className="banner-title pb-3">
                     <h4 className="text-white pb-3">
                       {" "}
