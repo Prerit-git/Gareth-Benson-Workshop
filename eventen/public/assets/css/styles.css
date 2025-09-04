@@ -546,6 +546,10 @@
     width: 50%;
   }
 
+  .banner_date{
+    width: 100%;
+  }
+
   .m-top{
     margin-top: 15px;
   }

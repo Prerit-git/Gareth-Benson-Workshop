@@ -318,26 +318,41 @@ function Home() {
                   </div>  */}
                      <div className="banner-event-info pb-3">
                     <ul className="m-0 ps-0 d-sm-flex justify-content-center list-unstyled banner-details">
+                        <div className='pe-4 banner_date'>
+                            <h4 className='text-center text-white'>For Delhi</h4>
+                            <div className='d-flex'>
                       <li className="pe-3 border-end border-1 border-lightgrey text-center banner-details-li">
-                       For Delhi Students: <br />
-                        <i className="pe-1"></i> 8th-11th <br />SEPTEMBER
+                       Students:<br />
+                        <i className="pe-1"></i> 8th-11th <br />SEP
                       </li>
-                      <li className="ps-2 pe-2 border-end border-1 border-lightgrey text-center banner-details-li">
-                       For Delhi Trainers: <br />
-                        <i className="pe-1"></i> 12th-13th <br />SEPTEMBER
+                      <li className="ps-2 pe-2 text-center banner-details-li">
+                         Trainers: <br />
+                        <i className="pe-1"></i> 12th-13th <br />SEP
                       </li>
-                      <li className="ps-2 pe-2 border-end border-1 border-lightgrey text-center banner-details-li m-top">
+                            </div>
+                        </div>
+                        <div className='banner_date'>
+                            <h4 className='text-center text-white'>For Bhopal</h4>
+                            <div className='d-flex'>
+                      <li className="pe-3 border-end border-1 border-lightgrey text-center banner-details-li">
+                       Students:<br />
+                        <i className="pe-1"></i> 15th-18th <br />SEP
+                      </li>
+                      <li className="ps-2 pe-2 text-center banner-details-li">
+                         Trainers: <br />
+                        <i className="pe-1"></i> 19th-20th <br />SEP
+                      </li>
+                            </div>
+                        </div>
+
+                      {/* <li className="ps-2 pe-2 border-end border-1 border-lightgrey text-center banner-details-li m-top">
                        For Bhopal Students: <br />
                         <i className="pe-1"></i> 15th-18th <br />SEPTEMBER
                       </li>
                       <li className="ps-2 pe-2 border-end border-1 border-lightgrey text-center banner-details-li m-top">
                        For Bhopal Trainers: <br />
                         <i className="pe-1"></i> 19th-20th <br />SEPTEMBER
-                      </li>
-                      {/* <li className="pe-2 ps-2 border-end border-1 border-lightgrey text-center">
-                        <i className="pe-1"></i> Indian Institute of  <br />Creative Skills
                       </li> */}
-                      {/* <li className="ps-2 text-center">Time: <br />09:30 A.M - 05:00 P.M</li> */}
                     </ul>
                   </div>
                   {/* <div className="banner-button">
@@ -418,7 +433,7 @@ function Home() {
                   <div className="overview-title pb-4">
                     {/* <p className="mb-1 ">FOCUS POINTS</p> */}
                     <h2 className="mb-2 text-white">
-                      WHAT YOU WILL{" "}
+                      WHAT WILL THE STUDENTS{" "}
                       <span className="">LEARN ?</span>
                     </h2>
                     <p>The Indian Institute of Creative Skills proudly presents an exclusive workshop with Gareth Benson, a global expert in Creative Producing, 3D Storytelling, Animation, XR and AR. Known for bridging the gap between creativity and technology, Gareth brings his international expertise to Delhi, offering students a once-in-a-lifetime opportunity to learn, create, and innovate under his guidance. </p>
