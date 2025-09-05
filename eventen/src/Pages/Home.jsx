@@ -614,7 +614,7 @@ function Home() {
                   <div className="col-lg-12 col-md-4">
                     <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
                       <h4 className="pink mb-2">Students Interested in :</h4>
-                      <p className="col-10">This workshop is an amazing opportunity for students who have completed 12th Standard, and are looking for a course that stimulates their creativity. </p>
+                      <p className="col-lg-10">This workshop is an amazing opportunity for students who have completed 12th Standard, and are looking for a course that stimulates their creativity. </p>
                       {/* <p>
                         Digital <br />
                         Industries
@@ -719,7 +719,7 @@ function Home() {
                   <div className="col-lg-12 col-md-4">
                     <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
                       <h4 className="pink mb-2">Professionals working in :</h4>
-                      <p className="col-10">The workshop is also an upskilling opportunity for professionals and trainers that are active members of AR/VR technology, Game Design and Digital Content Production industries. </p>
+                      <p className="col-lg-10">The workshop is also an upskilling opportunity for professionals and trainers that are active members of AR/VR technology, Game Design and Digital Content Production industries. </p>
                       {/* <p>
                         Digital & Social Media <br />
                         Content Production
