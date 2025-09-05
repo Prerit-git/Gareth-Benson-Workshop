@@ -5,270 +5,171 @@ import Gallery from '../Components/Gallery'
 import { Link } from 'react-router-dom'
 import Countdown from '../Components/Countdown'
 import Contactform from '../Components/Contactform'
+import WorkshopBenefits from '../Components/WorkshopBenefits'
 
-// const speakers = [
-//   {
-//     id: 1,
-//     name: "Padma Shri Resul Pookutty",
-//     role: "Indian film director, film production designer, television host Academy Award winner Sound Designer, and Chairperson, IICS",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Padma-Shri-Resul-Pookutty.png",
-//   },
-//   {
-//     id: 2,
-//     name: "Padma Shri Shankar Mahadevann",
-//     role: "Indian singer and composer",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Padma-Shri-Shankar-Mahadevan.png",
-//   },
-//   {
-//     id: 3,
-//     name: "Ms.Dia Mirza",
-//     role: "Actor",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Ms-Dia-Mirza.jpg",
-//   },
-//   {
-//     id: 4,
-//     name: "Ms. Kavita Krishnamurthy",
-//     role: "Indian playback singer",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Ms-Kavita-Krishnamurthy.png",
-//   },
-//   {
-//     id: 5,
-//     name: "Ms. Neeta Lulla",
-//     role: "Costume Designer",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Ms-Neeta-Lulla.png",
-//   },
-//   {
-//     id: 6,
-//     name: "Ms. Revathy Asha Kelunni",
-//     role: "Indian Actress and Director",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Ms-Revathy-Asha-Kelunni.png",
-//   },
-//   {
-//     id: 7,
-//     name: "Ms.Sushma Gaikwad",
-//     role: "Co-founder Ice Global, Wizcraft MIME & Sukhoon",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/sushma.png",
-//   },
-//   {
-//     id: 8,
-//     name: "Mr. Manvendra Shukul",
-//     role: "CEO of Lakshaya Digital",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/manvendra%20shukul.png",
-//   },
-//   {
-//     id: 9,
-//     name: "Mr. Suresh Eriyat",
-//     role: "Indian animator & director",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Suresh-Eriyat.png",
-//   },
-//   {
-//     id: 10,
-//     name: "Mr. Bharat Dabholkar",
-//     role: "Actor",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Bharat-Dabholkar.png",
-//   },
-//   {
-//     id: 11,
-//     name: "Mr. Amit Sadh",
-//     role: "Actor",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/amit-sadh.png",
-//   },
-//   {
-//     id: 12,
-//     name: "Mr. Sameer Tobaccowala",
-//     role: "CEO, Shobiz Experiential Communications",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/sameer-tobaccowala.png",
-//   },
+const speakers = [
+  {
+    id: 1,
+    image: "https://iicsindia.org/blog/wp-content/uploads/2025/09/DSC01774-scaled.jpg",
+  },
+  {
+    id: 2,
+    image: "https://iicsindia.org/blog/wp-content/uploads/2025/09/IMG_3172-scaled.jpg",
+  },
+  {
+    id: 3,
+    image: "https://iicsindia.org/blog/wp-content/uploads/2025/09/BSF_5591-scaled.jpg",
+  },
+  {
+    id: 4,
+    image: "https://iicsindia.org/blog/wp-content/uploads/2025/09/DSC01909-scaled.jpg",
+  },
+  {
+    id: 5,
+    image: "https://iicsindia.org/blog/wp-content/uploads/2025/09/DSC01591-Picsart-AiImageEnhancer-1-scaled.png",
+  },
+  {
+    id: 6,
+    image: "https://iicsindia.org/blog/wp-content/uploads/2025/09/BSF_5569-scaled.jpg",
+  },
+  {
+    id: 7,
+    image: "https://iicsindia.org/blog/wp-content/uploads/2025/09/DSC_0387-scaled.jpg",
+  },
+  {
+    id: 8,
+    image: "https://iicsindia.org/blog/wp-content/uploads/2025/09/IMG_7451-scaled.jpg",
+  },
+  {
+    id: 9,
+    image: "https://iicsindia.org/blog/wp-content/uploads/2025/09/IMG_7671-scaled.jpg",
+  },
+  {
+    id: 10,
+    image: "https://iicsindia.org/blog/wp-content/uploads/2025/09/BSF_5361-scaled.jpg",
+  },
+  {
+    id: 11,
+    image: "https://iicsindia.org/blog/wp-content/uploads/2025/09/DSC02280-scaled.jpg",
+  },
+  {
+    id: 12,
+    image: "https://iicsindia.org/blog/wp-content/uploads/2025/09/BSF_5591-scaled.jpg",
+  },
 //   {
 //     id: 13,
-//     name: "Mr. Amit Behl",
-//     role: "Indian Theatre, Television and Film Actor",
 //     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/amit-behl.png",
 //   },
 //   {
 //     id: 14,
-//     name: "Ms. Sohini Dasgupta",
-//     role: "Director of Sound Design & Music Video Production Course, Writer, Director",
 //     image: "https://iicsindia.org/images/IICS/iics_image/management/sohini.webp",
 //   },
 //   {
 //     id: 15,
-//     name: "Ms. Bina Paul",
-//     role: "Indian film editor",
 //     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/bina-paul.png",
 //   },
-//   {
-//     id: 16,
-//     name: "Mr. Omung Kumar",
-//     role: "Indian film director, film production designer, and television host",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/omung_kumar.png",
-//   },
-//   {
-//     id: 17,
-//     name: "Mr. Kamlesh Pandey",
-//     role: "Writer",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Kamlesh-Pandey_.png",
-//   },
-//   {
-//     id: 18,
-//     name: "Mr. Sham Kaushal",
-//     role: "Action Director",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Shayam-Kaushal.png",
-//   },
-//   {
-//     id: 19,
-//     name: "Ms. Jaya Bhattacharya",
-//     role: "Indian television actress",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/jaya-bhattacharya.png",
-//   },
-//   {
-//     id: 20,
-//     name: "Mr. Rahul Rawail",
-//     role: "Indian Film Director",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Rahul-Rawail.png",
-//   },
-//   {
-//     id: 21,
-//     name: "Mr. Jaya Kumar",
-//     role: "CEO, Toonz Media Group",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/jaya-kumar.png",
-//   },
-//   {
-//     id: 22,
-//     name: "Mr. Salim Arif",
-//     role: "Indian Theatre & Film Actor",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/salim-arif.png",
-//   },
-//   {
-//     id: 23,
-//     name: "Dr. L. Subramaniam",
-//     role: "Indian Violinist",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/L-Subramaniam-4.png",
-//   },
-//   {
-//     id: 24,
-//     name: "Ms. Kausar Munir",
-//     role: "Lyricist/Writer",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/mr-kausar-munir.png",
-//   },
-//   {
-//     id: 25,
-//     name: "Mr. Anupam Shobhakar",
-//     role: "Indian musician, composer, instrumentalist, record producer, and classically trained sarodist",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Mr-Anupam-Shobhakar.png",
-//   },
-//   {
-//     id: 26,
-//     name: "Mr. Vaibhav Kumaresh",
-//     role: "Founder, Creative Director of Vaibhav Studios",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/vaibhav-kumaresh.png",
-//   },
-//   {
-//     id: 27,
-//     name: "Mr. Sumanto Ray",
-//     role: "Actor, Voice Artist, Dubbing Director, Dialogue writer, Music creator",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/Sumanto-Ray-.png",
-//   },
-//   {
-//     id: 28,
-//     name: "Ms. Anusha Srinivasan Iyer",
-//     role: "Digital Creator, Filmaker, Director",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/anusha-mam_.png",
-//   },
-//   {
-//     id: 29,
-//     name: "Mr. R. Prasanna Venkatesh",
-//     role: "Commercial Photographer",
-//     image: "https://iicsindia.org/images/IICS/iics_image/industry-mentors/mr-r-prasana.jpg",
-//   },
-// ];
+];
 
 
-// const SpeakersCarousel = () => {
-//     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+const SpeakersCarousel = () => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-//     useEffect(() => {
-//     const handleResize = () => setIsMobile(window.innerWidth < 768);
-//     window.addEventListener("resize", handleResize);
+    useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
 
-//      const carouselEl = document.getElementById("speakersCarousel");
-//     if (carouselEl && window.bootstrap) {
-//       new window.bootstrap.Carousel(carouselEl, {
-//         interval: 3000,
-//         ride: "carousel",
-//         pause: true,
-//       });
-//     }
+     const carouselEl = document.getElementById("speakersCarousel");
+    if (carouselEl && window.bootstrap) {
+      new window.bootstrap.Carousel(carouselEl, {
+        interval: 3000,
+        ride: "carousel",
+        pause: true,
+      });
+    }
 
-//     return () => window.removeEventListener("resize", handleResize);
-//   }, []);
-//    const chunkSize = isMobile ? 1 : 4;
-//   const speakerChunks = [];
-//   for (let i = 0; i < speakers.length; i += chunkSize) {
-//     speakerChunks.push(speakers.slice(i, i + chunkSize));
-//   }
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+   const chunkSize = isMobile ? 1 : 3;
+  const speakerChunks = [];
+  for (let i = 0; i < speakers.length; i += chunkSize) {
+    speakerChunks.push(speakers.slice(i, i + chunkSize));
+  }
 
-//   return (
-//     <div
-//       id="speakersCarousel"
-//       className="carousel slide"
-//       data-bs-ride="carousel"
-//       data-bs-interval="3000"
-//     >
-//       <div className="carousel-inner">
-//         {speakerChunks.map((chunk, index) => (
-//           <div
-//             className={`carousel-item ${index === 0 ? "active" : ""}`}
-//             key={index}
-//           >
-//             <div className="row justify-content-center">
-//               {chunk.map((speaker) => (
-//                 <div className="col-12 col-sm-6 col-md-3 text-center" key={speaker.id}>
-//                   <div className="card border-0 p-0 h-100">
-//                     <img
-//                       src={speaker.image}
-//                       alt={speaker.name}
-//                       className="card-img-top mx-auto"
-//                       style={{
-//                         width: "200px",
-//                         height: "200px",
-//                         objectFit: "cover",
-//                       }}
-//                     />
-//                     <div className="card-body">
-//                       <h5 className="card-title">{speaker.name}</h5>
-//                       <p className="card-text small">{speaker.role}</p>
-//                     </div>
-//                   </div>
-//                 </div>
-//               ))}
-//             </div>
-//           </div>
-//         ))}
-//       </div>
+  return (
+
+    <section>
+       <div className="col-lg-8 container">
+                <div className="overview-left text-center text-lg-start">
+                  <div className="overview-title pb-4">
+                    {/* <p className="mb-1 ">FOCUS POINTS</p> */}
+                    <h2 className="mb-2">
+                      Other Notable {" "} <br></br>
+                      <span className="pink">Workshops at IICS</span>
+                    </h2>
+                    </div>
+                    </div>
+                    </div>
+    <div
+      id="speakersCarousel"
+      className="carousel slide"
+      data-bs-ride="carousel"
+      data-bs-interval="3000"
+    >
+      <div className="carousel-inner">
+        {speakerChunks.map((chunk, index) => (
+          <div
+            className={`carousel-item ${index === 0 ? "active" : ""}`}
+            key={index}
+          >
+            <div className="row justify-content-center">
+              {chunk.map((speaker) => (
+                <div className="col-12 col-sm-6 col-md-3 text-center" key={speaker.id}>
+                  <div className="card border-0 p-0 h-200">
+                    <img
+                      src={speaker.image}
+                      alt={speaker.name}
+                      className="card-img-top mx-auto"
+                      style={{
+                        width: "450px",
+                        height: "300px",
+                        objectFit: "fit",
+                      }}
+                    />
+                    {/* <div className="card-body">
+                      <h5 className="card-title">{speaker.name}</h5>
+                      <p className="card-text small">{speaker.role}</p>
+                    </div> */}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
 
       {/* Carousel controls */}
-//       <button
-//         className="carousel-control-prev"
-//         type="button"
-//         data-bs-target="#speakersCarousel"
-//         data-bs-slide="prev"
-//       >
-//         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-//         <span className="visually-hidden">Previous</span>
-//       </button>
-//       <button
-//         className="carousel-control-next"
-//         type="button"
-//         data-bs-target="#speakersCarousel"
-//         data-bs-slide="next"
-//       >
-//         <span className="carousel-control-next-icon" aria-hidden="true"></span>
-//         <span className="visually-hidden">Next</span>
-//       </button>
-//     </div>
-//   );
-// };
+       <button
+        className="carousel-control-prev"
+        type="button"
+        data-bs-target="#speakersCarousel"
+        data-bs-slide="prev"
+      >
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Previous</span>
+      </button>
+      <button
+        className="carousel-control-next"
+        type="button"
+        data-bs-target="#speakersCarousel"
+        data-bs-slide="next"
+      >
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Next</span>
+      </button>
+    </div>
+    </section>
+  );
+};
 
 function Home() {
   return (
@@ -324,11 +225,11 @@ function Home() {
                             <div className='d-flex'>
                       <li className="pe-3 border-end border-1 border-lightgrey text-center banner-details-li">
                        Students:<br />
-                        <i className="pe-1"></i> 8th-11th <br />SEP
+                        <i className="pe-1"></i> 18th-19th <br />SEP
                       </li>
                       <li className="ps-2 pe-2 text-center banner-details-li">
                          Trainers: <br />
-                        <i className="pe-1"></i> 12th-13th <br />SEP
+                        <i className="pe-1"></i> 20th-21th <br />SEP
                       </li>
                             </div>
                         </div>
@@ -337,11 +238,11 @@ function Home() {
                             <div className='d-flex'>
                       <li className="pe-3 border-end border-1 border-lightgrey text-center banner-details-li">
                        Students:<br />
-                        <i className="pe-1"></i> 15th-18th <br />SEP
+                        <i className="pe-1"></i> 12th-13th <br />SEP
                       </li>
                       <li className="ps-2 pe-2 text-center banner-details-li">
                          Trainers: <br />
-                        <i className="pe-1"></i> 19th-20th <br />SEP
+                        <i className="pe-1"></i> 13th-14th <br />SEP
                       </li>
                             </div>
                         </div>
@@ -395,6 +296,140 @@ function Home() {
       {/*--Banner Section end--*/}
 
       
+       {/*--Overview Section start--*/}
+      <section className="overview pb-0 " id="gareth-benson">
+        <div className="container">
+          <div className="inner-overview pb-10 position-relative">
+            <div className="row">
+              <div className="col-lg-6">
+                <div className="overview-left text-center text-lg-start">
+                  <div className="overview-title pb-4">
+                    {/* <p className="mb-1 pink">OVERVIEW</p> */}
+                    <h2 className="mb-2">
+                      GETTING TO KNOW ABOUT {" "}
+                      <span className="pink">GARETH BENSON</span>
+                    </h2>
+                    <p>
+                      Gareth Benson is a published author, Commercial and Intellectual Property Lawyer, Animator, AR/VR Content creator, Digital Media Lecturer and Keynote Presenter with over two decades of global experience.
+                    </p>
+                    <p className="mb-2">
+                      He is admitted as a Solicitor of the Supreme Court of Victoria and has worked extensively in private practice, government, and commercial law firms. His expertise spans Intellectual Property, Digital Innovation, Contract Law, Film making, Content development for AR/VR and Creative Commercialisation; making him a trusted advisor for governments, startups, corporates, and creative entrepreneurs alike.
+                    </p>
+                    <p>His professional journey includes roles at CSIRO, SBS Television, and the Australian Centre for the Moving Image (ACMI), where he managed contracts and content pathways for global exhibitions, including collaborations with Disney, Warner Brothers, and Paramount.</p>
+                    <p>Gareth Benson is a multidisciplinary creative professional with notable achievements in animation, game design, and AR/VR. In animation, he has directed and produced award-winning films and commercials that blend powerful storytelling with innovative visuals, earning recognition on national and international stages.</p>
+                  </div>
+                  {/* <div className="overview-event-info pb-6 g-4 text-start position-absolute">
+                    <div className="row justify-content-around ">
+                      <div className="col-lg-6 col-md-6">
+                        <a>
+                          <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
+                            <div className="event-info-icon text-center ">
+                              <i className="fa fa-map-marker  text-white bg-pink rounded-circle me-3"></i>
+                            </div>
+                            <div className="location-info">
+                              <h5 className="mb-1">WHERE</h5>
+                              <small>Indian Institue of Creative Skills, Delhi</small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div className="col-lg-6 col-md-6">
+                        <a>
+                          <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
+                            <div className="event-info-icon text-center">
+                              <i className="fa fa-calendar-o  text-white bg-pink rounded-circle me-3"></i>
+                            </div>
+                            <div className="time-info">
+                              <h5 className="mb-1">WHEN</h5>
+                              <small>
+                                 Sep, 08-13, 2025
+                              </small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div className="row justify-content-around">
+                      <div className="col-lg-6 col-md-6">
+                        <a>
+                          <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
+                            <div className="event-info-icon text-center ">
+                              <i className="fa fa-map-marker  text-white bg-pink rounded-circle me-3"></i>
+                            </div>
+                            <div className="location-info">
+                              <h5 className="mb-1">WHERE</h5>
+                              <small>Jagran Lakecity University, Bhopal</small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div className="col-lg-6 col-md-6 ">
+                        <a>
+                          <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
+                            <div className="event-info-icon text-center">
+                              <i className="fa fa-calendar-o  text-white bg-pink rounded-circle me-3"></i>
+                            </div>
+                            <div className="time-info">
+                              <h5 className="mb-1">WHEN</h5>
+                              <small>
+                                 Sep, 15-20, 2025
+                              </small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div> */}
+                </div>
+              </div>
+              <div className="col-lg-6 mt-10">
+                <div className="overview-img">
+                  <div className="row align-items-center">
+                    <div className="col-lg-6 col-md-6 p-0 ">
+                      <div className="container-img-left mb-2">
+                        <div className="img-left-1 float-end w-lg-80">
+                          <img
+                            className="mb-2 w-100 rounded"
+                            src="https://iicsindia.org/blog/wp-content/uploads/2025/09/img2Gareth-scaled.jpg"
+                            alt="group-image"
+                          />
+                        </div>
+                        <div className="img-left-2">
+                          <img
+                            src="https://iicsindia.org/blog/wp-content/uploads/2025/09/img1Gareth-scaled.jpg"
+                            alt="group-image"
+                            className="w-100 rounded"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6 col-md-6">
+                      <div className="container-img-right w-lg-80">
+                        <img
+                          src="https://iicsindia.org/blog/wp-content/uploads/2025/09/gareth_pic-scaled.png"
+                          alt="group-image"
+                          className="w-100 rounded bg-lightgrey"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                    <div className="row justify-content-center">
+              <div className="col-lg-8 col-md-8 d-flex justify-content-center">
+                <a href='#home'
+                  className="btn btn-primary me-3 my-1 w-100 text-center"
+                >
+                  Register Now 
+                </a>
+              </div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/*--Overview Section end--*/}
+      
       {/*--Features Section start--*/}
       <section className="feature text-white position-relative z-0 start-0" id='modules'>
             <div className="overlay z-n1">
@@ -434,10 +469,10 @@ function Home() {
                   <div className="overview-title pb-4">
                     {/* <p className="mb-1 ">FOCUS POINTS</p> */}
                     <h2 className="mb-2 text-white">
-                      WHAT WILL THE STUDENTS{" "}
-                      <span className="">LEARN ?</span>
+                      Course Curriculum for{" "}
+                      <span className="pink">Students</span>
                     </h2>
-                    <p>The Indian Institute of Creative Skills proudly presents an exclusive workshop with Gareth Benson, a global expert in Creative Producing, 3D Storytelling, Animation, XR and AR. Known for bridging the gap between creativity and technology, Gareth brings his international expertise to Delhi, offering students a once-in-a-lifetime opportunity to learn, create, and innovate under his guidance. </p>
+                    <p>The Indian Institute of Creative Skills proudly presents an exclusive workshop with Gareth Benson, a global expert in Creative Producing, 3D Storytelling, Animation, XR and AR. Known for bridging the gap between creativity and technology, Gareth brings his international expertise to Delhi, offering students a once-in-a-lifetime opportunity to learn, create and innovate under his guidance. </p>
                     </div>
                     </div>
                     </div>
@@ -451,7 +486,7 @@ function Home() {
                                     <i className="fa fa-address-book-o text-white bg-pink rounded-circle text-center"></i>
                                 </div> */}
                                 <div className="feature-box-info ">
-                                    <h6 className="text-white mb-2">Module 1- Digital Industries</h6>
+                                    <h6 className="text-white mb-2">Digital Industries</h6>
                                     <ul>
                                         <li>Focus Points: Digital media marketing, Content Creation & Animation</li>
                                         <li>Crafting your story on a digital narrative</li>
@@ -469,7 +504,7 @@ function Home() {
                                     <i className="fa fa-comments text-white bg-pink rounded-circle text-center"></i>
                                 </div> */}
                                 <div className="feature-box-info">
-                                    <h6 className="text-white mb-2">Module 2- Digital & Social Media Content Production</h6>
+                                    <h6 className="text-white mb-2">Digital & Social Media Content Production</h6>
                                     <ul>
                                         <li>Focus Points: YouTube, Instagram & LinkedIn</li>
                                         <li>Design and Deliver brand stories</li>
@@ -487,7 +522,7 @@ function Home() {
                                     <i className="fa fa-desktop text-white bg-pink rounded-circle text-center"></i>
                                 </div> */}
                                 <div className="feature-box-info">
-                                    <h6 className="text-white mb-2">Module 3- Filmmaking & Studio Content Production</h6>
+                                    <h6 className="text-white mb-2">Filmmaking & Studio Content Production</h6>
                                     <ul>
                                         <li>Focus Points: Production, Camera Setup & Content Protection</li>
                                         <li>Acquiring hands on skills in basic film production </li>
@@ -505,7 +540,7 @@ function Home() {
                                     <i className="fa fa-cogs text-white bg-pink rounded-circle text-center"></i>
                                 </div> */}
                                 <div className="feature-box-info">
-                                    <h6 className="text-white mb-2">Module 4- Animation, AR/VR & Immersive Production</h6>
+                                    <h6 className="text-white mb-2">Animation, AR/VR & Immersive Production</h6>
                                    <ul>
                                         <li>Focus Points: AR/VR, Gaming Projects & UX Design </li>
                                         <li>Craft Immersive animated stories</li>
@@ -565,10 +600,10 @@ function Home() {
       <section className="schedules" id="areas">
         <div className="container">
           <div className="schedule-inner">
-            <div className="schedule-title text-center mb-6 w-lg-60 mx-auto">
+            <div className="schedule-title text-center mb-6 w-lg-70 mx-auto">
               {/* <p className="mb-1 pink">WORKSHOP SCHEDULE</p> */}
               <h2 className="mb-1">
-                BEST <span className="pink">SUITED</span> FOR
+                This workshop is  <span className="pink">designed for</span>
               </h2>
               {/* <p className="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
                     mattis, pulvinar dapibus leo.</p> */}
@@ -579,7 +614,7 @@ function Home() {
                   <div className="col-lg-12 col-md-4">
                     <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
                       <h4 className="pink mb-2">Students Interested in :</h4>
-                      {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
+                      <p className="col-10">This workshop is an amazing opportunity for students who have completed 12th Standard, and are looking for a course that stimulates their creativity. </p>
                       {/* <p>
                         Digital <br />
                         Industries
@@ -613,7 +648,7 @@ function Home() {
                             </ul>
                         </div>
                       </div> */}
-                      <div className=" schedule-list-box bg-lightgrey border border-white border-2 rounded px-6 py-4 mb-5">
+                      <div className=" schedule-list-box bg-lightgrey border border-white border-2 rounded px-6 mb-5">
                         {/* <div className="schedule-box-title">
                           <h5 className="mb-2">
                             <Link to="/" className="black">
@@ -684,7 +719,7 @@ function Home() {
                   <div className="col-lg-12 col-md-4">
                     <div className="schedule-day text-center text-sm-start py-6 position-relative ps-2 z-1">
                       <h4 className="pink mb-2">Professionals working in :</h4>
-                      {/* <h6 className="mb-2">APRIL 23, 2024</h6> */}
+                      <p className="col-10">The workshop is also an upskilling opportunity for professionals and trainers that are active members of AR/VR technology, Game Design and Digital Content Production industries. </p>
                       {/* <p>
                         Digital & Social Media <br />
                         Content Production
@@ -715,7 +750,7 @@ function Home() {
                             </ul>
                         </div>
                       </div> */}
-                      <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 py-4 mb-5">
+                      <div className=" schedule-list-box bg-lightgrey   border border-white border-2 rounded px-6 mb-5">
                         {/* <div className="schedule-box-title">
                           <h5 className="mb-2">
                             <Link to="/" className="black">
@@ -861,138 +896,8 @@ function Home() {
       </section>
       {/*--Schedules Section end--*/}
 
-      {/*--Overview Section start--*/}
-      <section className="overview pb-0 " id="gareth-benson">
-        <div className="container">
-          <div className="inner-overview pb-10 position-relative">
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="overview-left text-center text-lg-start">
-                  <div className="overview-title pb-4">
-                    {/* <p className="mb-1 pink">OVERVIEW</p> */}
-                    <h2 className="mb-2">
-                      GETTING TO KNOW ABOUT {" "}
-                      <span className="pink">GARETH BENSON</span>
-                    </h2>
-                    <p>
-                      Gareth Benson is a published author, Commercial and Intellectual Property Lawyer, Animator, AR/VR Content creator, Digital Media Lecturer and Keynote Presenter with over two decades of global experience.
-                    </p>
-                    <p className="mb-2">
-                      He is admitted as a Solicitor of the Supreme Court of Victoria and has worked extensively in private practice, government, and commercial law firms. His expertise spans Intellectual Property, Digital Innovation, Contract Law, Film making, Content development for AR/VR and Creative Commercialisation; making him a trusted advisor for governments, startups, corporates, and creative entrepreneurs alike.
-                    </p>
-                    <p>His professional journey includes roles at CSIRO, SBS Television, and the Australian Centre for the Moving Image (ACMI), where he managed contracts and content pathways for global exhibitions, including collaborations with Disney, Warner Brothers, and Paramount.</p>
-                  </div>
-                  {/* <div className="overview-event-info pb-6 g-4 text-start position-absolute">
-                    <div className="row justify-content-around ">
-                      <div className="col-lg-6 col-md-6">
-                        <a>
-                          <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
-                            <div className="event-info-icon text-center ">
-                              <i className="fa fa-map-marker  text-white bg-pink rounded-circle me-3"></i>
-                            </div>
-                            <div className="location-info">
-                              <h5 className="mb-1">WHERE</h5>
-                              <small>Indian Institue of Creative Skills, Delhi</small>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                      <div className="col-lg-6 col-md-6">
-                        <a>
-                          <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
-                            <div className="event-info-icon text-center">
-                              <i className="fa fa-calendar-o  text-white bg-pink rounded-circle me-3"></i>
-                            </div>
-                            <div className="time-info">
-                              <h5 className="mb-1">WHEN</h5>
-                              <small>
-                                 Sep, 08-13, 2025
-                              </small>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <div className="row justify-content-around">
-                      <div className="col-lg-6 col-md-6">
-                        <a>
-                          <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
-                            <div className="event-info-icon text-center ">
-                              <i className="fa fa-map-marker  text-white bg-pink rounded-circle me-3"></i>
-                            </div>
-                            <div className="location-info">
-                              <h5 className="mb-1">WHERE</h5>
-                              <small>Jagran Lakecity University, Bhopal</small>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                      <div className="col-lg-6 col-md-6 ">
-                        <a>
-                          <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
-                            <div className="event-info-icon text-center">
-                              <i className="fa fa-calendar-o  text-white bg-pink rounded-circle me-3"></i>
-                            </div>
-                            <div className="time-info">
-                              <h5 className="mb-1">WHEN</h5>
-                              <small>
-                                 Sep, 15-20, 2025
-                              </small>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div> */}
-                </div>
-              </div>
-              <div className="col-lg-6 mt-10">
-                <div className="overview-img">
-                  <div className="row align-items-center">
-                    <div className="col-lg-6 col-md-6 p-0 ">
-                      <div className="container-img-left mb-2">
-                        <div className="img-left-1 float-end w-lg-80">
-                          <img
-                            className="mb-2 w-100 rounded"
-                            src="https://iicsindia.org/blog/wp-content/uploads/2025/09/img2Gareth-scaled.jpg"
-                            alt="group-image"
-                          />
-                        </div>
-                        <div className="img-left-2">
-                          <img
-                            src="https://iicsindia.org/blog/wp-content/uploads/2025/09/img1Gareth-scaled.jpg"
-                            alt="group-image"
-                            className="w-100 rounded"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-lg-6 col-md-6">
-                      <div className="container-img-right w-lg-80">
-                        <img
-                          src="https://iicsindia.org/blog/wp-content/uploads/2025/09/gareth_pic-scaled.png"
-                          alt="group-image"
-                          className="w-100 rounded bg-lightgrey"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                    <div className="row justify-content-center">
-              <div className="col-lg-8 col-md-8 d-flex justify-content-center">
-                <a href='#home'
-                  className="btn btn-primary me-3 my-1 w-100 text-center"
-                >
-                  Register Now 
-                </a>
-              </div>
-            </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/*--Overview Section end--*/}
+
+      <WorkshopBenefits/>
 
       {/*--Partners Section start--*/}
       {/* <section className="partners">
@@ -1116,6 +1021,8 @@ function Home() {
         </div>
       </section>
       {/*--Ticketbook Section end--*/}
+
+      <SpeakersCarousel/>
 
       {/*--Pricing Section start--*/}
       {/* <section className="price bg-lightgrey" id="pricing">
