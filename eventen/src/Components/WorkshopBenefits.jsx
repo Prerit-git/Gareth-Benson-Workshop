@@ -20,10 +20,10 @@ const WorkshopBenefits = () => {
                   <li className="mb-3"> <b>Event Opportunities</b> → Be a part of exciting IICS events with MESC participation</li>
                   <li className="mb-3"> <b>Unlimited Learning</b> → Exclusive access to all content under the Vidyadaan Initiative</li>
                 </ul>
-                <div className="alert alert-success text-center fw-bold mt-4">
+              </div>
+                <div className="alert alert-success text-center fw-bold mx-auto col-10">
                    All this worth ₹7,899 — <span className="text-danger">for just ₹2,999!</span>
                 </div>
-              </div>
             </div>
           </div>
 
@@ -40,6 +40,9 @@ const WorkshopBenefits = () => {
                   <li className="mb-3"> <b>MESC Event Access</b> → Join exclusive industry events & gatherings</li>
                 </ul>
               </div>
+                <div className="alert alert-success text-center fw-bold mx-auto col-10">
+                   All this worth ₹11,000 — <span className="text-danger">for just ₹5,000!</span>
+                </div>
             </div>
           </div>
         </div>
