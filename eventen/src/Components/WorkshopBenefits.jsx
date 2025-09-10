@@ -6,29 +6,30 @@ const WorkshopBenefits = () => {
           <h2 className="fw-bold"> Added <span className="pink">Benefits</span> of Attending the Workshop </h2>
         </div>
 
-        <div className="row g-4">
+        <div className="row g-4 justify-content-center">
           {/* Students Section */}
           <div className="col-lg-6">
             <div className="card h-100 shadow-lg border-0 rounded-4">
               <div className="card-body p-4">
-                <h4 className="fw-bold text-primary mb-4"> For Students</h4>
+                {/* <h4 className="fw-bold text-primary mb-4"> For Students</h4> */}
                 <ul className="list-unstyled">
                   <li className="mb-3"> Get <b>NSQF Aligned Certification</b> – Level 4 (Certified by MESC, India’s Media & Entertainment Skills Council)</li>
                   <li className="mb-3"><b>Celebrity School Access</b> → Workshops & masterclasses by top celebs</li>
                   <li className="mb-3"> <b>Exclusive Workshops</b> → 5 upcoming sessions by mentors & industry experts at IICS</li>
+                  <li className="mb-3"> <b>2 complimentary movie tickets</b> → for inspiration and downtime!</li>
                   <li className="mb-3"> <b>Double Your Money</b> → 2X of the workshop fee discounted in your program enrollment</li>
                   <li className="mb-3"> <b>Event Opportunities</b> → Be a part of exciting IICS events with MESC participation</li>
                   <li className="mb-3"> <b>Unlimited Learning</b> → Exclusive access to all content under the Vidyadaan Initiative</li>
                 </ul>
               </div>
-                <div className="alert alert-success text-center fw-bold mx-auto col-10">
+                {/* <div className="alert alert-success text-center fw-bold mx-auto col-10">
                    All this worth ₹7,899 — <span className="text-danger">for just ₹2,999!</span>
-                </div>
+                </div> */}
             </div>
           </div>
 
           {/* Trainers Section */}
-          <div className="col-lg-6">
+          {/* <div className="col-lg-6">
             <div className="card h-100 shadow-lg border-0 rounded-4 bg-pink text-white">
               <div className="card-body p-4">
                 <h4 className="fw-bold mb-4 text-white"> For Trainers (TOT Program)</h4>
@@ -44,7 +45,7 @@ const WorkshopBenefits = () => {
                    All this worth ₹11,000 — <span className="text-danger">for just ₹5,000!</span>
                 </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

@@ -130,7 +130,7 @@ const SpeakersCarousel = () => {
                       alt={speaker.name}
                       className="card-img-top mx-auto"
                       style={{
-                        width: "450px",
+                        width: "330px",
                         height: "300px",
                         objectFit: "fit",
                       }}
@@ -184,12 +184,12 @@ function Home() {
                 <div className="banner-left text-center pb-lg-5 p-md-0">
                   <div className="banner-image">
                     <img
-                      src="assets/images/team/gareth-picture.png"
+                      src="assets/images/team/neeta-lulla-picture.png"
                       alt="banner-image"
                     />
                     <br />
                   </div>
-                      <h4 className='text-white'>Gareth Benson is Coming to India in:</h4>
+                      {/* <h4 className='text-white'>Gareth Benson is Coming to India in:</h4> */}
                   <div className="countdown">
                     <div
                       id="countdown"
@@ -205,13 +205,13 @@ function Home() {
                   <div className="banner-title pb-3">
                     <h4 className="text-white pb-3">
                       {" "}
-                      Learn from <span className="pink">International Expert</span>
+                      Learn from International <span className="text-ff1b2e"><br />Fashion Maestro</span>
                     </h4>
                     <h1 className="text-white">
-                      Gareth <span className="pink">Benson</span> 
+                      Neeta <span className="text-ff1b2e">Lulla</span> 
                     </h1>
-                    <p>An Australian IP lawyer, storyteller, scriptwriter, and seasoned advisor to various governments, winner of Toastmasters international award.</p>
-                      <h4 className='text-white'>World class workshops exclusively in <span className='pink'>Delhi and Bhopal </span></h4>
+                    {/* <p>The Designer Behind India's Most Iconic Films</p> */}
+                      <h4 className='text-white'>World class workshops on Costume Design in <span className='text-ff1b2e'>Delhi and Bhopal </span></h4>
                   </div>
                   {/* <div className="event-discription">
                     <p className="pb-4 m-0">
@@ -220,30 +220,30 @@ function Home() {
                   </div>  */}
                      <div className="banner-event-info pb-3">
                     <ul className="m-0 ps-0 d-sm-flex justify-content-center list-unstyled banner-details">
-                        <div className='pe-4 banner_date'>
+                        <div className='pe-8 banner_date'>
                             <h4 className='text-center text-white'>For Delhi</h4>
-                            <div className='d-flex'>
-                      <li className="pe-3 border-end border-1 border-lightgrey text-center banner-details-li">
-                       Students:<br />
-                        <i className="pe-1"></i> 18th-19th <br />SEP
+                            <div className='d-flex justify-content-center'>
+                      <li className="pe-3 text-center banner-details-li">
+                       {/* Students:<br /> */}
+                        <i className="pe-1"></i> 20th-21st SEP
                       </li>
-                      <li className="ps-2 pe-2 text-center banner-details-li">
+                      {/* <li className="ps-2 pe-2 text-center banner-details-li">
                          Trainers: <br />
                         <i className="pe-1"></i> 20th-21th <br />SEP
-                      </li>
+                      </li> */}
                             </div>
                         </div>
                         <div className='banner_date'>
                             <h4 className='text-center text-white'>For Bhopal</h4>
-                            <div className='d-flex'>
-                      <li className="pe-3 border-end border-1 border-lightgrey text-center banner-details-li">
-                       Students:<br />
-                        <i className="pe-1"></i> 12th-13th <br />SEP
+                            <div className='d-flex justify-content-center'>
+                      <li className="pe-3 text-center banner-details-li">
+                       {/* Students:<br /> */}
+                        <i className="pe-1"></i> 18th-19th SEP
                       </li>
-                      <li className="ps-2 pe-2 text-center banner-details-li">
+                      {/* <li className="ps-2 pe-2 text-center banner-details-li">
                          Trainers: <br />
                         <i className="pe-1"></i> 13th-14th <br />SEP
-                      </li>
+                      </li> */}
                             </div>
                         </div>
 
@@ -297,7 +297,7 @@ function Home() {
 
       
        {/*--Overview Section start--*/}
-      <section className="overview pb-0 " id="gareth-benson">
+      <section className="overview pb-0 " id="neeta-lulla">
         <div className="container">
           <div className="inner-overview pb-10 position-relative">
             <div className="row">
@@ -307,16 +307,16 @@ function Home() {
                     {/* <p className="mb-1 pink">OVERVIEW</p> */}
                     <h2 className="mb-2">
                       GETTING TO KNOW ABOUT {" "}
-                      <span className="pink">GARETH BENSON</span>
+                      <span className="pink">Neeta Lulla</span>
                     </h2>
                     <p>
-                      Gareth Benson is a published author, Commercial and Intellectual Property Lawyer, Animator, AR/VR Content creator, Digital Media Lecturer and Keynote Presenter with over two decades of global experience.
+                     Neeta Lulla is a pioneering - and multi-awarded - Indian costume designer, couturier, and stylist whose influence spans <span className='text-ff1b2e'>over 300 films</span> and more than three decades in fashion and cinema. Trained at SNDT University, she began her storied career at just 16, initially styling for the legendary fashion choreographer Jeanne Naoroji and later returning to teach at her alma mater.
                     </p>
                     <p className="mb-2">
-                      He is admitted as a Solicitor of the Supreme Court of Victoria and has worked extensively in private practice, government, and commercial law firms. His expertise spans Intellectual Property, Digital Innovation, Contract Law, Film making, Content development for AR/VR and Creative Commercialisation; making him a trusted advisor for governments, startups, corporates, and creative entrepreneurs alike.
+                      Her cinematic contributions include masterpieces like Chandni, Lamhe, Taal, Devdas, Jodhaa Akbar, and Balgandharva. Neeta is the only designer to have received <span className='text-ff1b2e'>four National Film Awards</span> for Best Costume Design—for Lamhe, Devdas, Jodhaa Akbar, and Balgandharva. She’s also a member of the prestigious Academy of Motion Picture Arts and Sciences jury .
                     </p>
-                    <p>His professional journey includes roles at CSIRO, SBS Television, and the Australian Centre for the Moving Image (ACMI), where he managed contracts and content pathways for global exhibitions, including collaborations with Disney, Warner Brothers, and Paramount.</p>
-                    <p>Gareth Benson is a multidisciplinary creative professional with notable achievements in animation, game design, and AR/VR. In animation, he has directed and produced award-winning films and commercials that blend powerful storytelling with innovative visuals, earning recognition on national and international stages.</p>
+                    <p>Neeta's design ethos combines India's rich textile heritage—such as Kanjeevaram, Banarasi, Paithani, and Kalamkari—with modern silhouettes and motifs, creating ensembles of poetic grandeur. She’s also known for crafting Aishwarya Rai’s iconic “laal paar sada saree” overnight for Devdas, a testament to her creativity under pressure.</p>
+                    <p>Recently, she revealed that legendary actress Sridevi, with her discerning fashion sense, played a formative role in shaping Lulla’s approach to color and design..</p>
                   </div>
                   {/* <div className="overview-event-info pb-6 g-4 text-start position-absolute">
                     <div className="row justify-content-around ">
@@ -390,13 +390,13 @@ function Home() {
                         <div className="img-left-1 float-end w-lg-80">
                           <img
                             className="mb-2 w-100 rounded"
-                            src="https://iicsindia.org/blog/wp-content/uploads/2025/09/img2Gareth-scaled.jpg"
+                            src="https://iicsindia.org/blog/wp-content/uploads/2025/09/National-Award-B.jpeg"
                             alt="group-image"
                           />
                         </div>
                         <div className="img-left-2">
                           <img
-                            src="https://iicsindia.org/blog/wp-content/uploads/2025/09/img1Gareth-scaled.jpg"
+                            src="https://iicsindia.org/blog/wp-content/uploads/2025/09/c6b231ce-7f12-4be0-83a3-66a02da1ecf2.jpg"
                             alt="group-image"
                             className="w-100 rounded"
                           />
@@ -404,11 +404,11 @@ function Home() {
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-6">
-                      <div className="container-img-right w-lg-80">
+                      <div className="container-img-right w-lg-90">
                         <img
-                          src="https://iicsindia.org/blog/wp-content/uploads/2025/09/gareth_pic-scaled.png"
+                          src="https://iicsindia.org/blog/wp-content/uploads/2025/09/RTZ_5601-scaled.jpg"
                           alt="group-image"
-                          className="w-100 rounded bg-lightgrey"
+                          className="w-100 rounded"
                         />
                       </div>
                     </div>
@@ -472,7 +472,7 @@ function Home() {
                       Course Curriculum for{" "}
                       <span className="pink">Students</span>
                     </h2>
-                    <p>The Indian Institute of Creative Skills proudly presents an exclusive workshop with Gareth Benson, a global expert in Creative Producing, 3D Storytelling, Animation, XR and AR. Known for bridging the gap between creativity and technology, Gareth brings his international expertise to Delhi, offering students a once-in-a-lifetime opportunity to learn, create and innovate under his guidance. </p>
+                    <p>The Indian Institute of Creative Skills proudly presents an exclusive workshop with Neeta Lulla—the visionary who blends couture finesse and storytelling through design. </p>
                     </div>
                     </div>
                     </div>
@@ -486,12 +486,11 @@ function Home() {
                                     <i className="fa fa-address-book-o text-white bg-pink rounded-circle text-center"></i>
                                 </div> */}
                                 <div className="feature-box-info ">
-                                    <h6 className="text-white mb-2">Digital Industries</h6>
+                                    <h6 className="text-white mb-2">Legacy & Textiles</h6>
                                     <ul>
-                                        <li>Focus Points: Digital media marketing, Content Creation & Animation</li>
-                                        <li>Crafting your story on a digital narrative</li>
-                                        <li>Social media marketing and the role of content creation in a dynamic world</li>
-                                        <li>Animation, Augmented reality (AR/VR) & Artificial intelligence(AI)</li>
+                                        <li>Focus Points: Heritage textiles, couture storytelling</li>
+                                        <li>Delve into traditional craft techniques like Paithani, Banarasi, and Kalamkari with contemporary design sensibilities</li>
+                                        <li>Learn how to create narrative-rich outfits that blend culture and innovation</li>
                                     </ul>
                                 </div>
                                 </a>
@@ -504,12 +503,12 @@ function Home() {
                                     <i className="fa fa-comments text-white bg-pink rounded-circle text-center"></i>
                                 </div> */}
                                 <div className="feature-box-info">
-                                    <h6 className="text-white mb-2">Digital & Social Media Content Production</h6>
+                                    <h6 className="text-white mb-2">Costume for Film & Media</h6>
                                     <ul>
-                                        <li>Focus Points: YouTube, Instagram & LinkedIn</li>
-                                        <li>Design and Deliver brand stories</li>
-                                        <li>Essentials of brand storytelling for digital media: strategies behind successful social campaigns.</li>
-                                        <li>Create content that reaches, engages, and resonates with audiences.</li>
+                                        <li>Focus Points: Film narrative, styling, visual storytelling</li>
+                                        <li>Techniques behind designing iconic cinema costumes</li>
+                                        <li>Stage and screen styling essentials: layering narratives through fabric and form</li>
+                                        <li>Insights on balancing storytelling sensitivity with visual impact.</li>
                                     </ul>
                                 </div>
                                 </a>
@@ -522,12 +521,11 @@ function Home() {
                                     <i className="fa fa-desktop text-white bg-pink rounded-circle text-center"></i>
                                 </div> */}
                                 <div className="feature-box-info">
-                                    <h6 className="text-white mb-2">Filmmaking & Studio Content Production</h6>
+                                    <h6 className="text-white mb-2">Creating Under Pressure</h6>
                                     <ul>
-                                        <li>Focus Points: Production, Camera Setup & Content Protection</li>
-                                        <li>Acquiring hands on skills in basic film production </li>
-                                        <li>The Language of film: Shots, Storyboard & Sequences</li>
-                                        <li>Protect your content: Copyright & Ownership </li>
+                                        <li>Focus Points: Speed designing, real-world constraints</li>
+                                        <li>Learn from case studies like the overnight creation of the “laal paar sada saree.” </li>
+                                        <li>Manage tight timelines without compromising on artistry and detail.</li>
                                     </ul>
                                 </div>
                                 </a>
@@ -540,12 +538,11 @@ function Home() {
                                     <i className="fa fa-cogs text-white bg-pink rounded-circle text-center"></i>
                                 </div> */}
                                 <div className="feature-box-info">
-                                    <h6 className="text-white mb-2">Animation, AR/VR & Immersive Production</h6>
+                                    <h6 className="text-white mb-2">Teaching & Mentorship</h6>
                                    <ul>
-                                        <li>Focus Points: AR/VR, Gaming Projects & UX Design </li>
-                                        <li>Craft Immersive animated stories</li>
-                                        <li>Understand Softwares: Midjourney, Canva & Leonardo AI</li>
-                                        <li>Gain confidence working on Greenscreen and studio set ups   </li>
+                                        <li>Focus Points: Educating future designers, legacy building </li>
+                                        <li>Neeta’s journey from student to educator—now founding the Neeta School of Fashion at Whistling Woods International.</li>
+                                        <li>Understand how to mentor and inspire the next generation using time-tested techniques and storytelling.</li>
                                     </ul>
                                 </div>
                                 </a>

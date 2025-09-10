@@ -1,14 +1,17 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Contactform = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    role: "",
+    location: "",
     subject: "",
     message: "",
   });
+
+  const navigate = useNavigate();
 
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,7 +25,7 @@ const Contactform = () => {
  const handleSubmit = async (e) => {
   e.preventDefault();
 
-  const { name, email, phone, role } = formData;
+  const { name, email, phone, location } = formData;
 
   if (!name || !email || !phone) {
     setStatus("Please fill in all required fields.");
@@ -35,10 +38,10 @@ const Contactform = () => {
   formBody.append("name", name);
   formBody.append("email", email);
   formBody.append("phone", phone);
-  formBody.append("role", role);
+  formBody.append("location", location);
 
   try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbyXrv4joFpPD9frgzEVScZLGlPn0_-U_t8Zz_PNbtAcir0e27xB3ShF5F1yYZpNo94D/exec", {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbx76JwnwMpUhg36TYUDJMx7io3JTAzxnn5JkMgiu3ZVmRymwXVl3CAd6l0supXserui/exec", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -47,15 +50,19 @@ const Contactform = () => {
     });
 
     if (response.ok) {
-      // setStatus("Your message has been sent successfully!");
-      setFormData({ name: "", email: "", phone: "", role: "", subject: "", message: "" });
-      if (formData.role === "student") {
-    window.location.href = "https://pages.razorpay.com/pl_R8IzACN6XXMIU0/view";
-  } else if (formData.role === "teacher") {
-    window.location.href = "https://pages.razorpay.com/pl_R9v8YW5FSCBue6/view";
-  } else {
-    setStatus("Please select a role.");
-  }
+      setStatus("Registered Successfully!");
+      setFormData({ name: "", email: "", phone: "", location: "", subject: "", message: "" });
+
+       setTimeout(() => {
+    navigate("/thank-you");
+  }, 500);
+  //     if (formData.role === "student") {
+  //   window.location.href = "https://pages.razorpay.com/pl_R8IzACN6XXMIU0/view";
+  // } else if (formData.role === "teacher") {
+  //   window.location.href = "https://pages.razorpay.com/pl_R9v8YW5FSCBue6/view";
+  // } else {
+  //   setStatus("Please select a role.");
+  // }
     } else {
       setStatus("Failed to submit. Please try again.");
     }
@@ -108,15 +115,15 @@ const Contactform = () => {
       </div>
       <div className="role mb-3 col-lg-6">
       <select
-    name="role"
+    name="location"
     className="form-select rounded p-2"
-    value={formData.role}
+    value={formData.location}
     onChange={handleChange}
     required
       >
-    <option value="">Select Profession</option>
-    <option value="student">Student</option>
-    <option value="teacher">Teacher/Working Professional</option>
+    <option value="">Preferred Location</option>
+    <option value="delhi">Delhi</option>
+    <option value="bhopal">Bhopal</option>
       </select>
       </div>
       </div>
