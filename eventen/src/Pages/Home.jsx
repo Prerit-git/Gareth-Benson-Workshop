@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 import Countdown from '../Components/Countdown'
 import Contactform from '../Components/Contactform'
 import WorkshopBenefits from '../Components/WorkshopBenefits'
+import TargetAudience from '../Components/TargetAudience'
+import WhyAttend from '../Components/WhyAttend'
 
 const speakers = [
   {
@@ -205,7 +207,7 @@ function Home() {
                   <div className="banner-title pb-3">
                     <h4 className="text-white pb-3">
                       {" "}
-                      Learn from International <span className="text-ff1b2e"><br />Fashion Maestro</span>
+                      Learn from International <span className="text-ff1b2e"><br />Costume Design Maestro</span>
                     </h4>
                     <h1 className="text-white">
                       Neeta <span className="text-ff1b2e">Lulla</span> 
@@ -310,7 +312,7 @@ function Home() {
                       <span className="pink">Neeta Lulla</span>
                     </h2>
                     <p>
-                     Neeta Lulla is a pioneering - and multi-awarded - Indian costume designer, couturier, and stylist whose influence spans <span className='text-ff1b2e'>over 300 films</span> and more than three decades in fashion and cinema. Trained at SNDT University, she began her storied career at just 16, initially styling for the legendary fashion choreographer Jeanne Naoroji and later returning to teach at her alma mater.
+                     Neeta Lulla is a pioneering - and multi-awarded - Indian costume designer, couturier, and stylist whose influence spans <span className='text-ff1b2e'>over 400 films</span> and more than three decades in fashion and cinema. Trained at SNDT University, she began her storied career at just 16, initially styling for the legendary fashion choreographer Jeanne Naoroji and later returning to teach at her alma mater.
                     </p>
                     <p className="mb-2">
                       Her cinematic contributions include masterpieces like Chandni, Lamhe, Taal, Devdas, Jodhaa Akbar, and Balgandharva. Neeta is the only designer to have received <span className='text-ff1b2e'>four National Film Awards</span> for Best Costume Design—for Lamhe, Devdas, Jodhaa Akbar, and Balgandharva. She’s also a member of the prestigious Academy of Motion Picture Arts and Sciences jury .
@@ -592,10 +594,8 @@ function Home() {
         </section>
       {/*--Features Section end--*/}
 
-      
-     
-
-
+        <TargetAudience/>
+        <WhyAttend/>
       <WorkshopBenefits/>
 
       {/*--Partners Section start--*/}

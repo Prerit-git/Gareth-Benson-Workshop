@@ -41,7 +41,7 @@ const Navbar = () => {
           </li>
 
               <li className="nav-item">
-                <a href="#benefits" className="nav-link px-2 my-4 py-0 text-white">Benefits</a>
+                <a href="#why-attend" className="nav-link px-2 my-4 py-0 text-white">Benefits</a>
               </li>
               <li className="nav-item">
                 <a href="#neeta-lulla" className="nav-link px-2 my-4 py-0 text-white">Neeta Lulla</a>
