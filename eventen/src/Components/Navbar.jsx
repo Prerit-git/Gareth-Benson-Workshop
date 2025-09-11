@@ -12,7 +12,7 @@ const Navbar = () => {
           </li>
 
           <li className="nav-item">
-            <a href="#modules" className="nav-link px-2 my-4 py-0 text-white">About</a>
+            <a href="#about" className="nav-link px-2 my-4 py-0 text-white">About</a>
           </li>
 
           {/* Repeat the same pattern for other dropdowns */}
@@ -40,9 +40,9 @@ const Navbar = () => {
               </ul> */}
           </li>
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a href="#why-attend" className="nav-link px-2 my-4 py-0 text-white">Benefits</a>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <a href="#neeta-lulla" className="nav-link px-2 my-4 py-0 text-white">Neeta Lulla</a>
               </li>

@@ -8,6 +8,9 @@ import Contactform from '../Components/Contactform'
 import WorkshopBenefits from '../Components/WorkshopBenefits'
 import TargetAudience from '../Components/TargetAudience'
 import WhyAttend from '../Components/WhyAttend'
+// import DegreeHighlights from '../Components/DegreeHighlights'
+import NeetaLullaSection from '../Components/NeetaLullaSection'
+import DegreeCurriculumSection from '../Components/DegreeCurriculumSection'
 
 const speakers = [
   {
@@ -205,19 +208,24 @@ function Home() {
               <div className="col-lg-6 order-1 order-lg-2">
                 <div className="banner-right  ms-2 text-center pb-0">
                   <div className="banner-title pb-3">
-                    <h4 className="text-white pb-3">
+                    {/* <h4 className="text-white pb-3">
                       {" "}
                       Learn from International <span className="text-ff1b2e"><br />Costume Design Maestro</span>
+                    </h4> */}
+                    <h4 className="text-white pb-3">
+                      {" "}
+                     An Exclusive 3-Year Programme On <span className="text-ff1b2e"><br />Costume Design at</span> <br />Indian Institute of Creative Skills
                     </h4>
+                    by
                     <h1 className="text-white">
                       Neeta <span className="text-ff1b2e">Lulla</span> 
                     </h1>
                     {/* <p>The Designer Behind India's Most Iconic Films</p> */}
-                      <h4 className='text-white'>World class workshops on Costume Design in <span className='text-ff1b2e'>Delhi and Bhopal </span></h4>
+                      <h4 className='text-white'>Register now for workshops on Costume Design in <span className='text-ff1b2e'>Delhi and Bhopal </span></h4>
                   </div>
                   {/* <div className="event-discription">
                     <p className="pb-4 m-0">
-                      The workshop gives you insider knowledge, hands-on learning & global insights on AR/VR, Film making and Content Creation that you won’t find in classrooms.    
+                      Join India’s most celebrated costume designer for hands-on workshops in Delhi & Bhopal or build a career through our 3-Year Degree Program at IICS. <b>Admissions Opening Soon!</b> 
                     </p>
                   </div>  */}
                      <div className="banner-event-info pb-3">
@@ -297,306 +305,12 @@ function Home() {
       </section>
       {/*--Banner Section end--*/}
 
-      
-       {/*--Overview Section start--*/}
-      <section className="overview pb-0 " id="neeta-lulla">
-        <div className="container">
-          <div className="inner-overview pb-10 position-relative">
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="overview-left text-center text-lg-start">
-                  <div className="overview-title pb-4">
-                    {/* <p className="mb-1 pink">OVERVIEW</p> */}
-                    <h2 className="mb-2">
-                      GETTING TO KNOW ABOUT {" "}
-                      <span className="pink">Neeta Lulla</span>
-                    </h2>
-                    <p>
-                     Neeta Lulla is a pioneering - and multi-awarded - Indian costume designer, couturier, and stylist whose influence spans <span className='text-ff1b2e'>over 400 films</span> and more than three decades in fashion and cinema. Trained at SNDT University, she began her storied career at just 16, initially styling for the legendary fashion choreographer Jeanne Naoroji and later returning to teach at her alma mater.
-                    </p>
-                    <p className="mb-2">
-                      Her cinematic contributions include masterpieces like Chandni, Lamhe, Taal, Devdas, Jodhaa Akbar, and Balgandharva. Neeta is the only designer to have received <span className='text-ff1b2e'>four National Film Awards</span> for Best Costume Design—for Lamhe, Devdas, Jodhaa Akbar, and Balgandharva. She’s also a member of the prestigious Academy of Motion Picture Arts and Sciences jury .
-                    </p>
-                    <p>Neeta's design ethos combines India's rich textile heritage—such as Kanjeevaram, Banarasi, Paithani, and Kalamkari—with modern silhouettes and motifs, creating ensembles of poetic grandeur. She’s also known for crafting Aishwarya Rai’s iconic “laal paar sada saree” overnight for Devdas, a testament to her creativity under pressure.</p>
-                    <p>Recently, she revealed that legendary actress Sridevi, with her discerning fashion sense, played a formative role in shaping Lulla’s approach to color and design..</p>
-                  </div>
-                  {/* <div className="overview-event-info pb-6 g-4 text-start position-absolute">
-                    <div className="row justify-content-around ">
-                      <div className="col-lg-6 col-md-6">
-                        <a>
-                          <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
-                            <div className="event-info-icon text-center ">
-                              <i className="fa fa-map-marker  text-white bg-pink rounded-circle me-3"></i>
-                            </div>
-                            <div className="location-info">
-                              <h5 className="mb-1">WHERE</h5>
-                              <small>Indian Institue of Creative Skills, Delhi</small>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                      <div className="col-lg-6 col-md-6">
-                        <a>
-                          <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
-                            <div className="event-info-icon text-center">
-                              <i className="fa fa-calendar-o  text-white bg-pink rounded-circle me-3"></i>
-                            </div>
-                            <div className="time-info">
-                              <h5 className="mb-1">WHEN</h5>
-                              <small>
-                                 Sep, 08-13, 2025
-                              </small>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <div className="row justify-content-around">
-                      <div className="col-lg-6 col-md-6">
-                        <a>
-                          <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
-                            <div className="event-info-icon text-center ">
-                              <i className="fa fa-map-marker  text-white bg-pink rounded-circle me-3"></i>
-                            </div>
-                            <div className="location-info">
-                              <h5 className="mb-1">WHERE</h5>
-                              <small>Jagran Lakecity University, Bhopal</small>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                      <div className="col-lg-6 col-md-6 ">
-                        <a>
-                          <div className="event-info-box align-items-center d-flex p-4 rounded bg-white box-shadow my-2">
-                            <div className="event-info-icon text-center">
-                              <i className="fa fa-calendar-o  text-white bg-pink rounded-circle me-3"></i>
-                            </div>
-                            <div className="time-info">
-                              <h5 className="mb-1">WHEN</h5>
-                              <small>
-                                 Sep, 15-20, 2025
-                              </small>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div> */}
-                </div>
-              </div>
-              <div className="col-lg-6 mt-10">
-                <div className="overview-img">
-                  <div className="row align-items-center">
-                    <div className="col-lg-6 col-md-6 p-0 ">
-                      <div className="container-img-left mb-2">
-                        <div className="img-left-1 float-end w-lg-80">
-                          <img
-                            className="mb-2 w-100 rounded"
-                            src="https://iicsindia.org/blog/wp-content/uploads/2025/09/National-Award-B.jpeg"
-                            alt="group-image"
-                          />
-                        </div>
-                        <div className="img-left-2">
-                          <img
-                            src="https://iicsindia.org/blog/wp-content/uploads/2025/09/c6b231ce-7f12-4be0-83a3-66a02da1ecf2.jpg"
-                            alt="group-image"
-                            className="w-100 rounded"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-lg-6 col-md-6">
-                      <div className="container-img-right w-lg-90">
-                        <img
-                          src="https://iicsindia.org/blog/wp-content/uploads/2025/09/RTZ_5601-scaled.jpg"
-                          alt="group-image"
-                          className="w-100 rounded"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                    <div className="row justify-content-center">
-              <div className="col-lg-8 col-md-8 d-flex justify-content-center">
-                <a href='#home'
-                  className="btn btn-primary me-3 my-1 w-100 text-center"
-                >
-                  Register Now 
-                </a>
-              </div>
-            </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/*--Overview Section end--*/}
-      
-      {/*--Features Section start--*/}
-      <section className="feature text-white position-relative z-0 start-0" id='modules'>
-            <div className="overlay z-n1">
-            </div>
-            <div className="container">
-                <div className="feature-inner">
-                    {/* <div className="counter text-center border-bottom border-white border-opacity-25">
-                        <div className="inner-counter mb-7">
-                            <div className="row">
-                                <div className="col-lg-3 col-md-3 p-2">
-                                    <div className="counter-box p-2 border-end border-white border-opacity-25">
-                                        <CountUpBox end={300} label="Journalist" /> 
-                                    </div>
-                                </div>
-                                <div className="col-lg-3 col-md-3 p-2">
-                                    <div className="counter-box p-2 border-end border-white border-opacity-25">
-                                        <CountUpBox end={120} label="Events" />
-                                    </div>
-                                </div>
-                                <div className="col-lg-3 col-md-3 p-2">
-                                    <div className="counter-box p-2 border-end border-white border-opacity-25">
-                                        <CountUpBox end={50} label="Awards" />
-                                    </div>
-                                </div>
-                                <div className="col-lg-3 col-md-3 p-2">
-                                    <div className="counter-box p-2 border-opacity-25">
-                                        <CountUpBox end={1000} label="Members" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>     */}
+      <NeetaLullaSection/>
 
-                    <div className="row">
-              <div className="col-lg-8">
-                <div className="overview-left text-center text-lg-start">
-                  <div className="overview-title pb-4">
-                    {/* <p className="mb-1 ">FOCUS POINTS</p> */}
-                    <h2 className="mb-2 text-white">
-                      Course Curriculum for{" "}
-                      <span className="pink">Students</span>
-                    </h2>
-                    <p>The Indian Institute of Creative Skills proudly presents an exclusive workshop with Neeta Lulla—the visionary who blends couture finesse and storytelling through design. </p>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                    <div className="feature-lists pt-2">
-                        <div className="row g-2">
-                            <div className="col-lg-3 col-md-6 d-flex">
-                            <div className="feature-box py-7 px-3 rounded text bg-black bg-opacity-25 w-100">
-                                <a>
-                                {/* <div className="feature-box-icon mb-4">
-                                    <i className="fa fa-address-book-o text-white bg-pink rounded-circle text-center"></i>
-                                </div> */}
-                                <div className="feature-box-info ">
-                                    <h6 className="text-white mb-2">Legacy & Textiles</h6>
-                                    <ul>
-                                        <li>Focus Points: Heritage textiles, couture storytelling</li>
-                                        <li>Delve into traditional craft techniques like Paithani, Banarasi, and Kalamkari with contemporary design sensibilities</li>
-                                        <li>Learn how to create narrative-rich outfits that blend culture and innovation</li>
-                                    </ul>
-                                </div>
-                                </a>
-                            </div>
-                            </div>
-                            <div className="col-lg-3 col-md-6 d-flex">
-                            <div className="feature-box py-7 px-3 rounded  bg-black bg-opacity-25 w-100">
-                                <a>
-                                {/* <div className="feature-box-icon mb-4">
-                                    <i className="fa fa-comments text-white bg-pink rounded-circle text-center"></i>
-                                </div> */}
-                                <div className="feature-box-info">
-                                    <h6 className="text-white mb-2">Costume for Film & Media</h6>
-                                    <ul>
-                                        <li>Focus Points: Film narrative, styling, visual storytelling</li>
-                                        <li>Techniques behind designing iconic cinema costumes</li>
-                                        <li>Stage and screen styling essentials: layering narratives through fabric and form</li>
-                                        <li>Insights on balancing storytelling sensitivity with visual impact.</li>
-                                    </ul>
-                                </div>
-                                </a>
-                            </div>
-                            </div>
-                            <div className="col-lg-3 col-md-6 d-flex">
-                            <div className="feature-box py-7 px-3 rounded bg-black bg-opacity-25 w-100">
-                                <a>
-                                {/* <div className="feature-box-icon mb-4">
-                                    <i className="fa fa-desktop text-white bg-pink rounded-circle text-center"></i>
-                                </div> */}
-                                <div className="feature-box-info">
-                                    <h6 className="text-white mb-2">Creating Under Pressure</h6>
-                                    <ul>
-                                        <li>Focus Points: Speed designing, real-world constraints</li>
-                                        <li>Learn from case studies like the overnight creation of the “laal paar sada saree.” </li>
-                                        <li>Manage tight timelines without compromising on artistry and detail.</li>
-                                    </ul>
-                                </div>
-                                </a>
-                            </div>
-                            </div>
-                            <div className="col-lg-3 col-md-6 d-flex">
-                            <div className="feature-box py-7 px-3 rounded bg-black bg-opacity-25 w-100">
-                                <a>
-                                {/* <div className="feature-box-icon mb-4">
-                                    <i className="fa fa-cogs text-white bg-pink rounded-circle text-center"></i>
-                                </div> */}
-                                <div className="feature-box-info">
-                                    <h6 className="text-white mb-2">Teaching & Mentorship</h6>
-                                   <ul>
-                                        <li>Focus Points: Educating future designers, legacy building </li>
-                                        <li>Neeta’s journey from student to educator—now founding the Neeta School of Fashion at Whistling Woods International.</li>
-                                        <li>Understand how to mentor and inspire the next generation using time-tested techniques and storytelling.</li>
-                                    </ul>
-                                </div>
-                                </a>
-                            </div>
-                            </div>
-                            {/* <div className="col-lg-4 col-md-6">
-                            <div className="feature-box py-7 px-6 rounded bg-black bg-opacity-25">
-                                <a>
-                                <div className="feature-box-icon mb-4">
-                                    <i className="fa fa-gift text-white bg-pink rounded-circle text-center"></i>
-                                </div>
-                                <div className="feature-box-info">
-                                    <h5 className="text-white mb-2">EXICITING GIVEAWAYS</h5>
-                                    <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore.</small>
-                                </div>
-                                </a>
-                            </div>
-                            </div> */}
-                            {/* <div className="col-lg-4 col-md-6">
-                            <div className="feature-box py-7 px-6 rounded bg-black bg-opacity-25">
-                                <a>
-                                <div className="feature-box-icon mb-4">
-                                    <i className="fa fa-graduation-cap text-white bg-pink rounded-circle text-center"></i>
-                                </div>
-                                <div className="feature-box-info">
-                                    <h5 className="text-white mb-2">1-ON-1 SESSIONS</h5>
-                                    <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore.</small>
-                                </div>
-                                </a>
-                            </div>
-                            </div> */}
-                        </div>
-                    </div>
-                     <div className="row justify-content-center">
-              <div className="col-lg-4 col-md-8 d-flex justify-content-center">
-                <a href='#home'
-                  className="btn btn-primary me-3 my-1 w-100 text-center"
-                >
-                  Register Now 
-                </a>
-              </div>
-            </div>
-                </div>
-            </div>    
-        </section>
-      {/*--Features Section end--*/}
-
-        <TargetAudience/>
+      <DegreeCurriculumSection/>
         <WhyAttend/>
-      <WorkshopBenefits/>
+        <TargetAudience/>
+      {/* <WorkshopBenefits/> */}
 
       {/*--Partners Section start--*/}
       {/* <section className="partners">
