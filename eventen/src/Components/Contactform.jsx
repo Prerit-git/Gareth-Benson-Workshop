@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const Contactform = () => {
   const [formData, setFormData] = useState({
@@ -10,8 +9,6 @@ const Contactform = () => {
     subject: "",
     message: "",
   });
-
-  const navigate = useNavigate();
 
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -41,7 +38,7 @@ const Contactform = () => {
   formBody.append("location", location);
 
   try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbx76JwnwMpUhg36TYUDJMx7io3JTAzxnn5JkMgiu3ZVmRymwXVl3CAd6l0supXserui/exec", {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbzGS_3M-gk2x6BXXBQyIRFOLrHYzYNSxdauvUCznGXUbocYM1QVHtJQLNsnI8qCW4qggQ/exec", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -54,8 +51,9 @@ const Contactform = () => {
       setFormData({ name: "", email: "", phone: "", location: "", subject: "", message: "" });
 
        setTimeout(() => {
-    navigate("/thank-you");
-  }, 500);
+        window.location.href =
+          "https://iicsindia.org/workshops/Neeta-Lulla/thank-you.html";
+      }, 500);
   //     if (formData.role === "student") {
   //   window.location.href = "https://pages.razorpay.com/pl_R8IzACN6XXMIU0/view";
   // } else if (formData.role === "teacher") {

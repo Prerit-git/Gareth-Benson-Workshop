@@ -261,7 +261,7 @@
  background-position: center ;
 }
 .banner-image img{
-  width: 60%;
+  width: 110%;
 }
 
 .banner-button .btn2:hover{
@@ -563,9 +563,9 @@
     /* flex-wrap: wrap; */
   }
 
-  .banner-details-li{
+  /* .banner-details-li{
     width: 50%;
-  }
+  } */
 
   .banner_date{
     width: 100%;

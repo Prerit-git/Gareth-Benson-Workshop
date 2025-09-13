@@ -22,7 +22,6 @@ import Productsingle from './Pages/Productsingle';
 import Testimonials from './Pages/Testimonials';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
-import ThankYou from './Pages/Thankyou';
 
 function App() {
   const location = useLocation();
@@ -52,7 +51,6 @@ function App() {
         <Route path="/Testimonials" element={<Testimonials />} />
         <Route path="/Bloglists" element={<Bloglists />} />
         <Route path="/Blogsingle" element={<Blogsingle />} />
-         <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
       {!hideHeaderFooter && <Footer />}
     </div>

@@ -6,7 +6,7 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <BrowserRouter basename="/workshops/info"> */}
+    {/* <BrowserRouter basename="/workshops/Neeta-Lulla"> */}
     <BrowserRouter>
       <App />
     </BrowserRouter>

@@ -11,6 +11,9 @@ import WhyAttend from '../Components/WhyAttend'
 // import DegreeHighlights from '../Components/DegreeHighlights'
 import NeetaLullaSection from '../Components/NeetaLullaSection'
 import DegreeCurriculumSection from '../Components/DegreeCurriculumSection'
+import MentorsSection from '../Components/MentorsSection'
+import WorkshopSection from '../Components/WorkshopSection'
+import WorkshopTakeaways from '../Components/WorkshopTakeaways'
 
 const speakers = [
   {
@@ -180,21 +183,20 @@ function Home() {
   return (
     <div>
       {/*!-- Bannner section starts --*/}
-      <section className="banner position-relative pb-0" id="home">
+      <section className="banner position-relative pb-lg-30" id="home">
         <div className="overlay"></div>
         <div className="container">
-          <div className="inner-banner position-relative text-white ">
-            <div className="row">
+          <div className="inner-banner position-relative text-white">
+            <div className="row flex-row-reverse">
               <div className="col-lg-6 order-2 order-lg-1">
                 <div className="banner-left text-center pb-lg-5 p-md-0">
                   <div className="banner-image">
                     <img
-                      src="assets/images/team/neeta-lulla-picture.png"
+                      src="/assets/images/team/legends-pic.png"
                       alt="banner-image"
                     />
                     <br />
                   </div>
-                      {/* <h4 className='text-white'>Gareth Benson is Coming to India in:</h4> */}
                   <div className="countdown">
                     <div
                       id="countdown"
@@ -214,14 +216,15 @@ function Home() {
                     </h4> */}
                     <h4 className="text-white pb-3">
                       {" "}
-                     An Exclusive 3-Year Programme On <span className="text-ff1b2e"><br />Costume Design at</span> <br />Indian Institute of Creative Skills
+                     Career Guidance Workshop
+                    <span className="text-ff1b2e"><br />at</span> <br />Indian Institute of Creative Skills
                     </h4>
-                    by
                     <h1 className="text-white">
-                      Neeta <span className="text-ff1b2e">Lulla</span> 
+                      Level Up with Legends <span className="text-ff1b2e"></span> 
                     </h1>
-                    {/* <p>The Designer Behind India's Most Iconic Films</p> */}
-                      <h4 className='text-white'>Register now for workshops on Costume Design in <span className='text-ff1b2e'>Delhi and Bhopal </span></h4>
+                    {/* <h6 className='text-white'>Senior Manager – Training & Development at Phantom FX</h6> */}
+                    {/* <p>Step into the world of Animation and Visual Effects with one of the industry’s most respected mentors</p> */}
+                      {/* <h4 className='text-white'>Register now for workshops on Costume Design in <span className='text-ff1b2e'>Delhi and Bhopal </span></h4> */}
                   </div>
                   {/* <div className="event-discription">
                     <p className="pb-4 m-0">
@@ -287,7 +290,7 @@ function Home() {
             </div>
           </div>
         </div>
-        {/* <div className="wave overflow-hidden position-absolute w-100 z-0">
+        <div className="wave overflow-hidden position-absolute w-100 z-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1000 100"
@@ -301,15 +304,23 @@ function Home() {
                     c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
             ></path>
           </svg>
-        </div> */}
+        </div>
       </section>
       {/*--Banner Section end--*/}
 
-      <NeetaLullaSection/>
+      <MentorsSection/>
 
-      <DegreeCurriculumSection/>
+      <section className='bg-light p-0' id='about'>
+      <WorkshopSection/>
+      </section>
+
         <WhyAttend/>
-        <TargetAudience/>
+      <WorkshopTakeaways/>
+
+      {/* <NeetaLullaSection/> */}
+
+      {/* <DegreeCurriculumSection/> */}
+        {/* <TargetAudience/> */}
       {/* <WorkshopBenefits/> */}
 
       {/*--Partners Section start--*/}
@@ -404,11 +415,12 @@ function Home() {
               </div>
             </div>
             <SpeakersCarousel id="speakersCarousel"/>
-          </div>
-        </div>
-      </section> */}
+            </div>
+            </div>
+            </section> */}
       {/*--Speakers Section end--*/}
 
+            <SpeakersCarousel/>
       {/*--Ticketbook Section start--*/}
       <section className="ticket position-relative">
         <div className="overlay"></div>
@@ -435,7 +447,6 @@ function Home() {
       </section>
       {/*--Ticketbook Section end--*/}
 
-      <SpeakersCarousel/>
 
       {/*--Pricing Section start--*/}
       {/* <section className="price bg-lightgrey" id="pricing">
